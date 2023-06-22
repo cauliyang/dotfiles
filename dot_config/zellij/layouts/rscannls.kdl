@@ -1,0 +1,52 @@
+layout {
+
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            // FIXME: Zellij wants absolute path only
+             plugin location="file:/Users/ylk4626/.config/zellij/plugins/statusbar.wasm"
+        }
+    }
+
+   tab name="rscannls" focus=true cwd="/Users/ylk4626/ClionProjects/rscannls"{
+        pane 
+        pane 
+    }
+
+   // tab name="qscannls" split_direction="horizontal" {
+
+   //      pane borderless=true command="ssh" {
+   //          args "quest"
+   //      }
+
+   //      pane size="20%" command="ssh" {
+   //          args "quest"
+   //      }
+   //  }
+
+   // tab name="qrscannls" split_direction="horizontal" {
+
+   //      pane borderless=true command="ssh" {
+   //          args "quest"
+   //      }
+
+   //      pane size="20%" command="ssh" {
+   //          args "quest"
+   //      }
+   //  }
+
+
+
+}
+
+keybinds {
+
+    locked {
+        bind "Insert" { GoToTab 2; SwitchToMode "Normal"; }
+    }
+
+    shared_except "locked" {
+        bind "Insert" { GoToTab 1; SwitchToMode "Locked"; }
+    }
+
+}

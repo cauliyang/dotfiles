@@ -1,0 +1,34 @@
+layout {
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        children
+        pane size=1 borderless=true {
+          plugin location="zellij:compact-bar"
+        }
+    }
+      
+    tab name="scannls" cwd="/Users/ylk4626/ClionProjects/scannls-rs" {
+        pane borderless=true edit="./Cargo.toml"
+        pane command="cargo" {
+          args "nextest" "run"
+        }
+    }
+
+    tab name="research" cwd="/Users/ylk4626/writing_project/research-cookbook" {
+        pane borderless=true edit="./main.tex"
+    }
+
+
+    tab name="rust" cwd="/Users/ylk4626/ClionProjects/rust-htslib" {
+        pane borderless=true
+    }
+
+
+   tab name="quest"  {
+        pane borderless=true command="ssh" {
+          args "quest"
+        }
+    }
+
+}
+

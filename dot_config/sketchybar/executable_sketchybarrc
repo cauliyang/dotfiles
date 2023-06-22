@@ -1,0 +1,80 @@
+#!/usr/bin/env sh
+# shellcheck disable=all
+
+source "$HOME/.config/common_wm/colors.sh"
+source "$HOME/.config/common_wm/icons.sh"
+
+ITEM_DIR="$HOME/.config/sketchybar/items"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+FONT="SF Pro"
+SPACE_CLICK_SCRIPT="yabai -m space --focus \$SID 2>/dev/null"
+
+PADDINGS=3
+
+SHADOW=on
+
+sketchybar --add event mode_changed
+
+# Setting up and starting the helper process
+HELPER=git.felix.helper
+killall helper
+cd $HOME/.config/sketchybar/helper && make
+$HOME/.config/sketchybar/helper/helper $HELPER >/dev/null 2>&1 &
+
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
+
+# Setting up the general bar appearance and default values
+sketchybar --bar height=32 \
+	color=$BAR_COLOR \
+	shadow=$SHADOW \
+	position=top \
+	padding_right=20 \
+	padding_left=$PADDINGS \
+	blur_radius=20 \
+	sticky=off \
+	\
+	--default updates=when_shown \
+	icon.font="$FONT:Bold:14.0" \
+	icon.color=$ICON_COLOR \
+	icon.padding_left=$PADDINGS \
+	icon.padding_right=$PADDINGS \
+	label.font="$FONT:Semibold:13.0" \
+	label.color=$LABEL_COLOR \
+	label.padding_left=$PADDINGS \
+	label.padding_right=$PADDINGS \
+	background.padding_right=$PADDINGS \
+	background.padding_left=$PADDINGS \
+	popup.background.border_width=2 \
+	popup.background.corner_radius=11 \
+	popup.background.border_color=$POPUP_BORDER_COLOR \
+	popup.background.color=$POPUP_BACKGROUND_COLOR \
+	popup.background.shadow.drawing=$SHADOW
+
+# Left
+
+source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+
+# Center
+source "$ITEM_DIR/mode_indicator.sh"
+source "$ITEM_DIR/spotify.sh"
+
+# Right
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/input.sh"
+source "$ITEM_DIR/power.sh"
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/github.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/divider.sh"
+source "$ITEM_DIR/cpu.sh"
+
+source "$ITEM_DIR/wake.sh"
+
+############## FINALIZING THE SETUP ##############
+
+sketchybar --update
+echo "sketchybar configuation loaded.."

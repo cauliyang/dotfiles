@@ -1,0 +1,12 @@
+set selection-clipboard clipboard
+set selection-notification	"true"
+set guioptions			    "sv"
+set scroll-page-aware		"true"
+set statusbar-home-tilde	"true"
+set adjust-open			    "width"
+set statusbar-h-padding		10
+set statusbar-v-padding		10
+
+set recolor "true"
+
+include catppuccin-mocha

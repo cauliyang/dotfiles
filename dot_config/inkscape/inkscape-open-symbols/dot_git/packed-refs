@@ -1,0 +1,10 @@
+# pack-refs with: peeled fully-peeled sorted 
+e83b15b6c8b5d00a55db345d727bd6cd4ee68f72 refs/remotes/origin/dependabot/npm_and_yarn/css-what-2.1.3
+d5119669dea3275334bbb8eab6285dfcb8934a8d refs/remotes/origin/dependabot/npm_and_yarn/decode-uri-component-0.2.2
+c973166dd2bd0eb62440060db40a8b909b973f2a refs/remotes/origin/dependabot/npm_and_yarn/minimist-1.2.8
+5f3693b97eb3c0fed944d7c56aa1630222a7a915 refs/remotes/origin/gh-pages
+dd6929a98fe35a0027f8ddd8eb5f60565431d4d1 refs/remotes/origin/master
+76b69db16452d5948f2ea42ee21bd19ea6a2cd35 refs/tags/v1.0
+69b70ca7342cc3f176d242580eec1997577227d8 refs/tags/v1.1
+cb5d9b3c189dee1d48d04a2d69c3981ad2bdde9a refs/tags/v1.2
+0a62d6b91b408927fa9e2621b80df37a747ecfc6 refs/tags/v1.2.1
