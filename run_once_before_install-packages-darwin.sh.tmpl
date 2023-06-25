@@ -1,0 +1,143 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+brew "git"
+brew "coreutils"
+brew "moreutils"
+brew "findutils"
+brew "gnu-sed"
+brew "pv"
+brew "m-cli"
+brew "fish"
+brew "wget"
+brew "neovim --HEAD"
+brew "grep"
+brew "openssh"
+brew "entr"
+brew "gh"
+brew "git-delta"
+brew "btop" 
+brew "shellcheck"
+brew  "the_silver_searcher" 
+brew  "fzf"
+
+brew  "imagemagick"
+# This installs `npm` too using the recommended installation method
+brew  "node" 
+brew  "rename"
+brew  "tree"
+brew  "zopfli"
+brew  "ffmpeg"
+brew  "dust"
+brew  "hyperfine"
+brew  "zellij"
+brew  "lsd"
+brew  "lazygit"
+brew  "pre-commit"
+brew  "clang-format"
+# Nvim
+brew  "luarocks"
+brew  "youtube-dl"
+
+# will probably need these at some point
+brew  "automake"
+brew  "cmake"
+brew  "go"
+brew  "rust"
+
+brew  "pandoc"
+brew  "graphviz"
+
+brew  "gcc"
+brew  "llvm"
+
+brew  "koekeishiya/formulae/skhd"
+brew  "koekeishiya/formulae/yabai"
+
+tap FelixKratz/formulae
+brew  "sketchybar"
+
+cask sf-symbols
+
+brew  "jq"
+brew  "switchaudio-osx"
+brew  "ifstat"
+brew  "svim"
+
+# latex compiler
+brew  "tectonic"
+brew  "pstree"
+
+brew  "ruff"
+
+# show unicode text of figure
+brew  "chafa"
+brew  "translate-shell"
+brew  "aspell"
+
+# update all things
+brew  "topgrade"
+brew  "just"
+brew  "bottom"
+brew  "himalaya"
+brew  "scc"
+brew  "dooit"
+brew  "onefetch"
+brew  "act"
+tap wtfutil/wtfutil
+brew  "wtfutil"
+brew  "hub"
+
+## casks
+cask "google-chrome"
+
+
+# daily
+cask "rectangle"
+cask "1password"
+cask "rescuetime"
+cask "google-chrome"
+cask "zotero"
+cask "obsidian"
+cask "aldente"
+
+# dev
+cask "alacritty"
+cask "kitty"
+cask "imageoptim"
+
+# fun
+cask "limechat"
+cask "textual"
+
+# less often
+cask "disk-inventory-x"
+cask "screenflow"
+cask "vlc"
+cask "gpgtools"
+cask "iina"
+cask "spotify"
+
+tap homebrew/cask-fonts
+cask "font-jetbrains-mono"
+cask "font-hack-nerd-font"
+cask "font-fira-mono"
+cask "font-fira-code"
+cask "font-cascadia-code"
+cask "font-cascadia-mono"
+
+# latex
+cask "mactex"
+cask "skim"
+cask "gifcapture"
+# keycastr
+cask "keycastr"
+# inkscape
+cask "inkscape"
+cask "monitorcontrol"
+# igv
+cask "igv"
+
+EOF
+{{ end -}}
