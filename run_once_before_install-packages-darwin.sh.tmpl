@@ -1,6 +1,10 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 brew "git"
 brew "coreutils"
@@ -140,4 +144,14 @@ cask "monitorcontrol"
 cask "igv"
 
 EOF
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install silicon
+cargo install ouch
+cargo install leetup
+cargo install du-dust
+cargo install lsd
+
 {{ end -}}
