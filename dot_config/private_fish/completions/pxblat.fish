@@ -1,0 +1,1 @@
+complete --command pxblat --no-files --arguments "(env _PXBLAT_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=get-args _TYPER_COMPLETE_ARGS=(commandline -cp) pxblat)" --condition "env _PXBLAT_COMPLETE=complete_fish _TYPER_COMPLETE_FISH_ACTION=is-args _TYPER_COMPLETE_ARGS=(commandline -cp) pxblat"

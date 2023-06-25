@@ -1,0 +1,12 @@
+# pack-refs with: peeled fully-peeled sorted 
+5fe42ac4ad96261cc66ade94745563a192458c5d refs/remotes/origin/dev
+4ae234ffc65709ba58454a419d33b20ff2001c0d refs/remotes/origin/experiment/kvo+fuzzy-frame-detection-via-metamethod
+8cac927860b809e747985aa2da39b50ceed12449 refs/remotes/origin/experiment/testability
+5fe42ac4ad96261cc66ade94745563a192458c5d refs/remotes/origin/feature/improve-redraw-logic
+7c1b3925db33fbef5ba7c244e56a10b65df5dbcc refs/remotes/origin/feature/testing-infra
+2aa0bd9a27f93bad24b0fd4da38f3c0356414098 refs/remotes/origin/main
+05caacebff04cff78f84cedc3f7b5d6e84ead7a1 refs/remotes/origin/refactor/class
+5c47bb37ad2a3d3aa69803f40da012a5f007f370 refs/remotes/origin/refactor/localize-event-listeners
+5fe54972bf7a4d4b727d4302e521f0ef03fbfde7 refs/remotes/origin/refactor/query
+b0bff172b36f3f9e3455ce8d682ba4cd1d303eaa refs/remotes/origin/refactor/utils
+699e82586188f5f11c907c75998c181136c94bd5 refs/remotes/origin/tests/basic
