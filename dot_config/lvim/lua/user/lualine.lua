@@ -377,7 +377,7 @@ M.config = function()
     ins_right({
         function()
             if require("user.copilot").enabled() then
-                return " " .. icons.copilot .. " "
+                return " " .. icons.copilot
             else
                 return ""
             end
@@ -395,7 +395,7 @@ M.config = function()
             end
             for _, client in pairs(buf_clients) do
                 if client.name == "null-ls" then
-                    return " " .. icons.code_lens_action .. " "
+                    return " " .. icons.code_lens_action
                 end
             end
             return ""
@@ -415,7 +415,7 @@ M.config = function()
             end
         end,
         cond = function()
-            return vim.g.persisting ~= nil and lvim.builtin.session_manager ~= "persisted"
+            return vim.g.persisting ~= nil
         end,
         color = { fg = colors.green, bg = colors.bg },
     })
