@@ -21,7 +21,7 @@ return {
     s(
         { trig = "pfn", dscr = "insert public function" },
         fmt(
-            [[ 
+            [[
     {} fn {}({}, {}:{}) -> {} {{
           {}
     }}
@@ -32,7 +32,6 @@ return {
                 i(2, "name"),
 
                 c(3, {
-                    t(""),
                     t("self"),
                     t("mut self"),
                     t("&self"),

@@ -138,7 +138,6 @@ lvim.plugins = {
     -- show lsp signature
     {
         "ray-x/lsp_signature.nvim",
-        event = "BufRead",
         config = function()
             require("user.lsp_signature").config()
         end,
@@ -380,7 +379,6 @@ lvim.plugins = {
     {
         "ThePrimeagen/refactoring.nvim",
         ft = { "typescript", "javascript", "lua", "c", "cpp", "go", "python", "java", "rust", "kotlin" },
-        event = "BufReadPost",
         lazy = true,
         config = function()
             require("user.refactoring").config()
