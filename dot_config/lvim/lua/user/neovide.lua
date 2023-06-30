@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
     if vim.g.neovide then
-        vim.g.neovide_scale_factor = 1.9
+        vim.g.neovide_scale_factor = 1.85
         vim.g.neovide_hide_mouse_when_typing = true
         vim.g.neovide_input_macos_alt_is_meta = true
         vim.g.neovide_hide_mouse_when_typing = false

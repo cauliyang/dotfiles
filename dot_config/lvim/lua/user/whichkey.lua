@@ -15,7 +15,6 @@ if lvim.builtin.trouble.active then
 end
 
 if lvim.builtin.task_runner == "overseer" then
-    -- Overseer
     lvim.builtin.which_key.mappings["O"] = {
         name = "Overseer",
         l = { "<cmd>OverseerLoadBundle<CR>", "Load Bundle" },
@@ -45,7 +44,6 @@ end
 if lvim.builtin.refactoring.active then
     lvim.builtin.which_key.mappings["r"] = {
         name = "Refactor",
-
         f = { "<cmd>lua require('refactoring').refactor('Extract Function')<cr>", "Extract function" },
         F = {
             "<cmd>lua require('refactoring').refactor('Extract Function To File')<cr>",
@@ -78,11 +76,9 @@ lvim.builtin.which_key.mappings["F"] = {
     s = { "<cmd>lua require('user.telescope').find_string()<cr>", "Find string" },
     S = { "<cmd>lua require('user.telescope').find_identifier()<cr>", "Find identifier under cursor" },
     r = { "<cmd>lua require('user.telescope').recent_files()<cr>", "Recent files" },
-    -- z = { "<cmd>lua require('user.telescope').zoxide()<cr>", "Zoxide list" },
     o = { "<cmd>lua require('user.telescope').smart_open()<cr>", "Smart open" },
     y = { "<cmd>lua require('user.telescope').neoclip()<cr>", "Clipboard" },
     l = { "<cmd>lua require('user.telescope').luasnip()<cr>)", "Luasnip" },
-    -- n = { "<cmd>lua require('user.telescope').noice()<cr>", "Notice" },
     g = { "<cmd>lua require('user.telescope').lazy()<cr>)", "Lazy Plugins" },
     t = { "<cmd>lua require('user.telescope').resume()<cr>", "Last sction" },
     c = { "<cmd>lua require('user.telescope').bibtex()<cr>", "Find citation" },
@@ -153,7 +149,6 @@ lvim.builtin.which_key.mappings["gY"] = {
 }
 
 lvim.builtin.which_key.mappings["gB"] = {
-
     '<cmd>lua require"gitlinker".get_repo_url({action_callback = require"gitlinker.actions".open_in_browser})<cr>',
     "Open HomePage in Browser",
 }

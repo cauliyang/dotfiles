@@ -95,28 +95,14 @@ vim.api.nvim_clear_autocmds({ pattern = "*", group = "_lvim_colorscheme" })
 -- Custom group.
 vim.api.nvim_create_augroup("_lvim_user", {})
 
--- Close Neotree during wq
--- vim.api.nvim_create_autocmd("BufWritePost,VimLeave", {
---     group = "_lvim_user",
---     pattern = "*",
---     desc = "Close Neotree during wq",
---     command = "Neotree close",
--- })
-
--- if lvim.builtin.nonumber_unfocus.active then
---     vim.api.nvim_create_autocmd("WinEnter", {
---         group = "_lvim_user",
---         pattern = "*",
---         desc = "Enable numbers",
---         command = "set relativenumber number",
---     })
---     vim.api.nvim_create_autocmd("WinLeave", {
---         group = "_lvim_user",
---         pattern = "*",
---         desc = "Disable numbers",
---         command = "set norelativenumber nonumber",
---     })
--- end
+vim.api.nvim_create_autocmd("Filetype", {
+    group = "_lvim_user",
+    pattern = { "rust", "lua", "java", "python", "typescript", "go", "c", "cpp" },
+    desc = "Enable automatic inlay hints",
+    callback = function()
+        vim.lsp.buf.inlay_hint(0)
+    end,
+})
 
 -- Codelense viewer
 vim.api.nvim_create_autocmd("CursorHold", {
@@ -169,14 +155,6 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
     desc = "Allow hlslense in scrollbar",
     command = "lua ok, sb = pcall(require, 'scrollbar.handlers.search'); if ok then sb.handler.hide() end",
 })
-
--- -- Start metals
--- vim.api.nvim_create_autocmd("Filetype", {
---     group = "_lvim_user",
---     pattern = { "scala", "sbt" },
---     desc = "Start Scala metals",
---     callback = require("user.lsp.scala").start,
--- })
 
 -- Faster yank
 vim.api.nvim_create_autocmd("TextYankPost", {

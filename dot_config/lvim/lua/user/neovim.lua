@@ -61,10 +61,7 @@ M.config = function()
     -- Undodir
     vim.opt.undodir = vim.fn.stdpath("cache") .. "/undo"
     -- The font used in graphical neovim applications
-    -- vim.opt.guifont = { "RobotoMono Nerd Font", "h14" }
-    -- vim.opt.guifont = { "AurulentSansMono Nerd Font, JetBrainsMono Nerd Font Mono", ":h14" }
     vim.opt.guifont = "FiraCode Nerd Font Mono:h13"
-    -- vim.opt.guifont = "JetBrainsMonoNL Nerd Font Mono:h13"
 
     -- We need to see things like -- INSERT --
     vim.opt.showmode = false
@@ -216,8 +213,7 @@ M.config = function()
     vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
 
     -- Session
-    vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
-
+    vim.o.sessionoptions = "buffers,curdir,folds,globals,help,tabpages,winpos,winsize,terminal"
     -- Splitkeep
     -- vim.o.splitkeep = "screen"
 

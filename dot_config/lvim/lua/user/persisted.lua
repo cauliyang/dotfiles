@@ -14,6 +14,10 @@ M.config = function()
             -- Reload the LSP servers
             vim.lsp.stop_client(vim.lsp.get_active_clients())
         end,
+
+        telescope = { -- options for the telescope extension
+            reset_prompt_after_deletion = true, -- whether to reset prompt after session deleted
+        },
     })
 end
 
