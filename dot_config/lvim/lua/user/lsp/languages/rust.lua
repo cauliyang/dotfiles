@@ -44,7 +44,7 @@ pcall(function()
             },
 
             inlay_hints = {
-                auto = false,
+                auto = true,
                 only_current_line = false,
                 show_parameter_hints = true,
                 parameter_hints_prefix = "<-",

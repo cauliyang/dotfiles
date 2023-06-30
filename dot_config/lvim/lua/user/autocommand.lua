@@ -95,14 +95,14 @@ vim.api.nvim_clear_autocmds({ pattern = "*", group = "_lvim_colorscheme" })
 -- Custom group.
 vim.api.nvim_create_augroup("_lvim_user", {})
 
-vim.api.nvim_create_autocmd("Filetype", {
-    group = "_lvim_user",
-    pattern = { "rust", "lua", "java", "python", "typescript", "go", "c", "cpp" },
-    desc = "Enable automatic inlay hints",
-    callback = function()
-        vim.lsp.buf.inlay_hint(0)
-    end,
-})
+-- vim.api.nvim_create_autocmd("Filetype", {
+--     group = "_lvim_user",
+--     pattern = { "rust", "lua", "java", "python", "typescript", "go", "c", "cpp" },
+--     desc = "Enable automatic inlay hints",
+--     callback = function()
+--         vim.lsp.buf.inlay_hint(0)
+--     end,
+-- })
 
 -- Codelense viewer
 vim.api.nvim_create_autocmd("CursorHold", {
