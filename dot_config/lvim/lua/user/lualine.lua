@@ -302,7 +302,7 @@ M.config = function()
                 }
             end
         end,
-        symbols = { added = icons.added, modified = icons.modified, removed = icons.removed },
+        symbols = { added = "  ", modified = " ", removed = " " },
         diff_color = {
             added = { fg = colors.git.add, bg = colors.bg },
             modified = { fg = colors.git.change, bg = colors.bg },
