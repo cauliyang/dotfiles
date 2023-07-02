@@ -23,7 +23,7 @@ return {
         { trig = "standalone" },
         fmta(
             [[
-            \documentclass[tikz]{standalone}
+            \documentclass[tikz,border=10pt]{standalone}
             \usepackage{tkz-graph}
             \usepackage{amsmath,amssymb}
             \usepackage{xcolor}
@@ -111,10 +111,10 @@ return {
         \draw [help lines] (<>,<>) grid  (<>,<>);
         ]],
             {
-                i(1, "-1"),
-                i(2, "-2"),
-                i(3, "5"),
-                i(4, "5"),
+                i(1, "-3"),
+                i(2, "-3"),
+                i(3, "3"),
+                i(4, "3"),
             },
             { condition = tex_utils.in_tikz }
         )
