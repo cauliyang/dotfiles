@@ -16,18 +16,12 @@
 
 [user]
 	email = yangyang.li@northwestern.edu
-	name = Yangyang Li
+	name = yangyangli
 [core]
 	editor = vi
 [init]
 	defaultBranch = main
-[alias]
-	project-summary = !which onefetch && onefetch
-    runs = "!f() { \
-        watch_gha_runs \
-            \"$(git remote get-url origin)\" \
-            \"$(git rev-parse --abbrev-ref HEAD)\"; \
-    }; f"
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
