@@ -80,7 +80,6 @@ lvim.builtin.which_key.setup.ignore_missing = false
 --        opts        --
 ------------------------
 vim.g.instant_username = vim.env.USER
-vim.filetype.add({ extension = { wgsl = "wgsl" } })
 
 -----------------------------
 --        dashboard        --
