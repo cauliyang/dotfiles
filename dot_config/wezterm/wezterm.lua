@@ -24,7 +24,8 @@ local function get_theme()
 	if _time.hour >= 1 and _time.hour < 9 then
 		return "Rosé Pine (base16)"
 	elseif _time.hour >= 9 and _time.hour < 17 then
-		return "tokyonight_night"
+		-- return "tokyonight_night"
+		return "nightfox"
 	elseif _time.hour >= 17 and _time.hour < 21 then
 		return "Catppuccin Mocha"
 	elseif _time.hour >= 21 and _time.hour < 24 or _time.hour >= 0 and _time.hour < 1 then
