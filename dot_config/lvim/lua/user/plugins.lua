@@ -7,19 +7,25 @@ lvim.plugins = {
     -------------------------
 
     {
-        "rebelot/kanagawa.nvim",
-        config = function()
-            require("user.theme").kanagawa()
-        end,
-        enabled = lvim.builtin.theme.name == "kanagawa",
-    },
-
-    {
         "EdenEast/nightfox.nvim",
         config = function()
             require("user.theme").nightfox()
         end,
-        enabled = lvim.builtin.theme.name == "nightfox",
+        -- enabled = lvim.builtin.theme.name == "nightfox",
+    },
+
+    {
+        "rebelot/kanagawa.nvim",
+        config = function()
+            require("user.theme").kanagawa()
+            lvim.colorscheme = "kanagawa"
+        end,
+        -- enabled = lvim.builtin.theme.name == "kanagawa",
+        cond = function()
+            local _time = os.date("*t")
+            return ((_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1))
+                and lvim.builtin.time_based_themes
+        end,
     },
 
     {
@@ -27,8 +33,13 @@ lvim.plugins = {
         name = "rose-pine",
         config = function()
             require("user.theme").rose_pine()
+            lvim.colorscheme = "rose-pine"
         end,
-        enabled = lvim.builtin.theme.name == "rose-pine",
+        -- enabled = lvim.builtin.theme.name == "rose-pine",
+        cond = function()
+            local _time = os.date("*t")
+            return (_time.hour >= 1 and _time.hour < 9) and lvim.builtin.time_based_themes
+        end,
     },
 
     {
@@ -36,8 +47,13 @@ lvim.plugins = {
         name = "catppuccin",
         config = function()
             require("user.theme").catppuccin()
+            lvim.colorscheme = "catppuccin"
         end,
-        enabled = lvim.builtin.theme.name == "catppuccin",
+        -- enabled = lvim.builtin.theme.name == "catppuccin",
+        cond = function()
+            local _time = os.date("*t")
+            return (_time.hour >= 17 and _time.hour < 21) and lvim.builtin.time_based_themes
+        end,
     },
 
     {
@@ -49,7 +65,7 @@ lvim.plugins = {
             vim.g.gruvbox_baby_transparent_mode = 1
             vim.g.gruvbox_baby_background_color = "dark"
         end,
-        enabled = lvim.builtin.theme.name == "gruvbox-baby",
+        enabled = lvim.colorscheme == "gruvbox-baby",
     },
 
     -----------------------------

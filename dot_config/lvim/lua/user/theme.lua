@@ -7,7 +7,7 @@ M.gruvbox = function()
         bold = true,
         italic = true,
         strikethrough = true,
-        invert_selection = false,
+        invert_selection = true,
         invert_signs = false,
         invert_tabline = false,
         invert_intend_guides = false,
@@ -15,8 +15,8 @@ M.gruvbox = function()
         contrast = "hard", -- can be "hard", "soft" or empty string
         palette_overrides = {},
         overrides = {},
-        dim_inactive = false,
-        transparent_mode = false,
+        dim_inactive = true,
+        transparent_mode = lvim.transparent_window,
     })
 end
 
@@ -190,7 +190,7 @@ M.catppuccin = function()
         flavour = "mocha",
         background = { light = "latte", dark = "mocha" },
         transparent_background = lvim.transparent_window,
-        term_colors = false,
+        term_colors = true,
         styles = {
             comments = { "italic" }, -- Value is any valid attr-list value `:help attr-list`
             keywords = { "italic" },
@@ -500,17 +500,17 @@ M.colors = {
 }
 
 M.current_colors = function()
-    if lvim.builtin.theme.name == "tokyonight" then
+    if lvim.colorscheme == "tokyonight" then
         return M.colors.tokyonight_colors
-    elseif lvim.builtin.theme.name == "catppuccin" then
+    elseif lvim.colorscheme == "catppuccin" then
         return M.colors.catppuccin_colors
-    elseif lvim.builtin.theme.name == "kanagawa" then
+    elseif lvim.colorscheme == "kanagawa" then
         return M.colors.kanagawa_colors
-    elseif lvim.builtin.theme.name == "rose-pine" then
+    elseif lvim.colorscheme == "rose-pine" then
         return M.colors.rose_pine_colors
-    elseif lvim.builtin.theme.name == "nightfox" then
+    elseif lvim.colorscheme == "nightfox" then
         return M.colors.tokyonight_colors
-    elseif lvim.builtin.theme.name == "gruvbox" then
+    elseif lvim.colorscheme == "gruvbox" then
         return M.colors.gruvbox_colors
     else
         return M.colors.tokyonight_colors
@@ -592,27 +592,28 @@ M.telescope_theme = function()
     link("@lsp.typemod.parameter.label", "@field")
     link("@type.qualifier", "@keyword")
 
-    local current_colors = colorset
-    if colorset == nil or #colorset == 0 then
-        current_colors = M.current_colors()
+    if lvim.builtin.time_based_themes then
+        local current_colors = colorset
+        if colorset == nil or #colorset == 0 then
+            current_colors = M.current_colors()
+        end
+        set_fg_bg("Hlargs", current_colors.hlargs, "none")
+        set_fg_bg("CmpBorder", current_colors.cmp_border, current_colors.cmp_border)
+        link("NoiceCmdlinePopupBorder", "CmpBorder")
+        link("NoiceCmdlinePopupBorderCmdline", "CmpBorder")
+        link("NoiceCmdlinePopupBorderFilter", "CmpBorder")
+        link("NoiceCmdlinePopupBorderHelp", "CmpBorder")
+        link("NoiceCmdlinePopupBorderIncRename", "CmpBorder")
+        link("NoiceCmdlinePopupBorderInput", "CmpBorder")
+        link("NoiceCmdlinePopupBorderLua", "CmpBorder")
+        link("NoiceCmdlinePopupBorderSearch", "CmpBorder")
+        set_fg_bg("diffAdded", current_colors.git.add, "NONE")
+        set_fg_bg("diffRemoved", current_colors.git.delete, "NONE")
+        set_fg_bg("diffChanged", current_colors.git.change, "NONE")
+        set_fg_bg("WinSeparator", current_colors.bg_alt, current_colors.bg_alt)
+        set_fg_bg("SignColumn", current_colors.bg, "NONE")
+        set_fg_bg("SignColumnSB", current_colors.bg, "NONE")
     end
-
-    set_fg_bg("Hlargs", current_colors.hlargs, "none")
-    set_fg_bg("CmpBorder", current_colors.cmp_border, current_colors.cmp_border)
-    link("NoiceCmdlinePopupBorder", "CmpBorder")
-    link("NoiceCmdlinePopupBorderCmdline", "CmpBorder")
-    link("NoiceCmdlinePopupBorderFilter", "CmpBorder")
-    link("NoiceCmdlinePopupBorderHelp", "CmpBorder")
-    link("NoiceCmdlinePopupBorderIncRename", "CmpBorder")
-    link("NoiceCmdlinePopupBorderInput", "CmpBorder")
-    link("NoiceCmdlinePopupBorderLua", "CmpBorder")
-    link("NoiceCmdlinePopupBorderSearch", "CmpBorder")
-    set_fg_bg("diffAdded", current_colors.git.add, "NONE")
-    set_fg_bg("diffRemoved", current_colors.git.delete, "NONE")
-    set_fg_bg("diffChanged", current_colors.git.change, "NONE")
-    set_fg_bg("WinSeparator", current_colors.bg_alt, current_colors.bg_alt)
-    set_fg_bg("SignColumn", current_colors.bg, "NONE")
-    set_fg_bg("SignColumnSB", current_colors.bg, "NONE")
 
     local hi_colors = M.hi_colors()
     set_fg_bg("NormalFloat", hi_colors.fg, hi_colors.bg)
@@ -648,21 +649,19 @@ M.toggle_theme = function()
     local colorset = require("user.theme").colors.tokyonight_colors
     if theme == "tokyonight" then
         lvim.colorscheme = "nightfox"
-        lvim.builtin.theme.name = "nightfox"
         colorset = require("user.theme").colors.tokyonight_colors
     elseif theme == "nightfox" then
         lvim.colorscheme = "kanagawa"
-        lvim.builtin.theme.name = "kanagawa"
         colorset = require("user.theme").colors.kanagawa_colors
     elseif theme == "gruvbox" then
         lvim.colorscheme = "gruvbox"
-        lvim.builtin.theme.name = "gruvbox"
         colorset = require("user.theme").colors.gruvbox_colors
+    elseif theme == "catppuccin" then
+        lvim.colorscheme = "catppuccin"
+        colorset = require("user.theme").colors.catppuccin_colors
     else
         lvim.colorscheme = "tokyonight"
-        lvim.builtin.theme.name = "tokyonight"
     end
-    require("nvim-web-devicons").setup({ default = true })
     vim.cmd("colorscheme " .. lvim.colorscheme)
     require("user.theme").telescope_theme(colorset)
 end

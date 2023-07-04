@@ -4,8 +4,6 @@
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 
-vim.filetype.add({ extension = { wgsl = "wgsl" } })
-
 local themes = {
     rose_pine = "rose-pine",
     lunar = "lunar",
@@ -22,7 +20,8 @@ local themes = {
 }
 
 lvim.colorscheme = themes.nightfox
-lvim.builtin.theme.name = lvim.colorscheme
+lvim.builtin.time_based_themes = true
+
 lvim.transparent_window = true
 
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -81,6 +80,7 @@ lvim.builtin.which_key.setup.ignore_missing = false
 --        opts        --
 ------------------------
 vim.g.instant_username = vim.env.USER
+vim.filetype.add({ extension = { wgsl = "wgsl" } })
 
 -----------------------------
 --        dashboard        --
