@@ -1,15 +1,3 @@
-local formatters = require("lvim.lsp.null-ls.formatters")
-
-formatters.setup({
-    { command = "taplo", extra_args = { "fmt" }, filetypes = { "toml" } },
-})
-
-vim.filetype.add({
-    extension = {
-        toml = "toml",
-    },
-})
-
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "taplo" })
 
 local lsp_manager = require("lvim.lsp.manager")
