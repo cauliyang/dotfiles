@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local gpus = wezterm.gui.enumerate_gpus()
 
 local padding = {
 	left = 0,
@@ -31,45 +32,22 @@ local function get_theme()
 	end
 end
 
+local scheme = wezterm.get_builtin_color_schemes()[get_theme()]
 local config = {
 	bidi_enabled = true,
 	bidi_direction = "AutoLeftToRight",
 	color_scheme = get_theme(),
 	font = font_with_fallback({
-		family = "FiraCode Nerd Font Mono",
+		-- family = "FiraCode Nerd Font Mono",
+		family = "Cascadia Code",
 		harfbuzz_features = {
+			"calt",
+			"liga",
 			"zero",
+			"ss01",
+			"-ss04",
 		},
 	}),
-	font_rules = {
-		{
-			intensity = "Bold",
-			font = font_with_fallback({
-				family = "FiraCode Nerd Font",
-				harfbuzz_features = {
-					"zero",
-				},
-				weight = "Medium",
-			}),
-		},
-		{
-			italic = true,
-			intensity = "Bold",
-			font = font_with_fallback({
-				family = "Cascadia Code",
-				weight = "Medium",
-				italic = true,
-			}),
-		},
-		{
-			italic = true,
-			font = font_with_fallback({
-				family = "Cascadia Code",
-				weight = "Regular",
-				italic = true,
-			}),
-		},
-	},
 	-- leader = { key = "a", mods = "CTRL" },
 	-- keys = {
 	-- 	-- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
@@ -99,6 +77,7 @@ local config = {
 	-- 	{ key = "w", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	-- 	-- { key = "z", mods = "LEADER", action = "ToggleFullScreen" },
 	-- },
+
 	initial_cols = 128,
 	initial_rows = 32,
 	use_dead_keys = false,
@@ -118,6 +97,33 @@ local config = {
 	-- term = "wezterm",
 	-- freetype_load_target = "Light",
 	tab_max_width = 14,
+	automatically_reload_config = true,
+	webgpu_preferred_adapter = gpus[1],
+	front_end = "WebGpu",
+
+	ssh_domains = {
+		{
+			-- This name identifies the domain
+			name = "quest",
+			-- The hostname or address to connect to. Will be used to match settings
+			-- from your ssh config file
+			remote_address = "quser33.ci.northwestern.edu",
+			-- The username to use on the remote host
+			username = "ylk4626",
+		},
+	},
+
+	colors = {
+		tab_bar = {
+			background = scheme.background,
+			new_tab = { bg_color = "#2e3440", fg_color = scheme.ansi[8], intensity = "Bold" },
+			new_tab_hover = { bg_color = scheme.ansi[1], fg_color = scheme.brights[8], intensity = "Bold" },
+			-- format-tab-title
+			active_tab = { bg_color = "#121212", fg_color = "#FCE8C3" },
+			inactive_tab = { bg_color = scheme.background, fg_color = "#FCE8C3" },
+			inactive_tab_hover = { bg_color = scheme.ansi[1], fg_color = "#FCE8C3" },
+		},
+	},
 }
 
 return config
