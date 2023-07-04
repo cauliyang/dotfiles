@@ -4,7 +4,7 @@ local gpus = wezterm.gui.enumerate_gpus()
 local padding = {
 	left = 0,
 	right = 0,
-	top = 0,
+	top = 0.5,
 	bottom = 0,
 }
 
@@ -91,27 +91,14 @@ local config = {
 	-- disable_default_key_bindings = true,
 	line_height = 1.25,
 	font_size = 14,
-	window_background_opacity = 0.9,
+	window_background_opacity = 0.8,
 	bold_brightens_ansi_colors = true,
 	-- swap_backspace_and_delete = false,
 	-- term = "wezterm",
 	-- freetype_load_target = "Light",
-	tab_max_width = 14,
 	automatically_reload_config = true,
 	webgpu_preferred_adapter = gpus[1],
 	front_end = "WebGpu",
-
-	ssh_domains = {
-		{
-			-- This name identifies the domain
-			name = "quest",
-			-- The hostname or address to connect to. Will be used to match settings
-			-- from your ssh config file
-			remote_address = "quser33.ci.northwestern.edu",
-			-- The username to use on the remote host
-			username = "ylk4626",
-		},
-	},
 
 	colors = {
 		tab_bar = {
@@ -123,6 +110,11 @@ local config = {
 			inactive_tab = { bg_color = scheme.background, fg_color = "#FCE8C3" },
 			inactive_tab_hover = { bg_color = scheme.ansi[1], fg_color = "#FCE8C3" },
 		},
+	},
+
+	inactive_pane_hsb = {
+		saturation = 0.9,
+		brightness = 0.8,
 	},
 }
 
