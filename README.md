@@ -25,7 +25,7 @@ It'll give you a sense of how Chezmoi operates and how to manage your dotfiles.
 First, you need to clone this repository to your local machine:
 
 ```bash
-git clone <insert-your-repo-url-here>
+git clone https://github.com/cauliyang/dotfiles
 ```
 
 Then, navigate to the directory containing these dotfiles:
@@ -55,9 +55,7 @@ If you find an issue with my configurations or have any suggestions, please feel
 The open-source community has been a great source of inspiration in maintaining this repository.
 If you're interested in more ways to manage your dotfiles, check out [dotfiles.github.io](https://dotfiles.github.io/).
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+## License This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 That's it! Enjoy your journey with my configurations! Feel free to adapt them to match your personal taste.
 
