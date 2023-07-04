@@ -333,24 +333,23 @@ lvim.plugins = {
 
     {
         "olimorris/persisted.nvim",
-        -- lazy = true,
         config = function()
             require("user.persisted").config()
         end,
     },
 
-    -- {
-    --     "pwntester/octo.nvim",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-telescope/telescope.nvim",
-    --     },
-    --     lazy = true,
-    --     cmd = "Octo",
-    --     config = function()
-    --         require("user.octo").config()
-    --     end,
-    -- },
+    {
+        "pwntester/octo.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        lazy = true,
+        cmd = "Octo",
+        config = function()
+            require("user.octo").config()
+        end,
+    },
 
     -- Git linker
     {
@@ -847,6 +846,7 @@ lvim.plugins = {
             require("swenv").setup()
         end,
     },
+
     {
         "jinh0/eyeliner.nvim",
         config = function()

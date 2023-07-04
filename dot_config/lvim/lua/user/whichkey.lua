@@ -2,6 +2,8 @@ lvim.builtin.which_key.mappings["T"] = nil
 
 local icons = require("user.icons").icons
 
+lvim.builtin.which_key.mappings["L"]["name"] = icons.moon .. " Lunarvim"
+
 if lvim.builtin.trouble.active then
     lvim.builtin.which_key.mappings["t"] = {
         name = "Trouble",
@@ -119,7 +121,7 @@ lvim.builtin.which_key.vmappings["s"] = {
 }
 
 lvim.builtin.which_key.mappings["lp"] = { { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle LSP Lines" } }
-lvim.builtin.which_key.mappings["lo"] = { { "<cmd>lua vim.lsp.buf.inlay_hint(0)<cr>", icons.inlay .. "Toggle Inlay" } }
+lvim.builtin.which_key.mappings["lo"] = { { "<cmd>lua vim.lsp.inlay_hint(0)<cr>", icons.inlay .. "Toggle Inlay" } }
 
 if lvim.builtin.noice.active then
     lvim.keys.insert_mode["<C-s>"] = function()
