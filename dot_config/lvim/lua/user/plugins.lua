@@ -886,6 +886,7 @@ lvim.plugins = {
         config = function()
             require("user.statuscol").config()
         end,
+        enabled = lvim.builtin.ufo.active,
     },
 
     {

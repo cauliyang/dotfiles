@@ -43,7 +43,7 @@ M.lsp_capabilities = function()
 end
 
 M.config = function()
-    M.lsp_capabilities()
+    -- M.lsp_capabilities()
     require("ufo").setup({
         provider_selector = function(bufnr, filetype, buftype)
             return { "treesitter", "indent" }

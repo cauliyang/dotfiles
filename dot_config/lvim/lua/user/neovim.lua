@@ -150,14 +150,13 @@ M.config = function()
 
     -- Better fillchars
     vim.opt.fillchars = {
+        eob = " ", -- suppress ~ at EndOfBuffer
+        diff = "╱", -- alternatives = ⣿ ░ ─
+        msgsep = "‾",
         fold = " ",
         foldopen = "",
         foldclose = "",
         foldsep = " ",
-
-        eob = " ", -- suppress ~ at EndOfBuffer
-        diff = "╱", -- alternatives = ⣿ ░ ─
-        msgsep = "‾",
         horiz = "━",
         horizup = "┻",
         horizdown = "┳",
@@ -225,23 +224,6 @@ M.config = function()
 
     -- Colorcolumn
     vim.cmd([[set colorcolumn=]])
-
-    if vim.fn.has("nvim-0.8") == 1 then
-        vim.filetype.add({
-            extension = {
-                fnl = "fennel",
-                wiki = "markdown",
-            },
-            filename = {
-                ["go.sum"] = "gosum",
-                ["go.mod"] = "gomod",
-            },
-            pattern = {
-                ["*.tml"] = "gohtmltmpl",
-                ["%.env.*"] = "sh",
-            },
-        })
-    end
 
     -- Mouse handling
     vim.cmd([[
