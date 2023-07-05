@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 local keys = require("keys")
 local gpus = wezterm.gui.enumerate_gpus()
+local platform = require("platform")
+local utils = require("utils")
 
 -- Show which key table is active in the status area
 wezterm.on("update-right-status", function(window, pane)
@@ -79,10 +81,9 @@ local config = {
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.25,
 	font_size = 14,
-	window_background_opacity = 0.6,
+
 	bold_brightens_ansi_colors = true,
-	-- swap_backspace_and_delete = false,
-	-- term = "wezterm",
+
 	webgpu_preferred_adapter = gpus[1],
 	front_end = "WebGpu",
 
@@ -121,4 +122,4 @@ local config = {
 	},
 }
 
-return config
+return utils.merge_tables(config, platform.config)
