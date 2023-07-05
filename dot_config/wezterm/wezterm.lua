@@ -52,7 +52,7 @@ local config = {
 			-- "-ss04",
 		},
 	}),
-
+	adjust_window_size_when_changing_font_size = false,
 	disable_default_key_bindings = false,
 	leader = {
 		key = "p",
