@@ -113,7 +113,7 @@ lvim.builtin.motion_provider = ""
 lvim.builtin.image_viewer = "" -- chafa
 -- note provider
 lvim.builtin.note = "mind" -- mind or telekasten
-lvim.builtin.ufo = { active = false }
+lvim.builtin.ufo = { active = true }
 
 lvim.builtin.copilot = { active = true }
 lvim.builtin.trouble = { active = false }

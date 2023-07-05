@@ -1,7 +1,7 @@
 -- builtin parameters
-require("user.neovim").config()
-
 reload("user.builtin")
+
+require("user.neovim").config()
 
 require("user.neovide").config()
 

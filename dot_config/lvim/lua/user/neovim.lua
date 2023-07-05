@@ -151,12 +151,13 @@ M.config = function()
     -- Better fillchars
     vim.opt.fillchars = {
         fold = " ",
+        foldopen = "",
+        foldclose = "",
+        foldsep = " ",
+
         eob = " ", -- suppress ~ at EndOfBuffer
         diff = "╱", -- alternatives = ⣿ ░ ─
         msgsep = "‾",
-        foldopen = "▾",
-        foldsep = "│",
-        foldclose = "▸",
         horiz = "━",
         horizup = "┻",
         horizdown = "┳",
@@ -195,21 +196,21 @@ M.config = function()
     vim.g.loaded_perl_provider = 0
     vim.g.loaded_ruby_provider = 0
 
-    -- Folding
-    vim.wo.foldmethod = "expr"
-    vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-    vim.wo.foldlevel = 4
-    vim.wo.foldtext =
-        [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
-    vim.wo.foldnestmax = 3
-    vim.wo.foldminlines = 1
-
-    -- ufo folding
-
-    vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-    vim.o.foldlevelstart = 99
-    vim.o.foldenable = true
-    vim.o.foldcolumn = "0"
+    if lvim.builtin.ufo.active then
+        -- ufo folding
+        vim.o.foldcolumn = "1"
+        vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+        vim.o.foldlevelstart = 99
+        vim.o.foldenable = true
+    else
+        vim.o.foldmethod = "expr"
+        vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+        vim.o.foldlevel = 4
+        vim.o.foldtext =
+            [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
+        vim.o.foldnestmax = 3
+        vim.o.foldminlines = 1
+    end
 
     -- Conceal
     -- vim.o.conceallevel = 2
@@ -241,6 +242,7 @@ M.config = function()
             },
         })
     end
+    vim.g.markdown_fenced_languages = { "shell=bash" }
 
     -- Mouse handling
     vim.cmd([[
@@ -281,30 +283,6 @@ M.config = function()
         endfunction
         command! NoNuMode :call <SID>NoNuModeFunc()
     ]])
-
-    -- Disable syntax highlighting in big files
-    -- vim.cmd [[
-    --     function! DisableSyntaxTreesitter()
-    --         echo("Big file, disabling syntax, treesitter and folding")
-    --         if exists(':TSBufDisable')
-    --             exec 'TSBufDisable autotag'
-    --             exec 'TSBufDisable highlight'
-    --         endif
-    --         set foldmethod=manual
-    --         syntax clear
-    --         syntax off
-    --         filetype off
-    --         set noundofile
-    --         set noswapfile
-    --         set noloadplugins
-    --         set lazyredraw
-    --     endfunction
-
-    --     augroup BigFileDisable
-    --         autocmd!
-    --         autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
-    --     augroup END
-    -- ]]
 
     -- Clean search with <esc>
     vim.cmd([[
