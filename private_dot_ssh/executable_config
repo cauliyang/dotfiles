@@ -1,5 +1,9 @@
-  # quest.northwestern.edu
 Host quest
     HostName quser33.ci.northwestern.edu
     User ylk4626
     Port 22
+
+Host github github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
