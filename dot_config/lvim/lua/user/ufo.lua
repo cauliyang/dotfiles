@@ -1,4 +1,5 @@
 local M = {}
+-- reference for fold preview https://github.com/kevinhwang91/nvim-ufo/issues/4
 
 M.handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}

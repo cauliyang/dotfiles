@@ -1,5 +1,5 @@
 local M = {}
-
+-- ref: https://github.com/kevinhwang91/nvim-ufo/issues/4
 M.config = function()
     local builtin = require("statuscol.builtin")
 

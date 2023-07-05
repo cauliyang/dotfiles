@@ -278,24 +278,6 @@ lvim.plugins = {
         end,
     },
 
-    -- -- Translate
-    -- {
-    --     "potamides/pantran.nvim",
-    --     lazy = true,
-    --     cmd = "Pantran",
-    --     confg = function()
-    --         require("pantran").setup({
-    --             default_engine = "argos",
-    --             engines = {
-    --                 argos = {
-    --                     default_source = "en",
-    --                     default_target = "cn",
-    --                 },
-    --             },
-    --         })
-    --     end,
-    -- },
-
     {
         "hrsh7th/cmp-omni",
     },
@@ -370,18 +352,7 @@ lvim.plugins = {
         "ruifm/gitlinker.nvim",
         event = "BufRead",
         config = function()
-            require("gitlinker").setup({
-                opts = {
-                    -- adds current line nr in the url for normal mode
-                    add_current_line_on_normal_mode = true,
-                    -- callback for what to do with the url
-                    action_callback = require("gitlinker.actions").copy_to_clipboard,
-                    -- print the url after performing the action
-                    print_url = false,
-                    -- mapping to call url generation
-                    mappings = nil,
-                },
-            })
+            require("user.gitlinker").config()
         end,
         dependencies = "nvim-lua/plenary.nvim",
     },
@@ -875,6 +846,9 @@ lvim.plugins = {
 
         "kevinhwang91/nvim-ufo",
         dependencies = "kevinhwang91/promise-async",
+        init = function()
+            vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+        end,
         config = function()
             require("user.ufo").config()
         end,
