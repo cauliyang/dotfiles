@@ -27,7 +27,6 @@ local function get_theme()
 	if _time.hour >= 1 and _time.hour < 9 then
 		return "Rosé Pine (base16)"
 	elseif _time.hour >= 9 and _time.hour < 17 then
-		-- return "tokyonight_night"
 		return "nightfox"
 	elseif _time.hour >= 17 and _time.hour < 21 then
 		return "Catppuccin Mocha"
@@ -50,7 +49,7 @@ local config = {
 			"liga",
 			"zero",
 			"ss01",
-			"-ss04",
+			-- "-ss04",
 		},
 	}),
 
@@ -80,7 +79,7 @@ local config = {
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.25,
 	font_size = 14,
-	window_background_opacity = 0.8,
+	window_background_opacity = 0.7,
 	bold_brightens_ansi_colors = true,
 	-- swap_backspace_and_delete = false,
 	-- term = "wezterm",
@@ -102,6 +101,23 @@ local config = {
 	inactive_pane_hsb = {
 		saturation = 0.9,
 		brightness = 0.8,
+	},
+	-- This increases color saturation by 50%
+	foreground_text_hsb = {
+		hue = 1.0,
+		saturation = 1.0,
+		brightness = 1.5,
+	},
+
+	hyperlink_rules = {
+		{
+			regex = [[\b(https|http)://\S*\b]],
+			format = "$0",
+		},
+		{
+			regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
+			format = "https://www.github.com/$1/$3",
+		},
 	},
 }
 
