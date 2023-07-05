@@ -24,13 +24,13 @@ M.get_theme = function(default)
 
     local _time = os.date("*t")
     if (_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1) then
-        return "kanagawa"
+        return M.themes.kanagawa
     elseif _time.hour >= 1 and _time.hour < 9 then
-        return "rose-pine"
+        return M.themes.rose_pine
     elseif _time.hour >= 17 and _time.hour < 21 then
-        return "catppuccin"
+        return M.themes.catppuccin
     else
-        return "nightfox"
+        return M.themes.nightfox
     end
 end
 

@@ -12,7 +12,6 @@ lvim.plugins = {
         "EdenEast/nightfox.nvim",
         config = function()
             require("user.theme").nightfox()
-            lvim.colorscheme = themes.nightfox
         end,
         cond = function()
             return (get_theme() == themes.nightfox)
@@ -23,10 +22,9 @@ lvim.plugins = {
         "rebelot/kanagawa.nvim",
         config = function()
             require("user.theme").kanagawa()
-            lvim.colorscheme = themes.kanagawa
         end,
         cond = function()
-            return (get_theme() == themes.kanagawa) and lvim.builtin.time_based_themes
+            return (get_theme() == themes.kanagawa)
         end,
     },
 
@@ -35,10 +33,9 @@ lvim.plugins = {
         name = "rose-pine",
         config = function()
             require("user.theme").rose_pine()
-            lvim.colorscheme = themes.rose_pine
         end,
         cond = function()
-            return (get_theme() == themes.rose_pine) and lvim.builtin.time_based_themes
+            return (get_theme() == themes.rose_pine)
         end,
     },
 
@@ -47,23 +44,10 @@ lvim.plugins = {
         name = "catppuccin",
         config = function()
             require("user.theme").catppuccin()
-            lvim.colorscheme = themes.catppuccin
         end,
         cond = function()
-            return (get_theme() == themes.catppuccin) and lvim.builtin.time_based_themes
+            return (get_theme() == themes.catppuccin)
         end,
-    },
-
-    {
-        "luisiacc/gruvbox-baby",
-        config = function()
-            -- Enable telescope theme
-            vim.g.gruvbox_baby_telescope_theme = 1
-            -- Enable transparent mode
-            vim.g.gruvbox_baby_transparent_mode = 1
-            vim.g.gruvbox_baby_background_color = "dark"
-        end,
-        enabled = lvim.colorscheme == "gruvbox-baby",
     },
 
     -----------------------------
@@ -110,11 +94,7 @@ lvim.plugins = {
         "folke/todo-comments.nvim",
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
-            require("todo-comments").setup({
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            })
+            require("todo-comments").setup({})
         end,
     },
 
@@ -213,15 +193,6 @@ lvim.plugins = {
         end,
     },
 
-    -- -- Glow markdown preview
-    -- {
-    --     "ellisonleao/glow.nvim",
-    --     config = function()
-    --         require("glow").setup()
-    --     end,
-    --     ft = { "markdown" },
-    -- },
-
     { "barreiroleo/ltex-extra.nvim" },
 
     {
@@ -261,12 +232,10 @@ lvim.plugins = {
         lazy = false,
     },
 
+    -- find alternaitve word synonyms
     {
         "Ron89/thesaurus_query.vim",
     },
-
-    -- -- -- note
-    -- -- -- https://github.com/renerocksai/telekasten.nvim
 
     -- translator
     -- https://github.com/voldikss/vim-translator#know-bugs
@@ -283,9 +252,6 @@ lvim.plugins = {
     },
     -- -- Cmp for emojis..
     { "hrsh7th/cmp-emoji" },
-
-    -- -- Cmp for to calculate maths expressions.
-    -- { "hrsh7th/cmp-calc" },
 
     -- cmp_dictionay
     -- https://github.com/uga-rosa/cmp-dictionary/wiki/Examples-of-usage
@@ -323,9 +289,9 @@ lvim.plugins = {
         ft = "tex",
     },
 
-    -- -- -----------------------------------
-    -- -- --        session manager        --
-    -- -- -----------------------------------
+    -----------------------------------
+    --        session manager        --
+    -----------------------------------
 
     {
         "olimorris/persisted.nvim",
@@ -334,6 +300,7 @@ lvim.plugins = {
         end,
     },
 
+    --  manage issues and pr
     {
         "pwntester/octo.nvim",
         dependencies = {
@@ -356,7 +323,6 @@ lvim.plugins = {
         end,
         dependencies = "nvim-lua/plenary.nvim",
     },
-    ---------------
 
     -- Refactoring
     {
@@ -381,20 +347,19 @@ lvim.plugins = {
         config = function()
             require("user.dressing").config()
         end,
-        -- lazy = true,
     },
 
-    -- -- -- neotest
-    -- -- -- { "nvim-neotest/neotest-python", event = { "BufEnter *.py" } },
-    -- -- -- { "rouge8/neotest-rust", event = { "BufEnter *.rs" } },
-    -- -- -- {
-    -- -- -- 	"nvim-neotest/neotest",
-    -- -- -- 	config = require("user.neotest").post(),
-    -- -- -- 	dependencies = { "nvim-neotest/neotest-plenary" },
-    -- -- -- 	event = { "BufReadPost", "BufNew" },
-    -- -- -- },
-    -- -- -- { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
-    -- --  https://github.com/cshuaimin/ssr.nvim/
+    -- neotest
+    -- { "nvim-neotest/neotest-python", event = { "BufEnter *.py" } },
+    -- { "rouge8/neotest-rust", event = { "BufEnter *.rs" } },
+    -- {
+    -- 	"nvim-neotest/neotest",
+    -- 	config = require("user.neotest").post(),
+    -- 	dependencies = { "nvim-neotest/neotest-plenary" },
+    -- 	event = { "BufReadPost", "BufNew" },
+    -- },
+    -- { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
+    --  https://github.com/cshuaimin/ssr.nvim/
 
     {
         "cshuaimin/ssr.nvim",
@@ -406,9 +371,9 @@ lvim.plugins = {
         enabled = lvim.builtin.ssr.ctive,
     },
 
-    -- -- ----------------------------
-    -- -- --        zen mode        --
-    -- -- ----------------------------
+    ----------------------------
+    --        zen mode        --
+    ----------------------------
 
     {
         "folke/zen-mode.nvim",
@@ -436,8 +401,6 @@ lvim.plugins = {
                 snippet_engine = "luasnip",
             })
         end,
-        -- Uncomment next line if you want to follow only stable versions
-        -- version = "*"
         lazy = true,
     },
 
@@ -453,6 +416,7 @@ lvim.plugins = {
         enabled = lvim.builtin.sniprun.active,
     },
 
+    -- smooth scroll
     {
         "karb94/neoscroll.nvim",
         config = function()
@@ -482,17 +446,9 @@ lvim.plugins = {
         enabled = lvim.builtin.smooth_scroll == "cinnamon",
     },
 
-    -- -- ---------------------------------------
-    -- -- --        telescope extension        --
-    -- -- ---------------------------------------
-
-    -- -- { "nanotee/zoxide.vim" },
-
-    -- -- {
-    -- --     "jvgrootveld/telescope-zoxide",
-    -- --     dependencies = { "nvim-telescope/telescope.nvim" },
-    -- --     lazy = true,
-    -- -- },
+    ---------------------------------------
+    --        telescope extension        --
+    ---------------------------------------
 
     {
         "cljoly/telescope-repo.nvim",
@@ -522,9 +478,9 @@ lvim.plugins = {
 
     { "nvim-telescope/telescope-bibtex.nvim" },
 
-    -- -------------------------
-    -- --        noice        --
-    -- -------------------------
+    -------------------------
+    --        noice        --
+    -------------------------
 
     { "MunifTanjim/nui.nvim" },
     {
@@ -541,9 +497,9 @@ lvim.plugins = {
         enabled = lvim.builtin.noice.active,
     },
 
-    -- --------------------------
-    -- --        others        --
-    -- --------------------------
+    --------------------------
+    --        others        --
+    --------------------------
 
     -- {
     --     "krivahtoo/silicon.nvim",
@@ -553,13 +509,6 @@ lvim.plugins = {
     --     end,
     --     event = "VeryLazy",
     -- },
-
-    -- -- {
-    -- --     "glacambre/firenvim",
-    -- --     build = function()
-    -- --         vim.fn----[[ [[ ["firenvim#install"] ]] ]](0)
-    -- --     end,
-    -- -- },
 
     ----------------------------
     --        Daily Life        --
@@ -572,6 +521,7 @@ lvim.plugins = {
         enabled = lvim.builtin.note == "telekasten",
         event = "VeryLazy",
     },
+
     -- -- Trouble
     -- {
     --     "folke/trouble.nvim",
@@ -720,7 +670,7 @@ lvim.plugins = {
                         right_var = ");",
                     },
                 },
-                print_tag = "DBG-CRISIDEV",
+                print_tag = "DBG-YYL",
             })
         end,
     },
@@ -788,38 +738,6 @@ lvim.plugins = {
     },
 
     {
-        "Bryley/neoai.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
-        cmd = {
-            "NeoAI",
-            "NeoAIOpen",
-            "NeoAIClose",
-            "NeoAIToggle",
-            "NeoAIContext",
-            "NeoAIContextOpen",
-            "NeoAIContextClose",
-            "NeoAIInject",
-            "NeoAIInjectCode",
-            "NeoAIInjectContext",
-            "NeoAIInjectContextCode",
-        },
-
-        -- keys = {
-        --     { "<leader>as", desc = "summarize text" },
-        --     { "<leader>ag", desc = "generate git message" },
-        -- },
-        keys = nil,
-
-        config = function()
-            require("neoai").setup({
-                -- Options go here
-            })
-        end,
-    },
-
-    {
         "kaarmu/typst.vim",
         ft = "typst",
         lazy = false,
@@ -843,7 +761,6 @@ lvim.plugins = {
     },
 
     {
-
         "kevinhwang91/nvim-ufo",
         dependencies = "kevinhwang91/promise-async",
         init = function()
