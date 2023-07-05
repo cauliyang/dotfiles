@@ -113,5 +113,6 @@
   "vimtex": { "branch": "master", "commit": "91fbb48c0b850684a082801138dddc941a427d38" },
   "which-key.nvim": { "branch": "main", "commit": "d871f2b664afd5aed3dc1d1573bef2fb24ce0484" },
   "zen-mode.nvim": { "branch": "main", "commit": "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" },
+  "zig.vim": { "branch": "master", "commit": "0c4f965468259ab6e47fd7c6b2127583a8860eb1" },
   "zotcite": { "branch": "master", "commit": "87c21850f3ecf1c17a1538c8cba194bd87c9f504" }
 }

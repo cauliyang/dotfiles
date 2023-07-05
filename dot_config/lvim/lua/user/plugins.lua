@@ -899,6 +899,6 @@ lvim.plugins = {
     },
 
     { "szebniok/tree-sitter-wgsl" },
-
     { "IndianBoy42/tree-sitter-just" },
+    { "ziglang/zig.vim" },
 }
