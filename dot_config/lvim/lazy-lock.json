@@ -84,6 +84,7 @@
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "quarto-nvim": { "branch": "main", "commit": "f24e854316383078b79560f58283cd6234a8903d" },
   "refactoring.nvim": { "branch": "master", "commit": "859289acc0fda13bf42834dbeef10b8c1148d444" },
+  "ron.vim": { "branch": "master", "commit": "f749e543975a82e8dd9a6e7df9600a1c098ae800" },
   "rose-pine": { "branch": "main", "commit": "932adb0d9351186db047302de021bb2976756a07" },
   "rust-tools.nvim": { "branch": "master", "commit": "71d2cf67b5ed120a0e31b2c8adb210dd2834242f" },
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
