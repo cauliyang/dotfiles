@@ -11,8 +11,10 @@ M.config = function()
         vim.g.neovide_no_idle = true
         vim.g.neovide_confirm_quit = true
         vim.g.neovide_input_use_logo = true
+        vim.g.neovide_cursor_antialiasing = true
 
         vim.g.neovide_cursor_antialiasing = true
+        vim.g.neovide_scroll_animation_length = 0.0
         vim.g.neovide_cursor_animate_in_insert_mode = true
         vim.g.neovide_cursor_vfx_mode = "pixiedust"
         vim.g.neovide_cursor_vfx_particle_speed = 20.0
@@ -43,6 +45,7 @@ M.config = function()
         }
 
         vim.opt.guifont = fonts.ia
+        vim.opt.linespace = 0
 
         vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
         vim.keymap.set("v", "<D-c>", '"+y') -- Copy
