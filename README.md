@@ -1,4 +1,4 @@
-# Configuration
+# ⚙️ Configuration
 
 Welcome to my dotfiles repository! Here, I manage my configuration files (dotfiles) using Chezmoi, a powerful tool that helps handle diverse machine-specific configurations and secure management of secrets, and it also allows my dotfiles to be version controlled in a Git repository.
 If you are a tech enthusiast, a programmer, or simply interested in setting up your computer for maximum efficiency, you're in the right place.
