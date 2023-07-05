@@ -242,7 +242,6 @@ M.config = function()
             },
         })
     end
-    vim.g.markdown_fenced_languages = { "shell=bash" }
 
     -- Mouse handling
     vim.cmd([[

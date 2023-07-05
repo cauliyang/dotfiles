@@ -1,5 +1,5 @@
 -- builtin parameters
-reload("user.builtin")
+require("user.builtin").config()
 
 require("user.neovim").config()
 
@@ -10,7 +10,7 @@ if vim.g.started_by_firenvim == true then
     print("firenvim detected")
     -- set the environment variable
     vim.fn.setenv("OPENAI_API_KEY", "1")
-    -- set the color scheme
+    -- set the color schemeu
     vim.cmd([[colorscheme tokyonight]])
 end
 -- load plugins

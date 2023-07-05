@@ -6,14 +6,20 @@ M.config = function()
         setopt = true,
         relculright = true,
 
+        -- segments = {
+        --     {
+        --         text = { "", builtin.foldfunc, " " },
+        --         condition = { builtin.not_empty, true, builtin.not_empty },
+        --         click = "v:lua.ScFa",
+        --     },
+        --     { text = { "%s" }, click = "v:lua.ScSa" },
+        --     { text = { builtin.lnumfunc, " " }, click = "v:lua.CcLa" },
+        -- },
+
         segments = {
-            {
-                text = { "", builtin.foldfunc, " " },
-                condition = { builtin.not_empty, true, builtin.not_empty },
-                click = "v:lua.ScFa",
-            },
+            { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
             { text = { "%s" }, click = "v:lua.ScSa" },
-            { text = { builtin.lnumfunc, " " }, click = "v:lua.CcLa" },
+            { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
         },
     })
 end

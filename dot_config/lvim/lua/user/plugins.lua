@@ -1,4 +1,6 @@
 -- Additional Plugins
+local themes = require("user.builtin").themes
+local get_theme = require("user.builtin").get_theme
 
 lvim.plugins = {
 
@@ -10,21 +12,21 @@ lvim.plugins = {
         "EdenEast/nightfox.nvim",
         config = function()
             require("user.theme").nightfox()
+            lvim.colorscheme = themes.nightfox
         end,
-        -- enabled = lvim.builtin.theme.name == "nightfox",
+        cond = function()
+            return (get_theme() == themes.nightfox)
+        end,
     },
 
     {
         "rebelot/kanagawa.nvim",
         config = function()
             require("user.theme").kanagawa()
-            lvim.colorscheme = "kanagawa"
+            lvim.colorscheme = themes.kanagawa
         end,
-        -- enabled = lvim.builtin.theme.name == "kanagawa",
         cond = function()
-            local _time = os.date("*t")
-            return ((_time.hour >= 21 and _time.hour < 24) or (_time.hour >= 0 and _time.hour < 1))
-                and lvim.builtin.time_based_themes
+            return (get_theme() == themes.kanagawa) and lvim.builtin.time_based_themes
         end,
     },
 
@@ -33,12 +35,10 @@ lvim.plugins = {
         name = "rose-pine",
         config = function()
             require("user.theme").rose_pine()
-            lvim.colorscheme = "rose-pine"
+            lvim.colorscheme = themes.rose_pine
         end,
-        -- enabled = lvim.builtin.theme.name == "rose-pine",
         cond = function()
-            local _time = os.date("*t")
-            return (_time.hour >= 1 and _time.hour < 9) and lvim.builtin.time_based_themes
+            return (get_theme() == themes.rose_pine) and lvim.builtin.time_based_themes
         end,
     },
 
@@ -47,12 +47,10 @@ lvim.plugins = {
         name = "catppuccin",
         config = function()
             require("user.theme").catppuccin()
-            lvim.colorscheme = "catppuccin"
+            lvim.colorscheme = themes.catppuccin
         end,
-        -- enabled = lvim.builtin.theme.name == "catppuccin",
         cond = function()
-            local _time = os.date("*t")
-            return (_time.hour >= 17 and _time.hour < 21) and lvim.builtin.time_based_themes
+            return (get_theme() == themes.catppuccin) and lvim.builtin.time_based_themes
         end,
     },
 
@@ -882,6 +880,7 @@ lvim.plugins = {
         end,
         enabled = lvim.builtin.ufo.active,
     },
+
     {
         "luukvbaal/statuscol.nvim",
         config = function()
