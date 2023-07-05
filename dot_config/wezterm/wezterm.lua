@@ -44,22 +44,23 @@ local config = {
 	bidi_direction = "AutoLeftToRight",
 	color_scheme = get_theme(),
 	font = font_with_fallback({
-		-- family = "FiraCode Nerd Font Mono",
 		family = "Cascadia Mono",
 		harfbuzz_features = {
 			"calt",
 			"liga",
 			"zero",
 			"ss01",
-			-- "-ss04",
+			"-ss04",
 		},
 	}),
+
 	adjust_window_size_when_changing_font_size = false,
 	disable_default_key_bindings = false,
 	leader = {
 		key = "p",
 		mods = "CTRL",
 	},
+
 	keys = keys.pane_key,
 	key_tables = keys.key_tables,
 
@@ -72,12 +73,17 @@ local config = {
 		top = 0,
 		bottom = 0,
 	},
+
 	window_decorations = "RESIZE",
+
 	hide_tab_bar_if_only_one_tab = true,
-	tab_bar_at_bottom = true,
+	show_new_tab_button_in_tab_bar = false,
+	show_tab_index_in_tab_bar = true,
+	tab_bar_at_bottom = false,
 	enable_scroll_bar = false,
 	use_fancy_tab_bar = false,
 	tab_max_width = 24,
+
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.25,
 	font_size = 14,
