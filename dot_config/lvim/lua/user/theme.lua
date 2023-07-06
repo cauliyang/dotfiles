@@ -236,7 +236,7 @@ M.catppuccin = function()
             },
             indent_blankline = {
                 enabled = true,
-                colored_indent_levels = false,
+                colored_indent_levels = true,
             },
             gitsigns = lvim.builtin.gitsigns.active,
             notify = lvim.builtin.noice.active,
@@ -249,6 +249,7 @@ M.catppuccin = function()
             hop = lvim.builtin.motion_provider == "hop",
         },
 
+        color_overrides = {},
         highlight_overrides = {
             mocha = {
                 NormalFloat = { fg = "#CDD6F4", bg = "#151521" },
