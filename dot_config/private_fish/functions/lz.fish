@@ -1,3 +1,3 @@
-function lz --wraps=lazygit --description 'alias lz=lazygit'
-  lazygit $argv; 
+function lz --wraps=gitui --description 'alias lz=gitui'
+  gitui $argv; 
 end
