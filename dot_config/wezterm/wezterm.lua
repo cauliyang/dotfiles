@@ -34,13 +34,6 @@ local config = {
 
 	adjust_window_size_when_changing_font_size = false,
 	disable_default_key_bindings = false,
-	leader = {
-		key = "p",
-		mods = "CTRL",
-	},
-
-	keys = keys.pane_key,
-	key_tables = keys.key_tables,
 
 	initial_cols = 128,
 	initial_rows = 32,
@@ -95,4 +88,4 @@ local config = {
 	},
 }
 
-return utils.merge_tables(config, platform.config, events.config)
+return utils.merge_tables(config, platform.config, events.config, keys.config)

@@ -1,5 +1,7 @@
-local M = {}
 local wezterm = require("wezterm")
+local utils = require("utils")
+
+local M = {}
 
 -- https://github.com/yutkat/dotfiles/blob/main/.config/wezterm/keybinds.lua
 -- https://github.com/KevinSilvester/wezterm-config/blob/master/config/appearance.lua
@@ -167,6 +169,15 @@ M.key_tables = {
 
 		{ key = "UpArrow", action = wezterm.action.SplitPane({ direction = "Up" }) },
 		{ key = "k", action = wezterm.action.SplitPane({ direction = "Up" }) },
+	},
+}
+
+M.config = {
+	keys = M.pane_key,
+	key_tables = M.key_tables,
+	leader = {
+		key = "b",
+		mods = "CTRL",
 	},
 }
 
