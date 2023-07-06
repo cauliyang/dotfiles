@@ -1,5 +1,5 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
-keybinds {
+keybinds clear-defaults=true {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
@@ -156,11 +156,6 @@ keybinds {
     shared_except "move" "locked" {
         bind "Ctrl h" { SwitchToMode "Move"; }
     }
-
-    shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
-    }
-
 }
 
 plugins {
@@ -299,7 +294,6 @@ theme "catppuccin-mocha"
 // Default: "default"
 //
 default_layout "compact"
-// default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
