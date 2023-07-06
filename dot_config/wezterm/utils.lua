@@ -1,19 +1,37 @@
 local M = {}
 
+function M.get_theme()
+	local _time = os.date("*t")
+	if _time.hour >= 1 and _time.hour < 9 then
+		return "Rosé Pine (base16)"
+	elseif _time.hour >= 9 and _time.hour < 17 then
+		return "nightfox"
+	elseif _time.hour >= 17 and _time.hour < 21 then
+		return "Catppuccin Mocha"
+	elseif _time.hour >= 21 and _time.hour < 24 or _time.hour >= 0 and _time.hour < 1 then
+		return "kanagawabones"
+	end
+end
+
 M.extend_tables = function(t1, t2)
 	for k, v in pairs(t2) do
 		t1[k] = v
 	end
 end
 
-M.merge_tables = function(t1, t2)
-	for k, v in pairs(t2) do
-		if (type(v) == "table") and (type(t1[k] or false) == "table") then
-			M.merge_tables(t1[k], t2[k])
-		else
-			t1[k] = v
+M.merge_tables = function(t1, ...)
+	local args = { ... }
+
+	for _, t2 in ipairs(args) do
+		for k, v in pairs(t2) do
+			if (type(v) == "table") and (type(t1[k] or false) == "table") then
+				M.merge_tables(t1[k], t2[k])
+			else
+				t1[k] = v
+			end
 		end
 	end
+
 	return t1
 end
 
