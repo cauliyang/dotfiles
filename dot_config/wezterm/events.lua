@@ -3,8 +3,7 @@ local colors = require("colors")
 
 local M = {}
 
-local random_color = colors.random_color()
-local color_primary = random_color
+local color_primary = colors.random_color()
 local title_color_bg = color_primary.bg
 local title_color_fg = color_primary.fg
 
@@ -111,9 +110,13 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 end)
 
 M.config = {
+	use_fancy_tab_bar = false,
+	hide_tab_bar_if_only_one_tab = true,
+	show_new_tab_button_in_tab_bar = false,
+	tab_bar_at_bottom = false,
+	tab_max_width = 24,
 	colors = {
 		tab_bar = {
-			background = title_color_bg,
 			active_tab = {
 				bg_color = title_color_bg:lighten(0.03),
 				fg_color = title_color_fg:lighten(0.8),

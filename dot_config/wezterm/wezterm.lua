@@ -45,15 +45,7 @@ local config = {
 	},
 
 	window_decorations = "RESIZE",
-
-	hide_tab_bar_if_only_one_tab = true,
-	show_new_tab_button_in_tab_bar = false,
-	tab_bar_at_bottom = false,
-
 	enable_scroll_bar = false,
-	use_fancy_tab_bar = false,
-
-	tab_max_width = 24,
 
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.25,
