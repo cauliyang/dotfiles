@@ -13,6 +13,10 @@ elseif utils.is_mac() then
 		window_background_opacity = 0.55,
 		macos_window_background_blur = 20,
 	}
+else
+	M.config = {
+		window_background_opacity = 0.55,
+	}
 end
 
 return M
