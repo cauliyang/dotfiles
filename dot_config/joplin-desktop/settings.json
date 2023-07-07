@@ -21,7 +21,7 @@
 			},
 			{
 				"key": "noteList",
-				"width": 250,
+				"width": 388,
 				"visible": true
 			},
 			{
@@ -33,5 +33,10 @@
 	},
 	"editor.codeView": true,
 	"notes.sortOrder.field": "user_updated_time",
-	"notes.sortOrder.reverse": true
+	"notes.sortOrder.reverse": true,
+	"sync.target": 3,
+	"editor": "/opt/homebrew/bin/nvim",
+	"editor.spellcheckBeta": true,
+	"theme": 6,
+	"markdown.plugin.emoji": true
 }
