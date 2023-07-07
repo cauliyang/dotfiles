@@ -2,8 +2,6 @@ lvim.builtin.which_key.mappings["T"] = nil
 
 local icons = require("user.icons").icons
 
-lvim.builtin.which_key.mappings["L"]["name"] = icons.moon .. " Lunarvim"
-
 if lvim.builtin.trouble.active then
     lvim.builtin.which_key.mappings["t"] = {
         name = "Trouble",
