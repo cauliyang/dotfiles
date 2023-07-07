@@ -1,26 +1,24 @@
 local wezterm = require("wezterm")
 local keys = require("keys")
-local gpus = wezterm.gui.enumerate_gpus()
 local platform = require("platform")
 local utils = require("utils")
 local events = require("events")
 
--- Reload the configuration every ten minutes
-wezterm.time.call_after(600, function()
-	wezterm.reload_configuration()
-end)
-
 -- A helper function for my fallback fonts
 local function font_with_fallback(name, params)
-	local names = { name, "mini-file-icons", "Hack Nerd Font", "SauceCodePro Nerd Font" }
+	local names = { name, "mini-file-icons", "Hack Nerd Font" }
 	return wezterm.font_with_fallback(names, params)
 end
 
 local config = {
 	check_for_updates = true,
+	automatically_reload_config = true,
+
 	bidi_enabled = true,
 	bidi_direction = "AutoLeftToRight",
+
 	color_scheme = utils.get_theme(),
+
 	font = font_with_fallback({
 		family = "Cascadia Mono",
 		harfbuzz_features = {
@@ -37,6 +35,7 @@ local config = {
 
 	initial_cols = 128,
 	initial_rows = 32,
+
 	use_dead_keys = false,
 	window_padding = {
 		left = 0,
@@ -49,20 +48,16 @@ local config = {
 
 	hide_tab_bar_if_only_one_tab = true,
 	show_new_tab_button_in_tab_bar = false,
-	-- show_tab_index_in_tab_bar = true,
 	tab_bar_at_bottom = false,
+
 	enable_scroll_bar = false,
 	use_fancy_tab_bar = false,
+
 	tab_max_width = 24,
 
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.25,
 	font_size = 15,
-
-	bold_brightens_ansi_colors = true,
-
-	webgpu_preferred_adapter = gpus[1],
-	front_end = "WebGpu",
 
 	inactive_pane_hsb = {
 		saturation = 0.9,

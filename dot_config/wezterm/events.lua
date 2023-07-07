@@ -113,6 +113,7 @@ end)
 M.config = {
 	colors = {
 		tab_bar = {
+			background = title_color_bg,
 			active_tab = {
 				bg_color = title_color_bg:lighten(0.03),
 				fg_color = title_color_fg:lighten(0.8),
