@@ -73,6 +73,15 @@ local config = {
 			format = "https://www.github.com/$1/$3",
 		},
 	},
+
+	ssh_domains = {
+		{
+			name = "quest",
+			remote_address = "quser33.ci.northwestern.edu",
+			username = "ylk4626",
+			remote_wezterm_path = "/home/ylk4626/.local/bin/wezterm",
+		},
+	},
 }
 
 return utils.merge_tables(config, platform.config, events.config, keys.config)
