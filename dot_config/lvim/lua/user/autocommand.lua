@@ -63,20 +63,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end,
 })
 
-local in_mathzone = function() -- math context detection
-    return vim.fn["vimtex#syntax#in_mathzone"]() == 1
-end
-
--- vim.api.nvim_create_autocmd("CursorHold", {
---     pattern = "*.tex",
---     callback = function()
---         if in_mathzone() then
---             require("nabla").popup()
---         end
---     end,
---     desc = "Show nabla popup",
--- })
-
 -- Colorscheme
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",

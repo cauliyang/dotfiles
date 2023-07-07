@@ -76,6 +76,10 @@ lvim.plugins = {
                     enabled = true,
                     name = "crates",
                 },
+                popup = {
+                    style = "minimal",
+                    border = "rounded",
+                },
             })
         end,
     },

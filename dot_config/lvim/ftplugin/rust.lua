@@ -15,23 +15,28 @@ local opts = {
 local mappings = {
     C = {
         name = "Rust",
-        r = { "<cmd>RustRunnables<Cr>", "Runnables" },
-        t = { "<cmd>lua _CARGO_TEST()<cr>", "Cargo Test" },
-        m = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
-        c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
+        a = { "<cmd>lua require('rust-tools').hove_actions.hover_actions()<cr>", "Hover Actions" },
+        A = { "<cmd>lua require('rust-tools').code_action_group.code_action_group()<cr>", "Code Action Group" },
+        r = { "<cmd>lua require('rust-tools').runnables.runnables()<cr>", "Runnables" },
+        R = { "<cmd>lua require('rust-tools').debuggables.debuggables()<cr>", "Debuggables" },
+        e = { "<cmd>lua require('rust-tools').expand_macro.expand_macro()<cr>", "Expand Macro" },
+        m = { "<cmd>lua require('rust-tools').parent_module.parent_module()<cr>", "Parent Module" },
+        u = { "<cmd>lua require('rust-tools').move_item.move_item(true)<cr>", "Move Item Up" },
+        d = { "<cmd>lua require('rust-tools').move_item.move_item(false)<cr>", "Move Item Down" },
+        H = { "<cmd>lua require('rust-tools').hover_range.hover_range()<cr>", "Hover Range" },
+        c = { "<cmd>lua require('rust-tools').open_cargo_toml.open_cargo_toml()<cr>", "Open Cargo.toml" },
+        j = { "<cmd>lua require('rust-tools').join_lines.join_lines()<cr>", "Join Lines" },
 
-        -- D = { "<cmd>RustOpenExternalDocs<Cr>", "Open Docs" },
+        D = { "<cmd>RustOpenExternalDocs<Cr>", "Open Docs" },
 
-        D = { "<Cmd>lua require('crates').open_documentation()<CR>", "Open Documentation" },
+        -- D = { "<Cmd>lua require('crates').open_documentation()<CR>", "Open Documentation" },
 
-        p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
-        d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
         v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
-        R = {
+
+        L = {
             "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
             "Reload Workspace",
         },
-        o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
 
         lt = { "<Cmd>lua require('crates').toggle()<CR>", "Toggle Crate" },
         lu = { "<Cmd>lua require('crates').update_crate()<CR>", "Update Crate" },
@@ -39,7 +44,6 @@ local mappings = {
         lg = { "<Cmd>lua require('crates').update_all_crates()<CR>", "Update All" },
         lG = { "<Cmd>lua require('crates').upgrade_all_crates()<CR>", "Upgrade All" },
         lH = { "<Cmd>lua require('crates').open_homepage()<CR>", "Open HomePage" },
-        -- lD = { "<Cmd>lua require('crates').open_documentation()<CR>", "Open Documentation" },
     },
 }
 
