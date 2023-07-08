@@ -601,7 +601,7 @@ lvim.plugins = {
         },
         config = function()
             require("chatgpt").setup({
-                popup_input = { submit = "<C-b>" },
+                popup_input = { submit = "<C-n>" },
             })
         end,
         event = "VeryLazy",
