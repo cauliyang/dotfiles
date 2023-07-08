@@ -1,4 +1,11 @@
+local wezterm = require("wezterm")
+
 local M = {}
+
+function M.font_with_fallback(name, params)
+	local names = { name, "mini-file-icons", "Hack Nerd Font" }
+	return wezterm.font_with_fallback(names, params)
+end
 
 function M.get_theme()
 	local _time = os.date("*t")

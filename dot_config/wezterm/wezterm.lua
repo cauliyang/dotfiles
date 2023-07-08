@@ -4,12 +4,6 @@ local platform = require("platform")
 local utils = require("utils")
 local events = require("events")
 
--- A helper function for my fallback fonts
-local function font_with_fallback(name, params)
-	local names = { name, "mini-file-icons", "Hack Nerd Font" }
-	return wezterm.font_with_fallback(names, params)
-end
-
 local config = {
 	check_for_updates = true,
 	automatically_reload_config = true,
@@ -18,17 +12,6 @@ local config = {
 	bidi_direction = "AutoLeftToRight",
 
 	color_scheme = utils.get_theme(),
-
-	font = font_with_fallback({
-		family = "Cascadia Mono",
-		harfbuzz_features = {
-			"calt",
-			"liga",
-			"zero",
-			"ss01",
-			"-ss04",
-		},
-	}),
 
 	adjust_window_size_when_changing_font_size = false,
 	disable_default_key_bindings = false,
