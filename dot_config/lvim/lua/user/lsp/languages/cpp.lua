@@ -6,37 +6,6 @@ formatters.setup({
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
 
--- set debugger
-local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
-local codelldb_adapter = {
-    type = "server",
-    port = "${port}",
-    executable = {
-        command = mason_path .. "bin/codelldb",
-        args = { "--port", "${port}" },
-    },
-}
-
--- CHANGED --
-
--- lvim.builtin.dap.on_config_done = function(dap)
---     dap.adapters.codelldb = codelldb_adapter
---     dap.configurations.cpp = {
---         {
---             name = "Launch file",
---             type = "codelldb",
---             request = "launch",
---             program = function()
---                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
---             end,
---             cwd = "${workspaceFolder}",
---             stopOnEntry = false,
---         },
---     }
--- end
-
--- ref: https://github.com/crisidev/dotfiles/blob/main/home/.config/lvim/lua/user/lsp/go.lua
-
 local clangd_flags = {
 
     "--fallback-style=Google",
@@ -57,16 +26,6 @@ local clangd_flags = {
     -- "-Wunused-variable",
     "--function-arg-placeholders",
 }
-
--- local lsp_manager = require("lvim.lsp.manager")
-
--- lsp_manager.setup("clangd", {
-
--- 	cmd = { "clangd", unpack(clangd_flags) },
--- 	on_init = require("lvim.lsp").common_on_init,
--- 	capabilities = require("lvim.lsp").common_capabilities(),
--- })
--- )
 
 local provider = "clangd"
 

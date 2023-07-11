@@ -47,3 +47,5 @@ reload("user.autocommand")
 
 -- load snip
 reload("user.luasnip")
+
+require("user.dap").config()
