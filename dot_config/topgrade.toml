@@ -1,6 +1,6 @@
 [misc]
 # Don't ask for confirmations
-#assume_yes = true
+assume_yes = true
 
 # Disable specific steps - same options as the command line flag
 disable = ["system", "emacs", "chezmoi"]
@@ -40,7 +40,7 @@ no_retry = true
 # display_time = true
 
 # Cleanup temporary or old files
-#cleanup = true
+cleanup = true
 
 # Skip sending a notification at the end of a run
 #skip_notify = true
@@ -49,14 +49,13 @@ no_retry = true
 max_concurrency = 5
 # Additional git repositories to pull
 repos = [
-#    "~/src/*/",
-#    "~/.config/something"
-  "~/ClionProjects/petgraph/",
-  "~/ClionProjects/rust-debruijn",
-"/Users/ylk4626/.config/LazyVim",
-"/Users/ylk4626/.config/NvChad",
-"/Users/ylk4626/.config/AstroNvim",
-"/Users/ylk4626/project/neovide",
+    #    "~/src/*/",
+    #    "~/.config/something"
+    "~/ClionProjects/petgraph/",
+    "/Users/ylk4626/.config/LazyVim",
+    "/Users/ylk4626/.config/NvChad",
+    "/Users/ylk4626/.config/AstroNvim",
+    "/Users/ylk4626/project/neovide",
 
 ]
 
@@ -76,10 +75,11 @@ repos = [
 # Custom commands
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
+"Fish update Completions" = "fish_update_completions"
 
 [brew]
 #greedy_cask = true
-#autoremove = true
+autoremove = true
 
 [linux]
 # Arch Package Manager to use. Allowed values: autodetect, trizen, aura, paru, yay, pikaur, pacman, pamac.
