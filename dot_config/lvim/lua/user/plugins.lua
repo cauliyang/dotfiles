@@ -353,18 +353,6 @@ lvim.plugins = {
         end,
     },
 
-    -- neotest
-    -- { "nvim-neotest/neotest-python", event = { "BufEnter *.py" } },
-    -- { "rouge8/neotest-rust", event = { "BufEnter *.rs" } },
-    -- {
-    -- 	"nvim-neotest/neotest",
-    -- 	config = require("user.neotest").post(),
-    -- 	dependencies = { "nvim-neotest/neotest-plenary" },
-    -- 	event = { "BufReadPost", "BufNew" },
-    -- },
-    -- { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
-    --  https://github.com/cshuaimin/ssr.nvim/
-
     {
         "cshuaimin/ssr.nvim",
         -- Calling setup is optional.
@@ -569,29 +557,6 @@ lvim.plugins = {
         end,
         -- lazy = true,
     },
-
-    -- view image in terminal
-    {
-        "princejoogie/chafa.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "m00qek/baleia.nvim",
-        },
-        config = function()
-            require("chafa").setup({
-                render = {
-                    min_padding = 5,
-                    show_label = true,
-                },
-                events = {
-                    update_on_nvim_resize = true,
-                },
-            })
-        end,
-        lazy = true,
-        enabled = lvim.builtin.image_viewer == "chafa",
-    },
-
     {
         "jackMort/ChatGPT.nvim",
         dependencies = {
@@ -615,9 +580,32 @@ lvim.plugins = {
         end,
         enabled = lvim.builtin.task_runner == "overseer",
     },
+    {
+        "nvim-neotest/neotest",
+        config = function()
+            require("user.ntest").config()
+        end,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-neotest/neotest-plenary",
+        },
+        event = { "BufReadPost", "BufNew" },
+        enabled = lvim.builtin.task_runner == "overseer",
+    },
+    -- { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
+    {
+        "nvim-neotest/neotest-python",
+        event = { "BufEnter *.py" },
+        enabled = lvim.builtin.task_runner == "overseer",
+    },
 
-    -- -- -- kdl.vim
-    { "imsnif/kdl.vim" },
+    {
+        "rouge8/neotest-rust",
+        event = { "BufEnter *.rs" },
+        enabled = lvim.builtin.task_runner == "overseer",
+    },
 
     -- Treesitter textobject
     {
@@ -791,8 +779,16 @@ lvim.plugins = {
         end,
     },
 
+    -- kdl.vim
+    { "imsnif/kdl.vim" },
     { "szebniok/tree-sitter-wgsl" },
     { "IndianBoy42/tree-sitter-just" },
     { "ziglang/zig.vim" },
     { "ron-rs/ron.vim" },
+    -- Highligh logs
+    {
+        "mtdl9/vim-log-highlighting",
+        ft = { "text", "log" },
+        lazy = true,
+    },
 }
