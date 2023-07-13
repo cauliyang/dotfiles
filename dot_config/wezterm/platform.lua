@@ -20,7 +20,7 @@ if utils.is_windows() then
 	}
 elseif utils.is_mac() then
 	M.config = {
-		window_background_opacity = 0.55,
+		window_background_opacity = 0.88,
 		macos_window_background_blur = 20,
 		font = utils.font_with_fallback({
 			family = "Cascadia Mono",
@@ -35,7 +35,7 @@ elseif utils.is_mac() then
 	}
 else
 	M.config = {
-		window_background_opacity = 0.55,
+		window_background_opacity = 0.8,
 		font = utils.font_with_fallback({
 			family = "CaskaydiaCove Nerd Font",
 			harfbuzz_features = {
