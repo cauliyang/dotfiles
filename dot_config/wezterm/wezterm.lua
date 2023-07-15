@@ -4,6 +4,11 @@ local platform = require("platform")
 local utils = require("utils")
 local events = require("events")
 
+-- Reload the configuration every 1 hours
+wezterm.time.call_after(600 * 60, function()
+	wezterm.reload_configuration()
+end)
+
 local config = {
 	check_for_updates = true,
 	automatically_reload_config = true,
