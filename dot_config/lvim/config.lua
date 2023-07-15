@@ -17,9 +17,8 @@ end
 -- load plugins
 reload("user.plugins")
 
-require("user.cmp").config()
-
 -- Cmp
+require("user.cmp").config()
 
 -- load lsp
 reload("user.lsp")
