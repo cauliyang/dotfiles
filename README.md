@@ -3,6 +3,18 @@
 Welcome to my dotfiles repository! Here, I manage my configuration files (dotfiles) using Chezmoi, a powerful tool that helps handle diverse machine-specific configurations and secure management of secrets, and it also allows my dotfiles to be version controlled in a Git repository.
 If you are a tech enthusiast, a programmer, or simply interested in setting up your computer for maximum efficiency, you're in the right place.
 
+| Module Type           | Module Name  |
+| --------------------- | ------------ |
+| Shell                 | [fish-shell] |
+| Prompt Theme          | [Tide]       |
+| Window Manager        | [Yabai]      |
+| Status Bar            | [SketchyBar] |
+| System Info           | [neofecth]   |
+| Terminal              | [Wezterm]    |
+| File Manager          | [ranger]     |
+| Text Editor           | [Neovim]     |
+| Configuration Manager | [chezmoi]    |
+
 ## What are Dotfiles?
 
 Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system.
@@ -63,3 +75,13 @@ That's it! Enjoy your journey with my configurations! Feel free to adapt them to
 
 For any questions or suggestions, please feel free to contact me at:
 `<yangyang.li@northwestern.edu>`
+
+[sketchybar]: https://github.com/FelixKratz/SketchyBar
+[yabai]: https://github.com/koekeishiya/yabai
+[fish-shell]: https://github.com/fish-shell/fish-shell
+[Tide]: https://github.com/IlanCosman/tide
+[neofecth]: https://github.com/dylanaraps/neofetch
+[wezterm]: https://wezfurlong.org/wezterm
+[ranger]: https://github.com/ranger/ranger
+[neovim]: https://github.com/neovim/neovim
+[chezmoi]: https://www.chezmoi.io
