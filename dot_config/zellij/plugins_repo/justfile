@@ -1,0 +1,8 @@
+update: update-room
+
+update-submodules:
+    git submodule update --recursive --remote
+
+update-room: update-submodules
+    cd room &&  cargo build --release && cd ..
+    cp room/target/wasm32-wasi/release/room.wasm   ../plugins/

@@ -1,0 +1,11 @@
+/Users/ylk4626/.config/zellij/plugins_repo/room/target/wasm32-wasi/release/deps/include_dir-de1bfb93c9dbc71f.rmeta: /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md
+
+/Users/ylk4626/.config/zellij/plugins_repo/room/target/wasm32-wasi/release/deps/libinclude_dir-de1bfb93c9dbc71f.rlib: /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md
+
+/Users/ylk4626/.config/zellij/plugins_repo/room/target/wasm32-wasi/release/deps/include_dir-de1bfb93c9dbc71f.d: /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs /Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md
+
+/Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs:
+/Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs:
+/Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs:
+/Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs:
+/Users/ylk4626/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md:
