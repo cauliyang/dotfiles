@@ -40,7 +40,7 @@ return {
                 i(4, "arg"),
                 i(5, "Type"),
                 i(6, "RetType"),
-                i(0, "unimplemented!()"),
+                i(0, "todo!()"),
             }
         )
     ),
@@ -64,9 +64,9 @@ return {
     }}
     ]],
             {
-                i(1, "name"),
+                i(1, "tests"),
                 i(2, "name"),
-                i(0, "unimplemented!()"),
+                i(0, "todo!()"),
             }
         )
     ),
@@ -75,14 +75,14 @@ return {
         { trig = "new", dscr = "create constructor" },
         fmt(
             [[
-            fn new({}:{}) -> Self {{
+            pub fn new({}:{}) -> Self {{
                 {}
              }}
     ]],
             {
                 i(1, "arg"),
                 i(2, "Type"),
-                i(0, "unimplemented!()"),
+                i(0, "todo!()"),
             }
         )
     ),
