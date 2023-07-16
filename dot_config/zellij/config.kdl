@@ -128,6 +128,12 @@ keybinds clear-defaults=true {
         bind "Alt k" "Alt Up" { MoveFocus "Up"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
+
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+            floating true
+            }
+        }
     }
 
     shared_except "normal" "locked" {
