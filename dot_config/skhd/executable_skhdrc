@@ -165,7 +165,7 @@ ctrl + alt + cmd - r : launchctl kickstart -k "gui/$UID/homebrew.mxcl.yabai"; \
 ctrl + alt + cmd - s : launchctl kickstart -k "gui/$UID/homebrew.mxcl.sketchybar"
 
 # 0x24 is enter
-ctrl + shift - 0x24  : open -na /Applications/Alacritty.app
+ctrl + shift - 0x24  : open -na /Applications/WezTerm.app
 ctrl + shift - k     : open -na /Applications/Forklift.app
 ctrl + shift - q     : yabai -m window --close
 
