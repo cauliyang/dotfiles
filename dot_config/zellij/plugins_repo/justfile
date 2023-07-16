@@ -1,4 +1,4 @@
-update: update-room
+update: update-room update-jbz
 
 update-submodules:
     git submodule update --recursive --remote
@@ -6,3 +6,9 @@ update-submodules:
 update-room: update-submodules
     cd room &&  cargo build --release && cd ..
     cp room/target/wasm32-wasi/release/room.wasm   ../plugins/
+    cd room && cargo clean && cd ..
+
+update-jbz: update-submodules
+    cd jbz &&  cargo build --release && cd ..
+    cp jbz/target/wasm32-wasi/release/jbz.wasm   ../plugins/
+    cd jbz && cargo clean && cd ..

@@ -1,3 +1,6 @@
 [submodule "room"]
 	path = room
 	url = https://github.com/cauliyang/room.git
+[submodule "jbz"]
+	path = jbz
+	url = https://github.com/nim65s/jbz.git
