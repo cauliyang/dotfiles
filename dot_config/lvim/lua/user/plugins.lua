@@ -791,4 +791,5 @@ lvim.plugins = {
         ft = { "text", "log" },
         lazy = true,
     },
+    { "subnut/nvim-ghost.nvim" },
 }

@@ -15,6 +15,7 @@ M.themes = {
     tokyonight_day = "tokyonight-day",
     tokyonight_moon = "tokyonight-moon",
     catppuccin = "catppuccin",
+    miasma = "miasma",
 }
 
 M.get_theme = function(default)

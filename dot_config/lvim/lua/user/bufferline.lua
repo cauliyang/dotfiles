@@ -3,6 +3,7 @@ local M = {}
 M.config = function()
     vim.cmd("function! TbToggle_theme(a,b,c,d) \n lua require('user.theme').toggle_theme() \n endfunction")
     vim.cmd("function! Quit_vim(a,b,c,d) \n qa \n endfunction")
+
     local icons = require("user.icons").icons
     local List = require("plenary.collections.py_list")
     lvim.builtin.bufferline.highlights = {
@@ -15,6 +16,7 @@ M.config = function()
         background = { italic = true },
         buffer_selected = { bold = true },
     }
+
     local g_ok, bufferline_groups = pcall(require, "bufferline.groups")
     if not g_ok then
         bufferline_groups = {
@@ -27,6 +29,7 @@ M.config = function()
             },
         }
     end
+
     lvim.builtin.bufferline.options = {
         navigation = { mode = "uncentered" },
         diagnostics = false,
