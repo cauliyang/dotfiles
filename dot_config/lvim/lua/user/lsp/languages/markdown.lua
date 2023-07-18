@@ -2,7 +2,7 @@
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-    { command = "prettier", filetypes = { "markdown", "yaml", "json" } },
+    { command = "prettier", filetypes = { "markdown", "yaml", "json", "javascript" } },
 })
 
 local linter = require("lvim.lsp.null-ls.linters")
