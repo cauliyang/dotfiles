@@ -791,5 +791,18 @@ lvim.plugins = {
         ft = { "text", "log" },
         lazy = true,
     },
-    { "subnut/nvim-ghost.nvim" },
+    {
+        "subnut/nvim-ghost.nvim",
+        config = function()
+            vim.cmd([[
+            " Multiple autocommands can be specified like so -
+            augroup nvim_ghost_user_autocommands
+              au User www.reddit.com,www.stackoverflow.com setfiletype markdown
+              au User www.reddit.com,www.github.com setfiletype markdown
+              au User *github.com setfiletype markdown
+              au User www.overleaf.com setfiletype tex
+            augroup END
+            ]])
+        end,
+    },
 }
