@@ -7,7 +7,6 @@ formatters.setup({
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
 
 local clangd_flags = {
-
     "--fallback-style=Google",
     "--background-index",
     "-j=8",
@@ -21,9 +20,6 @@ local clangd_flags = {
     "--enable-config", -- clangd 11+ supports reading from .clangd configuration file
     "--offset-encoding=utf-16", --temporary fix for null-ls
     "--ranking-model=heuristics",
-    -- "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*,modernize-*,-modernize-use-trailing-return-type,bugprone-*",
-    -- "--query-driver=<list-of-white-listed-complers>"
-    -- "-Wunused-variable",
     "--function-arg-placeholders",
 }
 

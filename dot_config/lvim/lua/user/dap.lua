@@ -13,7 +13,23 @@ local function sep_os_replacer(str)
     result = result:gsub("/", path_sep)
     return result
 end
+
 local join_path = require("lvim.utils").join_paths
+
+local contains = function(tbl, str)
+    for _, v in ipairs(tbl) do
+        if v == str then
+            return true
+        end
+    end
+    return false
+end
+
+local file_exists = function(dir, file_pattern)
+    local scan = require("plenary.scandir")
+    local dirs = scan.scan_dir(dir, { depth = 1, search_pattern = file_pattern })
+    return contains(dirs, dir .. "/" .. file_pattern)
+end
 
 M.python = function()
     local conda_python = os.getenv("CONDA_PREFIX") .. "/bin/python"
@@ -96,6 +112,7 @@ end
 
 function M.cpp()
     local path = vim.fn.glob(mason_path .. "packages/codelldb/extension/")
+        or vim.fn.expand("~/") .. ".vscode/extensions/vadimcn.vscode-lldb-1.9.2/"
     local lldb_cmd = path .. "adapter/codelldb"
 
     dap.adapters.codelldb = {
@@ -103,7 +120,7 @@ function M.cpp()
         port = "${port}",
         executable = {
             -- CHANGE THIS to your path!
-            command = lldb_cmd,
+            command = llddb_cmd,
             args = { "--port", "${port}" },
 
             -- On windows you may have to uncomment this:
@@ -120,8 +137,9 @@ function M.cpp()
                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
             end,
             cwd = "${workspaceFolder}",
-            stopOnEntry = true,
+            stopOnEntry = false,
             runInTerminal = true,
+            -- console = "integratedTerminal",
         },
     }
 
