@@ -126,7 +126,21 @@ lvim.builtin.dap.on_config_done = function(dap)
             program = function()
                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
             end,
+            args = function()
+                local args = {}
+                local i = 1
+                while true do
+                    local arg = vim.fn.input("Argument [" .. i .. "]: ")
+                    if arg == "" then
+                        break
+                    end
+                    args[i] = arg
+                    i = i + 1
+                end
+                return args
+            end,
             cwd = "${workspaceFolder}",
+
             stopOnEntry = false,
         },
     }
