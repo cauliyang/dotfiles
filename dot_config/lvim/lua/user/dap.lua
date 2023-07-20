@@ -128,6 +128,7 @@ function M.cpp()
         },
     }
 
+    -- local lldb_scripts_path = vim.fn.expand("~/") .. "project/lldb_commands/dslldb.py"
     dap.configurations.cpp = {
         {
             name = "Launch file",
@@ -139,7 +140,7 @@ function M.cpp()
             cwd = "${workspaceFolder}",
             stopOnEntry = false,
             runInTerminal = true,
-            -- console = "integratedTerminal",
+            initCommands = { "command script import ~/project/lldb_commands/dslldb.py" },
         },
     }
 
