@@ -26,7 +26,7 @@
   "crates.nvim": { "branch": "main", "commit": "4ce7c51b881e58f1e2f8f437f30e4e583cbac319" },
   "debugprint.nvim": { "branch": "main", "commit": "3e27d34a767063033ca17e7e9d65c5cfae615354" },
   "dressing.nvim": { "branch": "master", "commit": "39611852fd7bbac117e939a26759bb37361f0c90" },
-  "eyeliner.nvim": { "branch": "main", "commit": "a6c05ed7f2a59640bd18ff0702694deda483a08e" },
+  "eyeliner.nvim": { "branch": "main", "commit": "70e1fb4f68bfdad2b9e2b53fcaf367ac86fc693f" },
   "fidget.nvim": { "branch": "legacy", "commit": "90c22e47be057562ee9566bad313ad42d622c1d3" },
   "flatten.nvim": { "branch": "main", "commit": "c6f3950d1b0e40fb267366c356d99ed5ab10a15a" },
   "friendly-snippets": { "branch": "main", "commit": "ea84a710262cb2c286d439070bad37d36fd3db25" },
@@ -117,9 +117,9 @@
   "vim-log-highlighting": { "branch": "master", "commit": "1037e26f3120e6a6a2c0c33b14a84336dee2a78f" },
   "vim-sandwich": { "branch": "master", "commit": "c5a2cc438ce6ea2005c556dc833732aa53cae21a" },
   "vim-translator": { "branch": "master", "commit": "6f0639c6d471a3a90ac19db96e1e379c030f74e3" },
-  "vimtex": { "branch": "master", "commit": "08371bf97a9c4ce3dbdf996161faf04ff8b32aa0" },
+  "vimtex": { "branch": "master", "commit": "95579267d48a6b4e8e99c4f32456cba992565ea2" },
   "which-key.nvim": { "branch": "main", "commit": "38b990f6eabf62014018b4aae70a97d7a6c2eb88" },
   "zen-mode.nvim": { "branch": "main", "commit": "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" },
-  "zig.vim": { "branch": "master", "commit": "0c4f965468259ab6e47fd7c6b2127583a8860eb1" },
+  "zig.vim": { "branch": "master", "commit": "15841fc4fecfb1b6c02da9b4cc17ced135edbf8e" },
   "zotcite": { "branch": "master", "commit": "87c21850f3ecf1c17a1538c8cba194bd87c9f504" }
 }
