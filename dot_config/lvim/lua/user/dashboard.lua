@@ -125,7 +125,7 @@ M.config = function()
             button("r", icons.clock .. " Smart open", "<cmd>lua require('user.telescope').smart_open()<cr>"),
             button("l", icons.magic .. " Last session", "<cmd>lua require('user.dashboard').session_load_last()<cr>"),
             button("S", icons.session .. " Sessions", "<cmd>lua require('user.telescope').session()<cr>"),
-            -- button("z", icons.folder .. "  Zoxide", "<cmd>lua require('user.telescope').zoxide()<cr>"),
+            button("z", icons.folder .. "  Zoxide", "<cmd>lua require('user.telescope').zoxide()<cr>"),
             button(
                 "f",
                 kind.cmp_kind.File .. " Find file",

@@ -100,6 +100,7 @@ lvim.builtin.which_key.mappings["F"] = {
     p = { "<cmd>lua require('user.telescope').projects()<cr>", "Projects" },
     s = { "<cmd>lua require('user.telescope').find_string()<cr>", "Find string" },
     S = { "<cmd>lua require('user.telescope').find_identifier()<cr>", "Find identifier under cursor" },
+    z = { "<cmd>lua require('user.telescope').zoxide()<cr>", "Zoxide" },
     r = { "<cmd>lua require('user.telescope').recent_files()<cr>", "Recent files" },
     o = { "<cmd>lua require('user.telescope').smart_open()<cr>", "Smart open" },
     y = { "<cmd>lua require('user.telescope').neoclip()<cr>", "Clipboard" },

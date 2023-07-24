@@ -441,7 +441,12 @@ lvim.plugins = {
     ---------------------------------------
     --        telescope extension        --
     ---------------------------------------
-
+    -- Telescope zoxide
+    {
+        "jvgrootveld/telescope-zoxide",
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        lazy = true,
+    },
     {
         "cljoly/telescope-repo.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },

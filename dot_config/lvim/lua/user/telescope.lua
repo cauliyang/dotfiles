@@ -223,7 +223,7 @@ M.projects = function()
     require("telescope").extensions.repo.list(M.get_theme())
 end
 
-M.zoxde = function()
+M.zoxide = function()
     require("telescope").extensions.zoxide.list(M.get_theme())
 end
 
