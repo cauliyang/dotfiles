@@ -21,6 +21,26 @@ disabled = true
 [git_branch]
 symbol = "🌱 "
 
+
+[git_commit]
+style = "normal"
+only_detached = true
+tag_disabled = false
+tag_symbol = " 🔖"
+format = "\\[[$hash](bold green)[$tag](bold red)\\] "
+
+[git_status]
+style = "normal"
+conflicted = "[ ](bold red)"
+ahead = "[↑×${count}](bold green)"
+diverged = "[↑×${ahead_count}](bold green) [↓×${behind_count}](bold red)"
+behind = "↓×${count}(bold red)"
+stashed = "[⊙](bold purple)"
+staged = "[](bold blue)"
+untracked = "[](normal)"
+deleted = "[](bold red)"
+modified = "[](#FF7F00)"
+
 [python]
 symbol = '👾 '
 
