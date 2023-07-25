@@ -172,4 +172,17 @@ return {
             }
         )
     ),
+
+    s(
+        { trig = "fmtoff", snippetType = "autosnippet" },
+        fmt(
+            [[
+        # fmt: off
+        {}
+        # fmt: on]],
+            {
+                d(1, get_visual),
+            }
+        )
+    ),
 }
