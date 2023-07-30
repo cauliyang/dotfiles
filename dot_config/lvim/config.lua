@@ -7,7 +7,6 @@ require("user.neovide").config()
 
 -- check if the editor is started by firenvim
 if vim.g.started_by_firenvim == true then
-    print("firenvim detected")
     -- set the environment variable
     vim.fn.setenv("OPENAI_API_KEY", "1")
     -- set the color schemeu
