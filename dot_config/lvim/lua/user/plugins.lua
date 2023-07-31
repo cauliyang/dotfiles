@@ -186,6 +186,17 @@ lvim.plugins = {
         end,
     },
 
+    -- trouble
+    {
+        "folke/trouble.nvim",
+        config = function()
+            require("user.trouble").config()
+        end,
+        cmd = "Trouble",
+        event = "VeryLazy",
+        enabled = lvim.builtin.trouble.active,
+    },
+
     -- latex and markdown
     -- https://github.com/iamcco/markdown-preview.nvim/tree/
     {
@@ -519,23 +530,6 @@ lvim.plugins = {
         event = "VeryLazy",
     },
 
-    -- -- Trouble
-    -- {
-    --     "folke/trouble.nvim",
-    --     config = function()
-    --         require("trouble").setup({
-    --             auto_open = false,
-    --             auto_close = true,
-    --             padding = false,
-    --             height = 10,
-    --             use_diagnostic_signs = true,
-    --         })
-    --     end,
-    --     cmd = "Trouble",
-    --     event = "VeryLazy",
-    --     enabled = lvim.builtin.trouble.active,
-    -- },
-
     {
         "krady21/compiler-explorer.nvim",
         config = function()
@@ -808,6 +802,14 @@ lvim.plugins = {
               au User www.overleaf.com setfiletype tex
             augroup END
             ]])
+        end,
+    },
+    { -- This plugin
+        "Zeioth/compiler.nvim",
+        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+        dependencies = { "stevearc/overseer.nvim" },
+        config = function(_, opts)
+            require("compiler").setup(opts)
         end,
     },
 }

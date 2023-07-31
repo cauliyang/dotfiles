@@ -136,7 +136,7 @@ M.config = function()
     lvim.builtin.ufo = { active = true }
 
     lvim.builtin.copilot = { active = true }
-    lvim.builtin.trouble = { active = false }
+    lvim.builtin.trouble = { active = true }
     lvim.builtin.distant = { active = false }
 
     lvim.builtin.borderless_cmp = true

@@ -49,8 +49,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "markdown", "tex" },
     callback = function()
-        vim.api.nvim_buf_set_keymap(0, "n", "<Leader>tt", "<Plug>Translate", { silent = true, noremap = true })
-        vim.api.nvim_buf_set_keymap(0, "n", "<Leader>tw", "<Plug>TranslateW", { silent = true, noremap = true })
+        vim.api.nvim_buf_set_keymap(0, "n", "<localleader>ct", "<Plug>Translate", { silent = true, noremap = true })
+        vim.api.nvim_buf_set_keymap(0, "n", "<localleader>cw", "<Plug>TranslateW", { silent = true, noremap = true })
     end,
 })
 

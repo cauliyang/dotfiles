@@ -71,4 +71,13 @@ return {
             }
         )
     ),
+    s(
+        { trig = "clang-tidy", dscr = "clang-tidy" },
+        fmta([[Checks: "<>"]], {
+            i(
+                1,
+                "clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,-modernize-use-trailing-return-type,bugprone-*,concurrency-*,hicpp-*,performance-*"
+            ),
+        })
+    ),
 }
