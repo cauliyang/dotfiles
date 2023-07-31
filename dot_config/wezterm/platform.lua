@@ -1,4 +1,5 @@
 local utils = require("utils")
+local wezterm = require("wezterm")
 
 local M = {}
 
@@ -23,7 +24,7 @@ elseif utils.is_mac() then
 		window_background_opacity = 0.8,
 		macos_window_background_blur = 20,
 		font = utils.font_with_fallback({
-			family = "Cascadia Mono",
+			family = "Fira Code",
 			harfbuzz_features = {
 				"calt",
 				"liga",
@@ -32,6 +33,34 @@ elseif utils.is_mac() then
 				"-ss04",
 			},
 		}),
+		font_rules = {
+			{
+				intensity = "Bold",
+				italic = true,
+				font = wezterm.font({
+					family = "Victor Mono",
+					weight = "Bold",
+					style = "Italic",
+				}),
+			},
+			{
+				italic = true,
+				intensity = "Half",
+				font = wezterm.font({
+					family = "Victor Mono",
+					weight = "DemiBold",
+					style = "Italic",
+				}),
+			},
+			{
+				italic = true,
+				intensity = "Normal",
+				font = wezterm.font({
+					family = "Victor Mono",
+					style = "Italic",
+				}),
+			},
+		},
 	}
 else
 	M.config = {
