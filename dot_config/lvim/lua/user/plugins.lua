@@ -702,6 +702,26 @@ lvim.plugins = {
     {
         "mfussenegger/nvim-dap-python",
     },
+    {
+        "theHamsta/nvim-dap-virtual-text",
+        config = function()
+            require("nvim-dap-virtual-text").setup()
+        end,
+        lazy = true,
+    },
+
+    -- Better hl
+    {
+        "m-demare/hlargs.nvim",
+        config = function()
+            require("hlargs").setup({
+                excluded_filetype = { "TelescopePrompt", "guihua", "guihua_rust", "clap_input" },
+            })
+        end,
+        lazy = true,
+        event = "VeryLazy",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+    },
 
     {
         "kaarmu/typst.vim",
