@@ -265,7 +265,7 @@ lvim.plugins = {
     {
         "hrsh7th/cmp-omni",
     },
-    -- -- Cmp for emojis..
+    -- Cmp for emojis..
     { "hrsh7th/cmp-emoji" },
 
     -- cmp_dictionay
