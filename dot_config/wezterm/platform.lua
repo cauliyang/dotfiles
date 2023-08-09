@@ -21,8 +21,8 @@ if utils.is_windows() then
 	}
 elseif utils.is_mac() then
 	M.config = {
-		window_background_opacity = 0.8,
-		macos_window_background_blur = 20,
+		window_background_opacity = 0.75,
+		macos_window_background_blur = 15,
 		font = utils.font_with_fallback({
 			family = "Fira Code",
 			harfbuzz_features = {
@@ -30,6 +30,7 @@ elseif utils.is_mac() then
 				"liga",
 				"zero",
 				"ss01",
+				"ss03",
 				"-ss04",
 			},
 		}),
