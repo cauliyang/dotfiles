@@ -807,4 +807,5 @@ lvim.plugins = {
             require("compiler").setup(opts)
         end,
     },
+    { "tamton-aquib/zone.nvim" },
 }

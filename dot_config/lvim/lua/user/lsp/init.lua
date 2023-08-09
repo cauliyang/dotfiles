@@ -9,6 +9,7 @@ require("user.lsp.languages.html")
 require("user.lsp.languages.r")
 require("user.lsp.languages.lua")
 require("user.lsp.languages.dockerfile")
+require("user.lsp.languages.typst")
 
 vim.diagnostic.config({
     virtual_text = false,
