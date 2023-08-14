@@ -569,6 +569,7 @@ lvim.plugins = {
             })
         end,
         event = "VeryLazy",
+        commit = "24bcca7",
         enabled = lvim.builtin.chatgpt.active,
     },
 
@@ -776,7 +777,6 @@ lvim.plugins = {
     -- kdl.vim
     { "imsnif/kdl.vim" },
     { "szebniok/tree-sitter-wgsl" },
-    { "IndianBoy42/tree-sitter-just" },
     { "ziglang/zig.vim" },
     { "ron-rs/ron.vim" },
     -- Highligh logs
@@ -807,5 +807,4 @@ lvim.plugins = {
             require("compiler").setup(opts)
         end,
     },
-    { "tamton-aquib/zone.nvim" },
 }

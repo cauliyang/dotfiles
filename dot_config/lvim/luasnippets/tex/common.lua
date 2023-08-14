@@ -7,9 +7,17 @@ local get_visual = function(args, parent)
 end
 
 return {
+
     s(
         { trig = "cref", snippetType = "autosnippet" },
         fmta([[~\cref{<>} ]], {
+            d(1, get_visual),
+        })
+    ),
+
+    s(
+        { trig = "enquote", snippetType = "autosnippet" },
+        fmta([[~\enquote{<>} ]], {
             d(1, get_visual),
         })
     ),
