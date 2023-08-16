@@ -45,6 +45,7 @@ return {
         fmta(
             [[
             \begin{figure}
+                \centering
                 \includestandalone[width=0.9\textwidth]{<>}
                 \caption{<>}
                 \label{fig:<>}
