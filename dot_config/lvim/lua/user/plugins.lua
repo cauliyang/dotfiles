@@ -569,7 +569,7 @@ lvim.plugins = {
             })
         end,
         event = "VeryLazy",
-        commit = "24bcca7",
+        -- commit = "24bcca7",
         enabled = lvim.builtin.chatgpt.active,
     },
 
