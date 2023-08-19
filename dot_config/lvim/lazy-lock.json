@@ -21,7 +21,7 @@
   "cmp-zotcite": { "branch": "main", "commit": "431c720a73fb84c8b1a51b4f123e2a7cc8a58bfd" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "compiler-explorer.nvim": { "branch": "master", "commit": "ee8e7a2808bdad67cd2acb61b5c9ffa7735c7ec9" },
-  "compiler.nvim": { "branch": "main", "commit": "e475a450f0c54d9c1fb05f827af7af97e751a349" },
+  "compiler.nvim": { "branch": "main", "commit": "3aedabefafde8121dca163fdb7ba362f46dfad24" },
   "copilot-cmp": { "branch": "master", "commit": "d631b3afbf26bb17d6cf2b3cd8f3d79e7d5eeca1" },
   "copilot.lua": { "branch": "master", "commit": "b3798d85322b1aaa56cad9d651d2d1aaec6298e9" },
   "crates.nvim": { "branch": "main", "commit": "d5caf28aba49e81ac4099426231f3cf3c151013a" },
