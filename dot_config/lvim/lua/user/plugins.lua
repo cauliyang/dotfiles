@@ -799,12 +799,13 @@ lvim.plugins = {
             ]])
         end,
     },
-    { -- This plugin
+
+    {
         "Zeioth/compiler.nvim",
         cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
         dependencies = { "stevearc/overseer.nvim" },
-        config = function(_, opts)
-            require("compiler").setup(opts)
+        config = function()
+            require("compiler").setup()
         end,
     },
 }
