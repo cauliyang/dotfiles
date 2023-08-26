@@ -21,10 +21,11 @@ if utils.is_windows() then
 	}
 elseif utils.is_mac() then
 	M.config = {
-		window_background_opacity = 0.8,
+		window_background_opacity = 0.85,
 		macos_window_background_blur = 20,
 		font = utils.font_with_fallback({
-			family = "Fira Code",
+			family = "Cascadia Mono",
+			-- family = "Fira Code",
 			harfbuzz_features = {
 				"calt",
 				"liga",
