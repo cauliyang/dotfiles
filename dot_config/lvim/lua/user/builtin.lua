@@ -165,6 +165,7 @@ M.config = function()
     -- refactoring
     lvim.builtin.refactoring = { active = true }
     lvim.builtin.chatgpt = { active = true }
+    lvim.builtin.frontend = { active = true }
 end
 
 return M

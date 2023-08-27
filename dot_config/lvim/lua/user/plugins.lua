@@ -160,7 +160,7 @@ lvim.plugins = {
                         ["."] = false,
                         ["*"] = true,
                     },
-                }) -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+                })                             -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
                 require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
             end, 100)
         end,
@@ -170,12 +170,12 @@ lvim.plugins = {
         "rmagatti/goto-preview",
         config = function()
             require("goto-preview").setup({
-                width = 120, -- Width of the floating window
-                height = 25, -- Height of the floating window
+                width = 120,             -- Width of the floating window
+                height = 25,             -- Height of the floating window
                 default_mappings = true, -- Bind default mappings
-                debug = false, -- Print debug information
-                opacity = nil, -- 0-100 opacity level of the floating window where 100 is fully transparent.
-                post_open_hook = nil, -- A function taking two arguments, a buffer and a window to be ran as a hook.
+                debug = false,           -- Print debug information
+                opacity = nil,           -- 0-100 opacity level of the floating window where 100 is fully transparent.
+                post_open_hook = nil,    -- A function taking two arguments, a buffer and a window to be ran as a hook.
                 -- You can use "default_mappings = true" setup option
                 -- Or explicitly set keybindings
                 --
@@ -535,14 +535,14 @@ lvim.plugins = {
         config = function()
             require("compiler-explorer").setup({
                 url = "https://godbolt.org",
-                open_qflist = false, -- Open qflist after compile.
-                infer_lang = true, -- Try to infer possible language based on file extension.
+                open_qflist = false,   -- Open qflist after compile.
+                infer_lang = true,     -- Try to infer possible language based on file extension.
                 binary_hl = "Comment", -- Highlight group for binary extmarks/virtual text.
                 autocmd = {
-                    enable = false, -- Enable assembly to source and source to assembly highlighting.
+                    enable = false,    -- Enable assembly to source and source to assembly highlighting.
                     hl = "Cursorline", -- Highlight group used for line match highlighting.
                 },
-                diagnostics = { -- vim.diagnostic.config() options for the ce-diagnostics namespace.
+                diagnostics = {        -- vim.diagnostic.config() options for the ce-diagnostics namespace.
                     underline = false,
                     virtual_text = false,
                     signs = false,
@@ -742,7 +742,7 @@ lvim.plugins = {
         config = function()
             require("eyeliner").setup({
                 highlight_on_key = true, -- show highlights only after keypress
-                dim = true, -- dim all other characters if set to true (recommended!)
+                dim = true,              -- dim all other characters if set to true (recommended!)
             })
         end,
     },
@@ -808,4 +808,7 @@ lvim.plugins = {
             require("compiler").setup()
         end,
     },
+
+
+    { "jose-elias-alvarez/typescript.nvim" }
 }
