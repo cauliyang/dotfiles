@@ -34,3 +34,10 @@
     autoSetupRemote = true
 [credential]
 	helper = osxkeychain
+
+[alias]
+    runs = "!f() { \
+        watch_gha_runs $@ \
+            \"$(git remote get-url origin)\" \
+            \"$(git rev-parse --abbrev-ref HEAD)\"; \
+    }; f"
