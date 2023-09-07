@@ -162,9 +162,6 @@ end
 
 lvim.builtin.which_key.mappings["a"] = {
     name = "ChatGPT",
-    -- a = { "<cmd>ChatGPTActAs<cr>", "Act As" },
-    -- e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit with instructions", mode = "v" },
-    -- s = { "<cmd>ChatRunCustomCodeAction<cr>", "Custome Code Action" },
     -- r = { "<cmd>lua require('user.telescope').chatgpt_run()<cr>)", "Chat Run", mode = "v" },
     c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
     e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
