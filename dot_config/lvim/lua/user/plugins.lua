@@ -779,6 +779,7 @@ lvim.plugins = {
     { "szebniok/tree-sitter-wgsl" },
     { "ziglang/zig.vim" },
     { "ron-rs/ron.vim" },
+    { "NoahTheDuke/vim-just" },
     -- Highligh logs
     {
         "mtdl9/vim-log-highlighting",
