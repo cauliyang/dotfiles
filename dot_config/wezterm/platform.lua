@@ -9,7 +9,7 @@ if utils.is_windows() then
 		window_background_opacity = 0,
 		win32_system_backdrop = "Acrylic",
 		font = utils.font_with_fallback({
-			family = "Cascadia Mono",
+			family = "Cascadia Code",
 			harfbuzz_features = {
 				"calt",
 				"liga",
@@ -24,8 +24,7 @@ elseif utils.is_mac() then
 		window_background_opacity = 0.85,
 		macos_window_background_blur = 20,
 		font = utils.font_with_fallback({
-			family = "Cascadia Mono",
-			-- family = "Fira Code",
+			family = "Cascadia Code",
 			harfbuzz_features = {
 				"calt",
 				"liga",
@@ -33,6 +32,8 @@ elseif utils.is_mac() then
 				"ss01",
 				"ss03",
 				"-ss04",
+				"ss05",
+				"onum",
 			},
 		}),
 		font_rules = {
