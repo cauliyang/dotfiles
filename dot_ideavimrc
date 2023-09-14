@@ -1,0 +1,79 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+" use jk to exit insert mode
+inoremap jk <Esc>
+
+" https://gist.github.com/dewaka/ef947e52767bf453eaf77c852051eb7e
+set NERDTree
+set surround
+
+let mapleader = " "
+
+
+set ideajoin
+
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+nmap <leader>wo :action NextSplitter<cr>
+nmap <leader>wp :action PrevSplitter<cr>
+
+
+map <leader>e :NERDTree<CR>
+map <leader>nf :NERDTreeFind<CR>
+
+nmap <leader>h :action Back<cr>
+nmap <leader>l :action Forward<cr>
+nmap <leader>L :action RecentLocations<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>C :action CallHierarchy<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nmap <leader>m :action ToggleBookmark<cr>
+nmap <leader>; :action FileStructurePopup<cr>
+nmap <leader>M :action ActivateStructureToolWindow<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>i :action GotoImplementation<cr>
+nmap <leader>U :action GotoSuperMethod<cr>
+nmap <leader>I :action SelectIn<cr>
+nmap <leader>a :action RecentChangedFiles<cr>
+nmap <leader>t :action GotoTest<cr>
+nmap <leader>p :action JumpToLastWindow<cr>
+
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+nmap <leader>n :action Run<cr>
+nmap <leader>w :action SaveAll<cr>
+nmap <leader>r :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>b :action Build<cr>
+nmap <leader>/ :action CommentByLineComment<cr>
+
+nnoremap [b :action PreviousTab<cr>
+nnoremap ]b :action NextTab<cr>
+nnoremap gl :action ShowIntentionActions<cr>
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
