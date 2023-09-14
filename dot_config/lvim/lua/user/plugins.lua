@@ -470,14 +470,9 @@ lvim.plugins = {
         lazy = true,
     },
 
-    -- -- Telescope plugins for lazy.nvim
+    -- Telescope plugins for lazy.nvim
     { "tsakirist/telescope-lazy.nvim" },
 
-    -- -- Telescope live grep
-    -- {
-    --     "nvim-telescope/telescope-live-grep-args.nvim",
-    --     lazy = true,
-    -- },
     {
         "danielfalk/smart-open.nvim",
         dependencies = { "kkharji/sqlite.lua" },
@@ -569,7 +564,6 @@ lvim.plugins = {
             })
         end,
         event = "VeryLazy",
-        -- commit = "24bcca7",
         enabled = lvim.builtin.chatgpt.active,
     },
 
@@ -811,4 +805,34 @@ lvim.plugins = {
     },
 
     { "jose-elias-alvarez/typescript.nvim" },
+
+    {
+        "piersolenski/wtf.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+        },
+        event = "VeryLazy",
+        opts = {
+            popup_type = "vertical",
+        },
+        keys = {
+            {
+                "gw",
+                mode = { "n", "x" },
+                function()
+                    require("wtf").ai()
+                end,
+                desc = "Debug diagnostic with AI",
+            },
+            {
+                mode = { "n", "x" },
+                "gW",
+                function()
+                    require("wtf").search()
+                end,
+                desc = "Search diagnostic with Google",
+            },
+        },
+        enabled = lvim.builtin.chatgpt.active,
+    },
 }
