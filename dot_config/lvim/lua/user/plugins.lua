@@ -835,4 +835,11 @@ lvim.plugins = {
         },
         enabled = lvim.builtin.chatgpt.active,
     },
+
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        keys = require("user.flash").keys,
+        enabled = lvim.builtin.motion_provider == "flash",
+    },
 }
