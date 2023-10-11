@@ -497,6 +497,9 @@ window < x            : set -l index (yabai -m query --spaces --space | jq '.ind
 # toggle window native fullscreen
 window < f            : yabai -m window --toggle native-fullscreen; skhd -k 'escape'
 
+# toggle window expose
+window < e            : yabai -m window --toggle expose; skhd -k 'escape'
+
 # send current window to i-th space and follow focus
 window < left         : yabai -m window --space prev; \
                         yabai -m space --focus prev; \
