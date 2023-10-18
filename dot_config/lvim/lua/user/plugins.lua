@@ -355,6 +355,7 @@ lvim.plugins = {
         config = function()
             require("user.lsplines").config()
         end,
+        enabled = lvim.builtin.lsplines,
     },
 
     {

@@ -116,7 +116,7 @@ M.config = function()
     ------------------------
     --        plugins     --
     ------------------------
-
+    lvim.builtin.lsplines = true
     -- Global status line
     lvim.builtin.global_statusline = true
     -- test runner
