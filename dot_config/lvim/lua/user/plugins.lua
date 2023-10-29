@@ -201,11 +201,11 @@ lvim.plugins = {
     -- https://github.com/iamcco/markdown-preview.nvim/
     {
         "iamcco/markdown-preview.nvim",
-        build = "cd app && npm install",
-        ft = "markdown",
+        build = "cd app && yarn install",
         config = function()
-            vim.g.mkdp_auto_start = 0
+            vim.g.mkdp_filetypes = { "markdown" }
         end,
+        ft = "markdown",
     },
 
     { "barreiroleo/ltex-extra.nvim" },
