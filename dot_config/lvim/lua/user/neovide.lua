@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
     if vim.g.neovide then
-        vim.g.neovide_scale_factor = 1.7
+        vim.g.neovide_scale_factor = 1.5
         vim.g.neovide_hide_mouse_when_typing = true
         vim.g.neovide_input_macos_alt_is_meta = true
         vim.g.neovide_hide_mouse_when_typing = false
@@ -24,7 +24,10 @@ M.config = function()
         vim.g.neovide_padding_right = 0
         vim.g.neovide_padding_left = 0
 
-        vim.g.neovide_transparency = 0.2
+        vim.g.neovide_floating_blur_amount_x = 2.0
+        vim.g.neovide_floating_blur_amount_y = 2.0
+
+        vim.g.neovide_transparency = 0.5
         vim.g.transparency = 0.47
 
         -- Helper function for transparency formatting
