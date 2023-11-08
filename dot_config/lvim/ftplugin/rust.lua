@@ -15,26 +15,24 @@ local opts = {
 local mappings = {
     C = {
         name = "Rust",
-        a = { "<cmd>lua vim.cmd.RustLsp { 'hover', 'actions' }<cr>", "Hover Actions" },
+        a = { "<cmd>lua require('rust-tools').hove_actions.hover_actions()<cr>", "Hover Actions" },
         A = { "<cmd>lua require('rust-tools').code_action_group.code_action_group()<cr>", "Code Action Group" },
-        r = { "<cmd>lua vim.cmd.RustLsp {'runnables', 'last' --[[ optional ]] }<cr>", "Runnables" },
-        R = { "<cmd>lua vim.cmd.RustLsp {'debuggables', 'last' --[[ optional ]] }<cr>", "Debuggables" },
-        e = { "<cmd>lua vim.cmd.RustLsp('expandMacro')<cr>", "Expand Macro" },
-        E = { "<cmd>lua vim.cmd.RustLsp('explainError')<cr>", "Explain Error" },
-        m = { "<cmd>lua vim.cmd.RustLsp('parentModule')<cr>", "Parent Module" },
-        u = { "<cmd>lua vim.cmd.RustLsp { 'moveItem',  'up' }<cr>", "Move Item Up" },
-        d = { "<cmd>lua vim.cmd.RustLsp { 'moveItem',  'down' }<cr>", "Move Item Down" },
-        H = { "<cmd>lua vim.cmd.RustLsp { 'hover', 'range' }<cr>", "Hover Range" },
-        c = { "<cmd>lua vim.cmd.RustLsp('openCargo')<cr>", "Open Cargo.toml" },
-        j = { "<cmd>lua vim.cmd.RustLsp('joinLines')<cr>", "Join Lines" },
-        f = { "<cmd>lua vim.cmd.RustLsp('flyCheck')<cr>", "Fly Check" },
+        r = { "<cmd>lua require('rust-tools').runnables.runnables()<cr>", "Runnables" },
+        R = { "<cmd>lua require('rust-tools').debuggables.debuggables()<cr>", "Debuggables" },
+        e = { "<cmd>lua require('rust-tools').expand_macro.expand_macro()<cr>", "Expand Macro" },
+        m = { "<cmd>lua require('rust-tools').parent_module.parent_module()<cr>", "Parent Module" },
+        u = { "<cmd>lua require('rust-tools').move_item.move_item(true)<cr>", "Move Item Up" },
+        d = { "<cmd>lua require('rust-tools').move_item.move_item(false)<cr>", "Move Item Down" },
+        H = { "<cmd>lua require('rust-tools').hover_range.hover_range()<cr>", "Hover Range" },
+        c = { "<cmd>lua require('rust-tools').open_cargo_toml.open_cargo_toml()<cr>", "Open Cargo.toml" },
+        j = { "<cmd>lua require('rust-tools').join_lines.join_lines()<cr>", "Join Lines" },
 
-        D = { "<cmd>lua vim.cmd.RustLsp('externalDocs')<cr>", "Open Docs" },
+        D = { "<cmd>RustOpenExternalDocs<Cr>", "Open Docs" },
 
-        v = { "<cmd>vim.cmd.RustLsp { 'crateGraph', '[backend]', '[output]' }<Cr>", "View Crate Graph" },
+        v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
 
         L = {
-            "<cmd>lua vim.cmd.RustLsp('reloadWorkspace')<cr>",
+            "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
             "Reload Workspace",
         },
 

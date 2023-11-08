@@ -65,12 +65,8 @@ lvim.plugins = {
 
     -- rust
     { "rust-lang/rust.vim" },
-    {
-        "mrcjkb/rustaceanvim",
-        version = "^3", -- Recommended
-        ft = { "rust" },
-    },
-    -- { "simrat39/rust-tools.nvim" },
+
+    { "simrat39/rust-tools.nvim" },
 
     {
         "saecki/crates.nvim",
@@ -492,14 +488,12 @@ lvim.plugins = {
     --        noice        --
     -------------------------
 
-    { "MunifTanjim/nui.nvim" },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
         config = function()
             require("user.noice").config()
         end,
-        -- version = '1.5.2',
         dependencies = {
             "rcarriga/nvim-notify",
             "MunifTanjim/nui.nvim",
