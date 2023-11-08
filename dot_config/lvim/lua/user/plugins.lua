@@ -720,15 +720,6 @@ lvim.plugins = {
     },
 
     {
-        "kaarmu/typst.vim",
-        ft = "typst",
-        lazy = false,
-        config = function()
-            vim.g.typst_pdf_viewer = "skim"
-        end,
-    },
-
-    {
         "AckslD/swenv.nvim",
         config = function()
             require("swenv").setup()
@@ -845,5 +836,24 @@ lvim.plugins = {
         event = "VeryLazy",
         keys = require("user.flash").keys,
         enabled = lvim.builtin.motion_provider == "flash",
+    },
+
+    -- typst
+    {
+        "kaarmu/typst.vim",
+        ft = "typst",
+        lazy = false,
+        config = function()
+            vim.g.typst_pdf_viewer = "skim"
+        end,
+    },
+
+    {
+        "MrPicklePinosaur/typst-conceal.vim",
+        ft = "typst",
+        config = function()
+            vim.g.typst_conceal_math = 1
+            vim.g.typst_conceal_emoji = 1
+        end,
     },
 }
