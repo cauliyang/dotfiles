@@ -107,7 +107,12 @@ M.config = function()
             },
 
             -- Used to override format_item. See :help dressing-format
-            format_item_override = {},
+            format_item_override = {
+                codeaction = function(action_tuple)
+                    local title = action_tuple.action.title:gsub("\r\n", "\\r\\n")
+                    return string.format("%s", title:gsub("\n", "\\n"))
+                end,
+            },
 
             -- see :help dressing_get_config
             get_config = nil,
