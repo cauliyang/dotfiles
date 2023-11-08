@@ -65,7 +65,13 @@ lvim.plugins = {
 
     -- rust
     { "rust-lang/rust.vim" },
-    { "simrat39/rust-tools.nvim" },
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^3", -- Recommended
+        ft = { "rust" },
+    },
+    -- { "simrat39/rust-tools.nvim" },
+
     {
         "saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
@@ -855,5 +861,14 @@ lvim.plugins = {
             vim.g.typst_conceal_math = 1
             vim.g.typst_conceal_emoji = 1
         end,
+    },
+
+    {
+        "2kabhishek/nerdy.nvim",
+        dependencies = {
+            "stevearc/dressing.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        cmd = "Nerdy",
     },
 }

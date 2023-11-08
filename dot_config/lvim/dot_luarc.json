@@ -113,7 +113,8 @@
         "/Users/ylk4626/.local/share/lunarvim/site/after",
         "/Users/ylk4626/.config/lvim/after",
         "/Users/ylk4626/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/22b6d4d6",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ],
     "workspace.checkThirdParty": false
 }

@@ -33,10 +33,9 @@ local function rdefault_capabilities()
 end
 
 pcall(function()
-    require("rust-tools").setup({
-
+    vim.g.rustaceanvim = {
         tools = {
-            executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
+            executor = require("rustaceanvim.executors").termopen, -- can be quickfix or termopen
             reload_workspace_from_cargo_toml = true,
 
             runnables = {
@@ -57,12 +56,12 @@ pcall(function()
             },
 
             hover_actions = {
-                border = "rounded",
                 auto_focus = true,
             },
 
             crate_graph = {
-                backend = "tk",
+                backend = "pdf",
+                output = "crate_graph.pdf",
             },
 
             on_initialized = function()
@@ -81,11 +80,11 @@ pcall(function()
 
         server = {
 
-            on_attach = function(client, bufnr)
-                require("lvim.lsp").common_on_attach(client, bufnr)
-                local rt = require("rust-tools")
-                vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-            end,
+            -- on_attach = function(client, bufnr)
+            --     require("lvim.lsp").common_on_attach(client, bufnr)
+            --     local rt = require("rustaceanvim")
+            --     vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- end,
 
             -- capabilities = require("lvim.lsp").common_capabilities(),
             capabilities = rdefault_capabilities(),
@@ -112,7 +111,7 @@ pcall(function()
                 },
             },
         },
-    })
+    }
 end)
 
 -- CHANGED --
