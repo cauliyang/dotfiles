@@ -19,11 +19,13 @@ inoremap jk <Esc>
 " https://gist.github.com/dewaka/ef947e52767bf453eaf77c852051eb7e
 set NERDTree
 set surround
+set commentary
 
 let mapleader = " "
 
-
 set ideajoin
+" enable clipboard
+set clipboard=unnamedplus
 
 nmap <leader>q :action CloseContent<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
@@ -60,9 +62,15 @@ nmap <leader>r :action Refactorings.QuickListPopupAction<cr>
 nmap <leader>b :action Build<cr>
 nmap <leader>/ :action CommentByLineComment<cr>
 
-nnoremap [b :action PreviousTab<cr>
-nnoremap ]b :action NextTab<cr>
+" nnoremap [b :action PreviousTab<cr>
+" nnoremap ]b :action NextTab<cr>
 nnoremap gl :action ShowIntentionActions<cr>
+
+" map H in mode to navigate the tab
+map H :action PreviousTab<cr>
+" remove L key mapping first
+unmap L
+map L :action NextTab<cr>
 
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
