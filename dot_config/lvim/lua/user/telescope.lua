@@ -403,6 +403,8 @@ M.config = function()
     -- Telescope
     local icons = require("user.icons").icons
 
+    local layout_strategy = "horizontal"
+
     lvim.builtin.telescope.max_path_length = 5
     lvim.builtin.telescope.defaults.dynamic_preview_title = true
     lvim.builtin.telescope.defaults.layout_config = M.layout_config()
@@ -417,7 +419,7 @@ M.config = function()
     lvim.builtin.telescope.theme = "ivy"
     lvim.builtin.telescope.defaults.selection_caret = icons.right
     lvim.builtin.telescope.defaults.cache_picker = { num_pickers = 5 }
-    lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
+    lvim.builtin.telescope.defaults.layout_strategy = layout_strategy
 
     lvim.builtin.telescope.defaults.color_devicons = true
 
@@ -463,16 +465,16 @@ M.config = function()
     lvim.builtin.telescope.pickers.git_files = {
         hidden = true,
         show_untracked = true,
-        layout_strategy = "horizontal",
+        layout_strategy = layout_strategy,
     }
 
     lvim.builtin.telescope.pickers.live_grep = {
         only_sort_text = true,
-        layout_strategy = "horizontal",
+        layout_strategy = layout_strategy,
     }
 
     lvim.builtin.telescope.pickers.find_files = {
-        layout_strategy = "horizontal",
+        layout_strategy = layout_strategy,
         attach_mappings = function(_)
             telescope_actions.select:enhance({
                 post = function()
