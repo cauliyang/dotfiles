@@ -9,6 +9,9 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
+set noerrorbells
+set visualbell
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -58,7 +61,7 @@ nmap <leader>p :action JumpToLastWindow<cr>
 nmap <leader>T :action ActivateTerminalToolWindow<cr>
 nmap <leader>n :action Run<cr>
 nmap <leader>w :action SaveAll<cr>
-nmap <leader>r :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>r :action RefactoringMenu<cr>
 nmap <leader>b :action Build<cr>
 nmap <leader>/ :action CommentByLineComment<cr>
 
