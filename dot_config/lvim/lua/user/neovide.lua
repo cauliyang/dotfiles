@@ -45,9 +45,10 @@ M.config = function()
             cascadiam = "Cascadia Mono:h13",
             fira = "Fira Code:h13",
             firam = "Fira Mono:h13",
+            monaspace_radon = "Monaspace Radon:h13",
         }
 
-        vim.opt.guifont = fonts.ia
+        vim.opt.guifont = fonts.monaspace_radon
         vim.opt.linespace = 0
 
         vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save

@@ -7,7 +7,9 @@ formatters.setup({
 
 local linter = require("lvim.lsp.null-ls.linters")
 linter.setup({
-    { command = "write-good", filetypes = { "markdown", "tex" } },
+    -- { command = "write-good", filetypes = { "markdown", "tex" } },
+    -- https://github.com/errata-ai/vale
+    { command = "vale", filetypes = { "markdown", "tex" } },
 })
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ltex" })

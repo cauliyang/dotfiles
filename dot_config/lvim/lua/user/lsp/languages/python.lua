@@ -1,8 +1,3 @@
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-    -- { command = "black", filetypes = { "python" } },
-})
-
 -- set lsp
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "ruff_lsp" })
 local lsp_manager = require("lvim.lsp.manager")

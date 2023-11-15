@@ -1,3 +1,8 @@
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+    { command = "latexindent", filetypes = { "tex" } },
+})
+
 --  reference : https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/texlab.lua
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "texlab" })
 

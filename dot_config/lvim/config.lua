@@ -1,4 +1,5 @@
 -- builtin parameters
+
 require("user.builtin").config()
 
 require("user.neovim").config()
@@ -7,7 +8,6 @@ require("user.neovide").config()
 
 -- load plugins
 reload("user.plugins")
-
 -- Cmp
 require("user.cmp").config()
 

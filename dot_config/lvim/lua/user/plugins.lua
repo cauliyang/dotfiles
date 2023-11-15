@@ -846,6 +846,7 @@ lvim.plugins = {
         config = function()
             vim.g.typst_pdf_viewer = "skim"
         end,
+        enabled = lvim.builtin.typst.active,
     },
 
     {
@@ -855,6 +856,7 @@ lvim.plugins = {
             vim.g.typst_conceal_math = 1
             vim.g.typst_conceal_emoji = 1
         end,
+        enabled = lvim.builtin.typst.active,
     },
 
     {
@@ -864,5 +866,15 @@ lvim.plugins = {
             "nvim-telescope/telescope.nvim",
         },
         cmd = "Nerdy",
+    },
+
+    {
+        "junegunn/vim-easy-align",
+        config = function()
+            vim.cmd([[
+                xmap ga <Plug>(EasyAlign)
+                nmap ga <Plug>(EasyAlign)
+                ]])
+        end,
     },
 }
