@@ -1,6 +1,6 @@
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-    { command = "latexindent", filetypes = { "tex" } },
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+    { name = "chktex", filetypes = { "tex" } },
 })
 
 --  reference : https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/texlab.lua
@@ -41,18 +41,19 @@ lsp_manager.setup("texlab", {
             },
             auxDirectory = "build",
             forwardSearch = {
-                executable = nil,
-                args = {},
+                -- executable = nil,
+                -- args = {},
+                executable = "/Applications/Skim.app/Contents/SharedSupport/displayline",
+                args = { "-g", "-b", "%l", "%p", "%f" },
             },
             chktex = {
                 onOpenAndSave = true,
-                onEdit = true,
+                onEdit = false,
             },
             diagnosticsDelay = 300,
             latexFormatter = "latexindent",
             latexindent = {
-                ["local"] = nil, -- local is a reserved keyword
-                modifyLineBreaks = false,
+                modifyLineBreaks = true,
             },
             bibtexFormatter = "texlab",
             formatterLineLength = 80,
