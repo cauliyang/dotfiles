@@ -869,12 +869,11 @@ lvim.plugins = {
     },
 
     {
-        "junegunn/vim-easy-align",
+        "echasnovski/mini.align",
+        event = "VeryLazy",
+        version = false,
         config = function()
-            vim.cmd([[
-                xmap ga <Plug>(EasyAlign)
-                nmap ga <Plug>(EasyAlign)
-                ]])
+            require("mini.align").setup()
         end,
     },
 }
