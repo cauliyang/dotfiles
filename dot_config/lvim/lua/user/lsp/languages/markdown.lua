@@ -2,7 +2,7 @@
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-    { command = "prettier", filetypes = { "markdown", "yaml", "css" } },
+    { command = "prettier", filetypes = { "markdown", "yaml", "css", "json" } },
 })
 
 local linter = require("lvim.lsp.null-ls.linters")
@@ -26,10 +26,8 @@ require("lspconfig").ltex.setup({
             log_level = "error", -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
         })
     end,
-
     settings = {
         ltex = {
-
             additionalrules = {
                 enablepickyrules = true,
                 mothertongue = "en-us",

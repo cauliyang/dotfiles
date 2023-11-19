@@ -25,6 +25,7 @@ lsp_manager.setup("pyright", {
 local ruff_opts = {
     single_file_support = true,
     filetypes = { "python" },
+    format = { enable = true },
 }
 
 lsp_manager.setup("ruff_lsp", ruff_opts)

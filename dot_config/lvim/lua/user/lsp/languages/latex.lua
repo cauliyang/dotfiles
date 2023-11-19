@@ -1,6 +1,6 @@
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-    { name = "chktex", filetypes = { "tex" } },
+    { name = "chktex", filetypes = { "tex", "plaintex" } },
 })
 
 --  reference : https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/texlab.lua
@@ -41,10 +41,8 @@ lsp_manager.setup("texlab", {
             },
             auxDirectory = "build",
             forwardSearch = {
-                -- executable = nil,
-                -- args = {},
-                executable = "/Applications/Skim.app/Contents/SharedSupport/displayline",
-                args = { "-g", "-b", "%l", "%p", "%f" },
+                executable = nil,
+                args = {},
             },
             chktex = {
                 onOpenAndSave = true,

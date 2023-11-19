@@ -3,7 +3,9 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver", 
 
 local capabilities = require("lvim.lsp").common_capabilities()
 
-require("lspconfig").biome.setup({})
+require("lspconfig").biome.setup({
+    filetypes = { "json", "javascript", "typescript" },
+})
 
 require("typescript").setup({
     -- disable_commands = false, -- prevent the plugin from creating Vim commands

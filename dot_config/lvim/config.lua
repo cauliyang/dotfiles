@@ -1,5 +1,4 @@
 -- builtin parameters
-
 require("user.builtin").config()
 
 require("user.neovim").config()
