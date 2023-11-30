@@ -9,4 +9,12 @@ M.terminal_keys = function()
     vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
 
+M.toggle_inlay_hints = function()
+    if vim.lsp.inlay_hint.is_enabled() then
+        vim.lsp.inlay_hint.enable(nil, false)
+    else
+        vim.lsp.inlay_hint.enable()
+    end
+end
+
 return M

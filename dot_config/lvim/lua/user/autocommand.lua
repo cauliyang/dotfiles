@@ -44,6 +44,14 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tpp",
+    callback = function()
+        -- let treesitter use bash highlight for zsh files as well
+        vim.cmd("set filetype=cpp")
+    end,
+})
+
 -- https://github.com/voldikss/vim-translator/tree/63ac44f87563fea49cfb5f07379b5959ef19cdaa#know-bugs
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -77,6 +85,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- Cleanup.
 vim.api.nvim_clear_autocmds({ pattern = "lir", group = "_filetype_settings" })
 vim.api.nvim_clear_autocmds({ pattern = "*", group = "_lvim_colorscheme" })
+vim.api.nvim_clear_autocmds({ pattern = "*", group = "nvim_swapfile" })
 
 -- Custom group.
 vim.api.nvim_create_augroup("_lvim_user", {})

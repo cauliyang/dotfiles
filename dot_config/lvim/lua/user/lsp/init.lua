@@ -25,11 +25,3 @@ formatters.setup({
     { command = "stylua", filetypes = { "lua" } },
     { command = "shfmt", filetypes = { "sh", "zsh" } },
 })
-
--- lvim.lsp.on_attach_callback = function(client, bufnr)
--- end
-
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "eslint_d", filetypes = { "javascript" } },
--- }

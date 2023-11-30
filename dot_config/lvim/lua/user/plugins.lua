@@ -132,6 +132,15 @@ lvim.plugins = {
         config = function()
             require("user.incline").config()
         end,
+        enabled = lvim.builtin.breadcrumbs_provider == "incline",
+    },
+
+    {
+        "Bekaboo/dropbar.nvim",
+        dependencies = {
+            "nvim-telescope/telescope-fzf-native.nvim",
+        },
+        enabled = lvim.builtin.breadcrumbs_provider == "dropbar",
     },
 
     -- show lsp signature
@@ -512,6 +521,7 @@ lvim.plugins = {
     --         require("user.silicon").config()
     --     end,
     --     event = "VeryLazy",
+    --     cmd = "Silicon",
     -- },
 
     ----------------------------
@@ -550,8 +560,20 @@ lvim.plugins = {
                 job_timeout = 25000, -- Timeout for libuv job in milliseconds.
             })
         end,
-        -- lazy = true,
+        cmd = {
+            "CECompile",
+            "CECompileLive",
+            "CEFormat",
+            "CEAddLibrary",
+            "CELoadExample",
+            "CEOpenWebsite",
+            "CEDeleteCache",
+            "CEShowTooltip",
+            "CEGotoLabel",
+        },
+        event = "VeryLazy",
     },
+
     {
         "jackMort/ChatGPT.nvim",
         dependencies = {

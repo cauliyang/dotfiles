@@ -112,17 +112,14 @@ end
 
 function M.cpp()
     local path = vim.fn.glob(mason_path .. "packages/codelldb/extension/")
-        or vim.fn.expand("~/") .. ".vscode/extensions/vadimcn.vscode-lldb-1.9.2/"
     local lldb_cmd = path .. "adapter/codelldb"
-
     dap.adapters.codelldb = {
         type = "server",
         port = "${port}",
         executable = {
             -- CHANGE THIS to your path!
-            command = llddb_cmd,
+            command = lldb_cmd,
             args = { "--port", "${port}" },
-
             -- On windows you may have to uncomment this:
             -- detached = false,
         },
@@ -136,6 +133,20 @@ function M.cpp()
             request = "launch",
             program = function()
                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+            end,
+
+            args = function()
+                local args = {}
+                local i = 1
+                while true do
+                    local arg = vim.fn.input("Argument [" .. i .. "]: ")
+                    if arg == "" then
+                        break
+                    end
+                    args[i] = arg
+                    i = i + 1
+                end
+                return args
             end,
             cwd = "${workspaceFolder}",
             stopOnEntry = false,

@@ -77,7 +77,6 @@ M.config = function()
     lvim.builtin.nvimtree.setup.view.side = "left"
     lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
     lvim.builtin.treesitter.highlight.enabled = true
-    lvim.builtin.breadcrumbs.active = true
 
     lvim.lsp.installer.setup.automatic_installation = false
 
@@ -167,6 +166,13 @@ M.config = function()
     lvim.builtin.chatgpt = { active = true }
     lvim.builtin.frontend = { active = true }
     lvim.builtin.typst = { active = true }
+
+    lvim.builtin.breadcrumbs_provider = "incline" -- 'dropbar'
+    if lvim.builtin.breadcrumbs_provider == "none" then
+        lvim.builtin.breadcrumbs.active = true
+    else
+        lvim.builtin.breadcrumbs.active = false
+    end
 end
 
 return M

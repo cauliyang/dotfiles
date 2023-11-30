@@ -145,7 +145,8 @@ lvim.builtin.which_key.vmappings["s"] = {
 }
 
 lvim.builtin.which_key.mappings["lp"] = { { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle LSP Lines" } }
-lvim.builtin.which_key.mappings["lo"] = { { "<cmd>lua vim.lsp.inlay_hint(0)<cr>", icons.inlay .. "Toggle Inlay" } }
+lvim.builtin.which_key.mappings["lo"] =
+    { { "<cmd>lua require('user.keys').toggle_inlay_hints()<cr>", icons.inlay .. "Toggle Inlay" } }
 
 if lvim.builtin.noice.active then
     lvim.keys.insert_mode["<C-s>"] = function()
