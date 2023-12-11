@@ -89,8 +89,16 @@ return {
     s({ trig = "utikz", snippetType = "autosnippet" }, fmta([[\usetikzlibrary{<>}]], { i(1, "") })),
 
     -- shape
-    s({ trig = "rec", snippetType = "autosnippet" }, fmta([[rectangle <>]], { i(1, "") })),
-    s({ trig = "pos", snippetType = "autosnippet" }, fmta([[(<>,<>)]], { i(1, "0"), i(2, "0") })),
+    s(
+        { trig = "rec", snippetType = "autosnippet" },
+        fmta([[rectangle <>]], { i(1, "") }),
+        { condition = tex_utils.in_tikz }
+    ),
+    s(
+        { trig = "pos", snippetType = "autosnippet" },
+        fmta([[(<>,<>)]], { i(1, "0"), i(2, "0") }),
+        { condition = tex_utils.in_tikz }
+    ),
     s({ trig = "dc" }, fmta([[\definecolor{<>}{RGB}{<>}]], { i(1, "name"), i(2, "value") })),
 
     s(

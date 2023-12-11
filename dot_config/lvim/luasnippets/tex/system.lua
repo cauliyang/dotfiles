@@ -21,6 +21,13 @@ end
 return {
     -- ANNOTATE (custom command for annotating equation derivations)
     s(
+        { trig = "ci", description = "cite" },
+        fmta([[~\cite{<>} ]], {
+            d(1, get_visual),
+        })
+    ),
+
+    s(
         { trig = "ann", snippetType = "autosnippet" },
         fmta(
             [[

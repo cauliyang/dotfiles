@@ -50,8 +50,9 @@ lsp_manager.setup("texlab", {
             },
             diagnosticsDelay = 300,
             latexFormatter = "latexindent",
+            -- linters = { "chktex" },
             latexindent = {
-                modifyLineBreaks = true,
+                modifyLineBreaks = false,
             },
             bibtexFormatter = "texlab",
             formatterLineLength = 80,
