@@ -166,6 +166,7 @@ M.config = function()
     lvim.builtin.chatgpt = { active = true }
     lvim.builtin.frontend = { active = true }
     lvim.builtin.typst = { active = true }
+    lvim.builtin.symbol_usage = { active = true }
 
     lvim.builtin.breadcrumbs_provider = "incline" -- 'dropbar'
     if lvim.builtin.breadcrumbs_provider == "none" then

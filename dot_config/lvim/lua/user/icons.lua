@@ -101,6 +101,14 @@ M.todo_comments = {
     SHIELD = "",
 }
 
+M.symbol_usage = {
+    circle_left = "",
+    circle_right = "",
+    def = "󰳽 ",
+    ref = "󰌹 ",
+    impl = "󰡱 ",
+}
+
 M.languages = {
     c = "",
     rust = "",

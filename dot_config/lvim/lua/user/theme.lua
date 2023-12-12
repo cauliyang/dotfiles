@@ -548,7 +548,7 @@ M.hi_colors = function()
     return colors
 end
 
-M.telescope_theme = function()
+M.telescope_theme = function(colorset)
     local function link(group, other)
         vim.cmd("highlight! link " .. group .. " " .. other)
     end
@@ -619,18 +619,42 @@ M.telescope_theme = function()
     local hi_colors = M.hi_colors()
     set_fg_bg("NormalFloat", hi_colors.fg, hi_colors.bg)
     set_fg_bg("FloatBorder", hi_colors.fg, hi_colors.bg)
-    set_fg_bg("TelescopeBorder", hi_colors.bg_alt, hi_colors.bg)
-    set_fg_bg("TelescopePromptBorder", hi_colors.bg, hi_colors.bg)
-    set_fg_bg("TelescopePromptNormal", hi_colors.fg, hi_colors.bg_alt)
-    set_fg_bg("TelescopePromptPrefix", hi_colors.red, hi_colors.bg)
-    set_bg("TelescopeNormal", hi_colors.bg)
-    set_fg_bg("TelescopePreviewTitle", hi_colors.bg, hi_colors.green)
-    set_fg_bg("LvimInfoHeader", hi_colors.bg, hi_colors.green)
-    set_fg_bg("LvimInfoIdentifier", hi_colors.red, hi_colors.bg_alt)
-    set_fg_bg("TelescopePromptTitle", hi_colors.bg, hi_colors.red)
-    set_fg_bg("TelescopeResultsTitle", hi_colors.bg, hi_colors.bg)
-    set_fg_bg("TelescopeResultsBorder", hi_colors.bg, hi_colors.bg)
-    set_bg("TelescopeSelection", hi_colors.bg_alt)
+
+    if lvim.builtin.telescope.active then
+        set_fg_bg("TelescopeBorder", hi_colors.bg_alt, hi_colors.bg)
+        set_fg_bg("TelescopePromptBorder", hi_colors.bg, hi_colors.bg)
+        set_fg_bg("TelescopePromptNormal", hi_colors.fg, hi_colors.bg_alt)
+        set_fg_bg("TelescopePromptPrefix", hi_colors.red, hi_colors.bg)
+        set_bg("TelescopeNormal", hi_colors.bg)
+        set_fg_bg("TelescopePreviewTitle", hi_colors.bg, hi_colors.green)
+        set_fg_bg("LvimInfoHeader", hi_colors.bg, hi_colors.green)
+        set_fg_bg("LvimInfoIdentifier", hi_colors.red, hi_colors.bg_alt)
+        set_fg_bg("TelescopePromptTitle", hi_colors.bg, hi_colors.red)
+        set_fg_bg("TelescopeResultsTitle", hi_colors.bg, hi_colors.bg)
+        set_fg_bg("TelescopeResultsBorder", hi_colors.bg, hi_colors.bg)
+        set_bg("TelescopeSelection", hi_colors.bg_alt)
+    else
+        set_fg_bg("FzfLuaBorder", hi_colors.bg, hi_colors.bg)
+        set_bg("FzfLuaNormal", hi_colors.bg)
+        set_fg_bg("FzfLuaTitle", hi_colors.bg, hi_colors.red)
+        set_fg_bg("FzfLuaPreviewTitle", hi_colors.bg, hi_colors.green)
+        set_fg_bg("FzfLuaPreviewBorder", hi_colors.bg, hi_colors.bg)
+        set_fg_bg("FzfLuaScrollBorderEmpty", hi_colors.bg, hi_colors.bg)
+        set_fg_bg("FzfLuaScrollBorderFull", hi_colors.bg, hi_colors.bg)
+        set_fg_bg("FzfLuaHelpNormal", hi_colors.bg_alt, hi_colors.bg)
+    end
+
+    if lvim.builtin.symbol_usage.active then
+        local function h(name)
+            return vim.api.nvim_get_hl(0, { name = name })
+        end
+
+        vim.api.nvim_set_hl(0, "SymbolUsageRounding", { fg = h("CursorLine").bg, italic = true })
+        vim.api.nvim_set_hl(0, "SymbolUsageContent", { bg = h("CursorLine").bg, fg = h("Comment").fg, italic = true })
+        vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Function").fg, bg = h("CursorLine").bg, italic = true })
+        vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Type").fg, bg = h("CursorLine").bg, italic = true })
+        vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("@keyword").fg, bg = h("CursorLine").bg, italic = true })
+    end
 end
 
 M.dashboard_theme = function()
