@@ -56,7 +56,8 @@ repos = [
     "/Users/ylk4626/.config/NvChad",
     "/Users/ylk4626/.config/AstroNvim",
     "/Users/ylk4626/project/neovide",
-
+    "/Users/ylk4626/ClionProjects/clip.cpp",
+    "/Users/ylk4626/ClionProjects/mlx",
 ]
 
 # Don't pull the predefined git repos
