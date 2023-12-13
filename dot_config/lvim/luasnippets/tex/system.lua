@@ -19,14 +19,51 @@ end
 
 -- Return snippet tables
 return {
-    -- ANNOTATE (custom command for annotating equation derivations)
     s(
-        { trig = "ci", description = "cite" },
-        fmta([[~\cite{<>} ]], {
-            d(1, get_visual),
-        })
+        { trig = " CI", snippetType = "autosnippet", wordTrig = false },
+        fmta(
+            [[
+      ~\cite{<>}
+      ]],
+            {
+                d(1, get_visual),
+            }
+        )
     ),
-
+    s(
+        { trig = " CRR", snippetType = "autosnippet", wordTrig = false },
+        fmta(
+            [[
+      ~\Cref{<>}
+      ]],
+            {
+                d(1, get_visual),
+            }
+        )
+    ),
+    s(
+        { trig = " cRR", snippetType = "autosnippet", wordTrig = false },
+        fmta(
+            [[
+      ~\cref{<>}
+      ]],
+            {
+                d(1, get_visual),
+            }
+        )
+    ),
+    s(
+        { trig = " ARR", snippetType = "autosnippet", wordTrig = false },
+        fmta(
+            [[
+      ~\autoref{<>}
+      ]],
+            {
+                d(1, get_visual),
+            }
+        )
+    ),
+    -- ANNOTATE (custom command for annotating equation derivations)
     s(
         { trig = "ann", snippetType = "autosnippet" },
         fmta(
@@ -163,6 +200,12 @@ return {
     s(
         { trig = "h3", snippetType = "autosnippet" },
         fmta([[\subsubsection{<>}]], {
+            d(1, get_visual),
+        })
+    ),
+    s(
+        { trig = "h4", snippetType = "autosnippet" },
+        fmta([[\paragraph{<>}]], {
             d(1, get_visual),
         })
     ),
