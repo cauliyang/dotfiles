@@ -1,7 +1,7 @@
-local linters = require("lvim.lsp.null-ls.linters")
-linters.setup({
-    { name = "chktex", filetypes = { "tex", "plaintex" } },
-})
+-- local linters = require("lvim.lsp.null-ls.linters")
+-- linters.setup({
+--     { name = "chktex", filetypes = { "tex", "plaintex" } },
+-- })
 
 --  reference : https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/texlab.lua
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "texlab" })
@@ -50,7 +50,7 @@ lsp_manager.setup("texlab", {
             },
             diagnosticsDelay = 300,
             latexFormatter = "latexindent",
-            -- linters = { "chktex" },
+            linters = { "chktex" },
             latexindent = {
                 modifyLineBreaks = false,
             },
