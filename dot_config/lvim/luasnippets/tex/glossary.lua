@@ -67,7 +67,7 @@ return {
     ),
     s(
         { trig = "gls", snippetType = "autosnippet" },
-        fmta([[ \gls{<>} ]], {
+        fmta([[ \gls{<>}]], {
             d(1, get_visual),
         })
     ),
