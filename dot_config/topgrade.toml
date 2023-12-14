@@ -77,6 +77,7 @@ repos = [
 [commands]
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 "Fish update Completions" = "fish_update_completions"
+"gh extension" = "gh extension upgrade --all"
 
 [brew]
 #greedy_cask = true
