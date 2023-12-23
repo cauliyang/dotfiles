@@ -282,9 +282,21 @@ lvim.plugins = {
         end,
     },
 
+    -- {
+    --     "hrsh7th/cmp-omni",
+    -- },
+
     {
-        "hrsh7th/cmp-omni",
+        "micangl/cmp-vimtex",
+        config = function()
+            require("cmp_vimtex").setup({
+                search = {
+                    browser = "open",
+                },
+            })
+        end,
     },
+
     -- Cmp for emojis..
     { "hrsh7th/cmp-emoji" },
 

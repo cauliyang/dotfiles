@@ -15,7 +15,7 @@ M.config = function()
             "jsonc",
             "julia",
             "kotlin",
-            -- "latex",
+            "latex",
             "ledger",
             "lua",
             "make",
@@ -30,7 +30,6 @@ M.config = function()
     lvim.builtin.treesitter.ignore_install = { "haskell" }
     -- https://github.com/lervag/vimtex/blob/ed5c5eafe47dc8e0212f2ecafc0676a550a849e4/doc/vimtex.txt#L6346
     lvim.builtin.treesitter.additional_vim_regex_highlighting = { "latex", "markdown" }
-    -- lvim.builtin.treesitter.highlight.disable = { "latex" }
 
     lvim.builtin.treesitter.incremental_selection = {
         enable = true,
