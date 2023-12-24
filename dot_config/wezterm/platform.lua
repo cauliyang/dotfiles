@@ -21,7 +21,7 @@ if utils.is_windows() then
 	}
 elseif utils.is_mac() then
 	M.config = {
-		window_background_opacity = 0.9,
+		window_background_opacity = 0.95,
 		macos_window_background_blur = 10,
 		font = utils.font_with_fallback({
 			-- family = "Cascadia Code",
