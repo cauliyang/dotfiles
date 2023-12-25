@@ -124,11 +124,6 @@ lvim.builtin.which_key.mappings["sx"] = {
     { "<cmd>lua require('ssr').open()<cr>", "structure replace" },
 }
 
-lvim.builtin.which_key.mappings["ly"] = {
-    "<cmd>SymbolsOutline<CR>",
-    "SymbolsOutline",
-}
-
 lvim.builtin.which_key.mappings["gS"] = {
     "<cmd>lua require('user.telescope').git_status()<cr>",
     "Repository status",

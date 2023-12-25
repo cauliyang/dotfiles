@@ -124,8 +124,10 @@ M.config = function()
     lvim.builtin.task_runner = "overseer" -- overseer
     -- tree provider
     lvim.builtin.tree_provider = "nvimtree"
+
     -- tag provider
-    lvim.builtin.tag_provider = "symbols-outline"
+    lvim.builtin.tag_provider = "outline" -- "symbols-outline"
+
     -- motion provider
     lvim.builtin.motion_provider = ""
     -- image viewer

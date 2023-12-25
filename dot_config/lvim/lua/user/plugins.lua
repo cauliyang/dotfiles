@@ -55,9 +55,9 @@ lvim.plugins = {
     -----------------------------
     { "machakann/vim-sandwich" },
 
-    -- -----------------------
-    -- --        lsp        --
-    -- -----------------------
+    -----------------------
+    --        lsp        --
+    -----------------------
 
     -- cpp
     { "p00f/clangd_extensions.nvim" },
@@ -65,9 +65,7 @@ lvim.plugins = {
 
     -- rust
     { "rust-lang/rust.vim" },
-
     { "simrat39/rust-tools.nvim" },
-
     {
         "saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
@@ -115,13 +113,31 @@ lvim.plugins = {
     -- show symbols-outline
     {
         "simrat39/symbols-outline.nvim",
-        config = require("user.symbols-outline").config(),
+        keys = { -- Example mapping to toggle outline
+            { "ly", "<cmd>SymbolsOutline<CR>", desc = "Toggle outline" },
+        },
+        config = function()
+            require("user.symbols-outline").config()
+        end,
+        enabled = lvim.builtin.tag_provider == "symbols-outline",
+    },
+
+    {
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        keys = { -- Example mapping to toggle outline
+            { "ly", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        config = function()
+            require("user.outline").config()
+        end,
+        enabled = lvim.builtin.tag_provider == "outline",
     },
 
     -- show lsp progress
     {
         "j-hui/fidget.nvim",
-        branch = "legacy",
         config = function()
             require("user.fidget").config()
         end,
@@ -281,10 +297,6 @@ lvim.plugins = {
             require("user.vim-translator").config()
         end,
     },
-
-    -- {
-    --     "hrsh7th/cmp-omni",
-    -- },
 
     {
         "micangl/cmp-vimtex",
@@ -949,6 +961,21 @@ lvim.plugins = {
                 },
             })
             vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+        end,
+    },
+
+    -- others
+    {
+        "TobinPalmer/Tip.nvim",
+        event = "VimEnter",
+        init = function()
+            -- Default config
+            --- @type Tip.config
+            require("tip").setup({
+                seconds = 2,
+                title = "Tip!",
+                url = "https://vtip.43z.one",
+            })
         end,
     },
 }
