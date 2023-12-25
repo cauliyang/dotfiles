@@ -963,19 +963,5 @@ lvim.plugins = {
             vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
         end,
     },
-
     -- others
-    {
-        "TobinPalmer/Tip.nvim",
-        event = "VimEnter",
-        init = function()
-            -- Default config
-            --- @type Tip.config
-            require("tip").setup({
-                seconds = 2,
-                title = "Tip!",
-                url = "https://vtip.43z.one",
-            })
-        end,
-    },
 }

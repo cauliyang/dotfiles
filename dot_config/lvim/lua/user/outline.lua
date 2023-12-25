@@ -51,9 +51,6 @@ M.config = function()
             auto_unfold_hover = true,
         },
         symbols = {
-            filter = {
-                exclude = true,
-            },
             icons = {
                 Array = { hl = "@constant", icon = "" },
                 Boolean = { hl = "@boolean", icon = "" },
