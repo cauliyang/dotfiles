@@ -946,6 +946,7 @@ lvim.plugins = {
     -- Preview code actions
     {
         "aznhe21/actions-preview.nvim",
+        lazy = true,
         config = function()
             require("actions-preview").setup({
                 telescope = {
@@ -965,5 +966,6 @@ lvim.plugins = {
             vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
         end,
     },
+
     -- others
 }
