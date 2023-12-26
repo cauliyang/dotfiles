@@ -118,6 +118,7 @@ return {
             i(1),
         })
     ),
+
     s(
         { trig = "SI", snippetType = "autosnippet" },
         fmta([[\SI{<>}{<>}]], {
@@ -125,6 +126,13 @@ return {
             i(2),
         })
     ),
+    s(
+        { trig = "NUM", snippetType = "autosnippet" },
+        fmta([[\num{<>}]], {
+            d(1, get_visual),
+        })
+    ),
+
     s(
         { trig = "url" },
         fmta([[\url{<>}]], {

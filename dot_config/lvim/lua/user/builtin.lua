@@ -162,7 +162,7 @@ M.config = function()
     lvim.builtin.sniprun = { active = false }
 
     -- smooth_scroll
-    lvim.builtin.smooth_scroll = "" -- value can be  "neoscroll" . "cinnamon" or ""
+    lvim.builtin.smooth_scroll = "neoscroll" -- value can be  "neoscroll" . "cinnamon" or ""
     -- refactoring
     lvim.builtin.refactoring = { active = true }
     lvim.builtin.chatgpt = { active = true }

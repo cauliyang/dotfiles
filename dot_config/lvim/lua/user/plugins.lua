@@ -53,7 +53,9 @@ lvim.plugins = {
     -----------------------------
     --        operation        --
     -----------------------------
+
     { "machakann/vim-sandwich" },
+    -- { "echasnovski/mini.surround", version = false, config = true },
 
     -----------------------
     --        lsp        --
@@ -114,7 +116,7 @@ lvim.plugins = {
     {
         "simrat39/symbols-outline.nvim",
         keys = { -- Example mapping to toggle outline
-            { "ly", "<cmd>SymbolsOutline<CR>", desc = "Toggle outline" },
+            { "<leader>ly", "<cmd>SymbolsOutline<CR>", desc = "Toggle outline" },
         },
         config = function()
             require("user.symbols-outline").config()
@@ -127,7 +129,7 @@ lvim.plugins = {
         lazy = true,
         cmd = { "Outline", "OutlineOpen" },
         keys = { -- Example mapping to toggle outline
-            { "ly", "<cmd>Outline<CR>", desc = "Toggle outline" },
+            { "<leader>ly", "<cmd>Outline<CR>", desc = "Toggle outline" },
         },
         config = function()
             require("user.outline").config()
@@ -812,7 +814,7 @@ lvim.plugins = {
     },
 
     {
-        "norcalli/nvim-colorizer.lua",
+        "NvChad/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup()
         end,
