@@ -87,7 +87,7 @@
   "octo.nvim": { "branch": "master", "commit": "b5371003f209764c9d1cc43cf20b6dc52961f0e8" },
   "onedarker.nvim": { "branch": "freeze", "commit": "b00dd2189f264c5aeb4cf04c59439655ecd573ec" },
   "otter.nvim": { "branch": "main", "commit": "b4f4a1bcddfe91ed342c86c72e8d156780289552" },
-  "outline.nvim": { "branch": "main", "commit": "5669c8aa9ea6346ab491646a9a1e73d7f594e2f8" },
+  "outline.nvim": { "branch": "main", "commit": "8c6b11e4c27bca690bfde0c6ce35ba66a805dfa3" },
   "overseer.nvim": { "branch": "master", "commit": "78e893394cef6efee05f31bd65f6dff08b0bac09" },
   "persisted.nvim": { "branch": "main", "commit": "97bc6260fb85f3472d2f773dc6cc41f7d942a7a2" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
