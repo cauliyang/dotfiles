@@ -7,7 +7,6 @@ lvim.plugins = {
     -------------------------
     --        theme        --
     -------------------------
-
     {
         "EdenEast/nightfox.nvim",
         config = function()
@@ -299,7 +298,6 @@ lvim.plugins = {
             require("user.vim-translator").config()
         end,
     },
-
     {
         "micangl/cmp-vimtex",
         config = function()
