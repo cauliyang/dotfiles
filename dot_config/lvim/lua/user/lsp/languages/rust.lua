@@ -32,116 +32,91 @@ local function rdefault_capabilities()
     return capabilities
 end
 
-pcall(function()
-    require("rust-tools").setup({
+vim.g.rustaceanvim = {
+    tools = {
+        reload_workspace_from_cargo_toml = true,
 
-        tools = {
-            executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
-            reload_workspace_from_cargo_toml = true,
-
-            runnables = {
-                use_telescope = true,
-            },
-
-            inlay_hints = {
-                auto = false,
-                only_current_line = false,
-                show_parameter_hints = true,
-                parameter_hints_prefix = "<-",
-                other_hints_prefix = "=>",
-                max_len_align = false,
-                max_len_align_padding = 1,
-                right_align = false,
-                right_align_padding = 7,
-                highlight = "Comment",
-            },
-
-            hover_actions = {
-                auto_focus = true,
-            },
-
-            crate_graph = {
-                backend = "pdf",
-                output = "crate_graph.pdf",
-            },
-
-            on_initialized = function()
-                vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
-                    pattern = { "*.rs" },
-                    callback = function()
-                        local _, _ = pcall(vim.lsp.codelens.refresh)
-                    end,
-                })
-            end,
+        runnables = {
+            use_telescope = true,
         },
 
-        dap = {
-            adapter = codelldb_adapter,
+        hover_actions = {
+            auto_focus = true,
         },
 
-        server = {
+        crate_graph = {
+            backend = "pdf",
+            output = "crate_graph.pdf",
+        },
 
-            on_attach = function(client, bufnr)
-                require("lvim.lsp").common_on_attach(client, bufnr)
-                local rt = require("rust-tools")
-                vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-            end,
+        on_initialized = function()
+            vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
+                pattern = { "*.rs" },
+                callback = function()
+                    local _, _ = pcall(vim.lsp.codelens.refresh)
+                end,
+            })
+        end,
+    },
 
-            -- capabilities = require("lvim.lsp").common_capabilities(),
-            capabilities = rdefault_capabilities(),
-            offset_encoding = "utf-16",
+    dap = {
+        adapter = codelldb_adapter,
+    },
 
-            settings = {
-                ["rust-analyzer"] = {
-                    inlayHints = {
-                        locationLinks = true,
-                    },
-                    lens = {
-                        enable = true,
-                    },
-                    checkOnSave = {
-                        enable = true,
-                        command = "clippy",
-                    },
-                    procMacro = {
-                        enable = true,
-                    },
-                    cargo = {
-                        allFeatures = false,
-                    },
+    server = {
+        on_attach = require("lvim.lsp").common_on_attach,
+        -- capabilities = require("lvim.lsp").common_capabilities(),
+        capabilities = rdefault_capabilities(),
+        offset_encoding = "utf-16",
+
+        settings = {
+            ["rust-analyzer"] = {
+                inlayHints = {
+                    locationLinks = true,
+                },
+                lens = {
+                    enable = true,
+                },
+                checkOnSave = {
+                    enable = true,
+                    command = "clippy",
+                },
+                procMacro = {
+                    enable = true,
+                },
+                cargo = {
+                    allFeatures = false,
                 },
             },
         },
-    })
-end)
+    },
+}
 
--- CHANGED --
-lvim.builtin.dap.on_config_done = function(dap)
-    dap.adapters.codelldb = codelldb_adapter
-    dap.configurations.rust = {
-        {
-            name = "Launch file",
-            type = "codelldb",
-            request = "launch",
-            program = function()
-                return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-            end,
-            args = function()
-                local args = {}
-                local i = 1
-                while true do
-                    local arg = vim.fn.input("Argument [" .. i .. "]: ")
-                    if arg == "" then
-                        break
-                    end
-                    args[i] = arg
-                    i = i + 1
+-- -- CHANGED --
+local dap = require("dap")
+dap.adapters.codeleldb = codeleldb_adapter
+dap.configurations.rust = {
+    {
+        name = "Launch file",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        args = function()
+            local args = {}
+            local i = 1
+            while true do
+                local arg = vim.fn.input("Argument [" .. i .. "]: ")
+                if arg == "" then
+                    break
                 end
-                return args
-            end,
-            cwd = "${workspaceFolder}",
-
-            stopOnEntry = false,
-        },
-    }
-end
+                args[i] = arg
+                i = i + 1
+            end
+            return args
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+    },
+}

@@ -66,7 +66,15 @@ lvim.plugins = {
 
     -- rust
     { "rust-lang/rust.vim" },
-    { "simrat39/rust-tools.nvim" },
+
+    -- { "simrat39/rust-tools.nvim" },
+
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^3", -- Recommended
+        ft = { "rust" },
+    },
+
     {
         "saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
@@ -758,7 +766,6 @@ lvim.plugins = {
         config = function()
             require("nvim-dap-virtual-text").setup()
         end,
-        lazy = true,
     },
 
     -- Better hl
