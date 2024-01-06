@@ -3,8 +3,6 @@ require("user.builtin").config()
 
 require("user.neovim").config()
 
-require("user.neovide").config()
-
 -- load plugins
 reload("user.plugins")
 -- Cmp
@@ -38,3 +36,5 @@ reload("user.autocommand")
 reload("user.luasnip")
 
 require("user.dap").config()
+
+require("user.neovide").config()

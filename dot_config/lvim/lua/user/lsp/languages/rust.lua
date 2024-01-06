@@ -81,6 +81,9 @@ vim.g.rustaceanvim = {
                     enable = true,
                     command = "clippy",
                 },
+                diagnostics = {
+                    experimental = true,
+                },
                 procMacro = {
                     enable = true,
                 },
