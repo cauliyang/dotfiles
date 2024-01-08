@@ -1,9 +1,14 @@
 local M = {}
 M.kind = {
-    Class = "󰌗 ",
+    Array = " ",
+    Boolean = "󰨙 ",
+    Class = " ",
+    Codeium = "󰘦 ",
+    Collapsed = " ",
     Color = " ",
-    Constant = "󰏿 ",
+    Constant = "",
     Constructor = " ",
+    Control = " ",
     Default = " ",
     Enum = "󰕘",
     EnumMember = " ",
