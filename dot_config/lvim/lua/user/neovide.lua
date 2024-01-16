@@ -37,11 +37,11 @@ M.config = function()
             fira = "Fira Code:h13",
             firam = "Fira Mono:h13",
             monaspace_radon = "Monaspace Radon:h13",
-            monospace_argon = "Monospace Argon:h13",
-            monospace_xenon = "Monospace Xenon:h13",
+            monaspace_argon = "Monaspace Argon:h13",
+            monaspace_xenon = "Monaspace Xenon:h13",
         }
 
-        vim.o.guifont = fonts.ia
+        vim.o.guifont = fonts.monaspace_radon
         vim.opt.linespace = 0
 
         -- Helper function for transparency formatting

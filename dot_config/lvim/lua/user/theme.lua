@@ -103,12 +103,13 @@ M.rose_pine = function()
         ---@usage 'main'|'moon'
         variant = "main",
         dark_variant = "main",
-        bold_vert_split = false,
-        dim_nc_background = lvim.builtin.global_statusline,
-        disable_background = lvim.transparent_window,
-        disable_float_background = true,
-        disable_italics = false,
-        ---@usage string hex value or named color from rosepinetheme.com/palette
+        dim_inactive_windows = lvim.builtin.global_statusline,
+        extend_background_behind_borders = true,
+        styles = {
+            bold = true,
+            italic = true,
+            transparency = lvim.transparent_window,
+        },
         groups = {
             border = "highlight_med",
             comment = "muted",

@@ -403,7 +403,7 @@ lvim.plugins = {
     },
 
     {
-        url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        url = "https://github.com/cauliyang/lsp_lines.nvim",
         config = function()
             require("user.lsplines").config()
         end,
@@ -973,4 +973,32 @@ lvim.plugins = {
     },
 
     -- others
+
+    {
+        "johmsalas/text-case.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        -- Author's Note: If default keymappings fail to register (possible config issue in my local setup),
+        -- verify lazy loading functionality. On failure, disable lazy load and report issue
+        -- lazy = false,
+        config = function()
+            require("textcase").setup({})
+            require("telescope").load_extension("textcase")
+        end,
+        keys = {
+            { "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "v" }, desc = "Telescope" },
+        },
+    },
+
+    {
+        "HakonHarnes/img-clip.nvim",
+        event = "BufEnter",
+        opts = {
+            -- add options here
+            -- or leave it empty to use the default settings
+        },
+        keys = {
+            -- suggested keymap
+            { "gpI", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
+        },
+    },
 }
