@@ -15,7 +15,7 @@ if utils.is_windows() then
 				"liga",
 				"zero",
 				"ss01",
-				"-ss04",
+				"ss04",
 			},
 		}),
 	}
@@ -26,7 +26,7 @@ elseif utils.is_mac() then
 		font = utils.font_with_fallback({
 			-- family = "Cascadia Code",
 			-- https://github.com/githubnext/monaspace?tab=readme-ov-file
-			family = "Monaspace Argon",
+			family = "Monaspace Neon",
 			harfbuzz_features = {
 				"calt",
 				"liga",
