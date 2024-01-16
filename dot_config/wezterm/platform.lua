@@ -26,7 +26,7 @@ elseif utils.is_mac() then
 		font = utils.font_with_fallback({
 			-- family = "Cascadia Code",
 			-- https://github.com/githubnext/monaspace?tab=readme-ov-file
-			family = "Monaspace Neon",
+			family = "Monaspace Radon",
 			harfbuzz_features = {
 				"calt",
 				"liga",
