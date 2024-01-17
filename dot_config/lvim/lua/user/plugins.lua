@@ -920,6 +920,7 @@ lvim.plugins = {
         end,
         enabled = lvim.builtin.typst.active,
     },
+    -- typst
 
     {
         "2kabhishek/nerdy.nvim",
