@@ -403,7 +403,7 @@ lvim.plugins = {
     },
 
     {
-        url = "https://github.com/cauliyang/lsp_lines.nvim",
+        url = "https://github.com/abzcoding/lsp_lines.nvim",
         config = function()
             require("user.lsplines").config()
         end,

@@ -29,12 +29,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     end,
 })
 
--- -- firenvim
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---     pattern = "github.com_*.txt",
---     cmd = "set filetype=markdown",
--- })
-
 -- highlight zsh file
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "zsh",

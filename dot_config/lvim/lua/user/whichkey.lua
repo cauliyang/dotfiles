@@ -140,6 +140,7 @@ lvim.builtin.which_key.vmappings["s"] = {
 }
 
 lvim.builtin.which_key.mappings["lp"] = { { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle LSP Lines" } }
+
 lvim.builtin.which_key.mappings["lo"] =
     { { "<cmd>lua require('user.keys').toggle_inlay_hints()<cr>", icons.inlay .. "Toggle Inlay" } }
 
