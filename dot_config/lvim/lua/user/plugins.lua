@@ -520,19 +520,24 @@ lvim.plugins = {
     -- Telescope file browser
     {
         "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
         lazy = true,
     },
 
     -- Telescope plugins for lazy.nvim
-    { "tsakirist/telescope-lazy.nvim" },
+    { "tsakirist/telescope-lazy.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
 
     {
         "danielfalk/smart-open.nvim",
-        dependencies = { "kkharji/sqlite.lua" },
+        dependencies = {
+            "kkharji/sqlite.lua",
+            "nvim-telescope/telescope-fzy-native.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
         lazy = true,
     },
 
-    { "nvim-telescope/telescope-bibtex.nvim" },
+    { "nvim-telescope/telescope-bibtex.nvim", dependencies = { "nvim-telescope/telescope.nvim" } },
 
     -------------------------
     --        noice        --

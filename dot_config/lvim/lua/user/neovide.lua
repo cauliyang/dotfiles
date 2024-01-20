@@ -19,7 +19,7 @@ M.config = function()
 
         vim.g.neovide_cursor_vfx_mode = "ripple" -- pixiedust
         vim.g.neovide_cursor_vfx_particle_speed = 10.0
-
+        vim.g.neovide_window_blurred = 0.8
         vim.g.neovide_padding_top = 0
         vim.g.neovide_padding_bottom = 0
         vim.g.neovide_padding_right = 0
