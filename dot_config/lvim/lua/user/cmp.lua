@@ -25,6 +25,7 @@ M.kind = {
     Property = " ",
     Reference = "󰈇 ",
     Snippet = " ", -- ""," "," "
+    spell = "󰓆 ",
     Struct = "󰕮",
     Text = "󰉿 ",
     TypeParameter = " ",
@@ -39,14 +40,15 @@ M.config = function()
     lvim.builtin.cmp.sorting = {
         priority_weight = 2,
         comparators = {
-            cmp.config.compare.offset,
-            cmp.config.compare.exact,
-            cmp.config.compare.score,
-            cmp.config.compare.recently_used,
             cmp.config.compare.locality,
+            cmp.config.compare.recently_used,
+            require("clangd_extensions.cmp_scores"),
+            cmp.config.compare.score,
+            cmp.config.compare.offset,
+            cmp.config.compare.order,
+            cmp.config.compare.exact,
             cmp.config.compare.kind,
             cmp.config.compare.length,
-            cmp.config.compare.order,
         },
     }
     lvim.builtin.cmp.sources = {
