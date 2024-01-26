@@ -64,8 +64,6 @@ yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
-yabai -m rule --add app="^Slack$" sticky=off layer=above manage=on
-
 yabai -m signal --add label=space_changed event=space_changed \
 	action="$HOME/.config/yabai/save_recent_space.sh"
 
