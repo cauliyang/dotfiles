@@ -50,7 +50,7 @@ M.config = function()
         end
 
         vim.g.neovide_transparency = 0.5
-        vim.g.neovide_transparency_point = 0.85
+        vim.g.neovide_transparency_point = 0.7
         vim.g.neovide_background_color = "#0f1117" .. alpha()
 
         -- Add keybinds to change transparency
