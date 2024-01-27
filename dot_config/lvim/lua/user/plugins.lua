@@ -7,6 +7,7 @@ lvim.plugins = {
     -------------------------
     --        theme        --
     -------------------------
+
     {
         "EdenEast/nightfox.nvim",
         config = function()
