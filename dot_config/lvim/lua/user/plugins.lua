@@ -278,10 +278,10 @@ lvim.plugins = {
 
     {
         "lervag/vimtex",
-        config = function()
+        lazy = false,
+        init = function()
             require("user.vimtex").config()
         end,
-        lazy = false,
     },
 
     {
