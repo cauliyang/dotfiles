@@ -43,13 +43,10 @@ M.config = function()
             monaspace_xenon = "Monaspace Xenon:h13",
         }
 
-        vim.o.guifont = fonts.monaspace_radon
+        vim.o.guifont = fonts.monaspace_argon
         vim.opt.linespace = 0
 
-        vim.g.neovide_transparency = 0.5
-
-        -- vim.g.neovide_transparency_point = 0.7
-        -- vim.g.neovide_background_color = "#0f1117" .. alpha()
+        vim.g.neovide_transparency = 0.8
 
         local change_scale_factor = function(delta)
             vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
