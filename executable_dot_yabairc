@@ -53,7 +53,7 @@ app_titles+="|QuickTime Player|Stickies)"
 yabai -m rule --add title="${app_titles}" manage=off
 
 app_names="^(Calculator|Authy Desktop|Postgres|VLC|System Preferences|IINA|GifCapture|Pomotroid"
-app_names+="|iMazing HEIC Converter|AppCleaner|Stickies|1Password 7|VeraCrypt|zoom.us"
+app_names+="|iMazing HEIC Converter|AppCleaner|Stickies|1Password 7|VeraCrypt|zoom.us|Spotify"
 app_names+="|Tunnelblick|WireGuard|Logi Options|JetBrains Toolbox|LX Music"
 app_names+="|Inkscape Settings|Alfred|System Settings|System Preferences|System Information|Activity Monitor"
 app_names+="|Logi Options\+|JetBrains Gateway|SteelSeries GG Client)$"
