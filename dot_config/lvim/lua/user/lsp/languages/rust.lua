@@ -91,6 +91,13 @@ vim.g.rustaceanvim = {
                 },
                 procMacro = {
                     enable = true,
+                    ignored = {
+                        leptos_macro = {
+                            -- optional: --
+                            "component",
+                            "server",
+                        },
+                    },
                 },
                 cargo = {
                     allFeatures = false,
