@@ -13,6 +13,7 @@ linter.setup({
 })
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "ltex", "marksman" })
+require("lspconfig").marksman.setup({})
 
 require("lspconfig").ltex.setup({
     on_init = require("lvim.lsp").common_on_init,
@@ -38,5 +39,3 @@ require("lspconfig").ltex.setup({
         },
     },
 })
-
-require("lspconfig").marksman.setup({})
