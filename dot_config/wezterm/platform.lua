@@ -21,8 +21,8 @@ if utils.is_windows() then
 	}
 elseif utils.is_mac() then
 	M.config = {
-		window_background_opacity = 0.95,
-		macos_window_background_blur = 10,
+		window_background_opacity = 0.8,
+		macos_window_background_blur = 40,
 		font = utils.font_with_fallback({
 			family = "Cascadia Code",
 			-- https://github.com/githubnext/monaspace?tab=readme-ov-file
@@ -43,34 +43,34 @@ elseif utils.is_mac() then
 				"dlig",
 			},
 		}),
-		font_rules = {
-			{
-				intensity = "Bold",
-				italic = true,
-				font = wezterm.font({
-					family = "Victor Mono",
-					weight = "Bold",
-					style = "Italic",
-				}),
-			},
-			{
-				italic = true,
-				intensity = "Half",
-				font = wezterm.font({
-					family = "Victor Mono",
-					weight = "DemiBold",
-					style = "Italic",
-				}),
-			},
-			{
-				italic = true,
-				intensity = "Normal",
-				font = wezterm.font({
-					family = "Victor Mono",
-					style = "Italic",
-				}),
-			},
-		},
+		-- font_rules = {
+		-- 	{
+		-- 		intensity = "Bold",
+		-- 		italic = true,
+		-- 		font = wezterm.font({
+		-- 			family = "Victor Mono",
+		-- 			weight = "Bold",
+		-- 			style = "Italic",
+		-- 		}),
+		-- 	},
+		-- 	{
+		-- 		italic = true,
+		-- 		intensity = "Half",
+		-- 		font = wezterm.font({
+		-- 			family = "Victor Mono",
+		-- 			weight = "DemiBold",
+		-- 			style = "Italic",
+		-- 		}),
+		-- 	},
+		-- 	{
+		-- 		italic = true,
+		-- 		intensity = "Normal",
+		-- 		font = wezterm.font({
+		-- 			family = "Victor Mono",
+		-- 			style = "Italic",
+		-- 		}),
+		-- 	},
+		-- },
 	}
 else
 	M.config = {
