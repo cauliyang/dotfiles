@@ -938,15 +938,6 @@ lvim.plugins = {
     },
 
     {
-        "echasnovski/mini.align",
-        event = "VeryLazy",
-        version = false,
-        config = function()
-            require("mini.align").setup()
-        end,
-    },
-
-    {
         "Wansmer/symbol-usage.nvim",
         event = "LspAttach", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
         config = function()
@@ -999,13 +990,38 @@ lvim.plugins = {
     {
         "HakonHarnes/img-clip.nvim",
         event = "BufEnter",
-        opts = {
-            -- add options here
-            -- or leave it empty to use the default settings
-        },
         keys = {
             -- suggested keymap
             { "gpI", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
+        },
+    },
+
+    {
+        "echasnovski/mini.align",
+        event = "VeryLazy",
+        version = false,
+        config = function()
+            require("mini.align").setup()
+        end,
+        enabled = false,
+    },
+
+    {
+        "gsuuon/model.nvim",
+        -- Don't need these if lazy = false
+        cmd = { "M", "Model", "Mchat" },
+        init = function()
+            vim.filetype.add({
+                extension = {
+                    mchat = "mchat",
+                },
+            })
+        end,
+        ft = "mchat",
+        keys = {
+            -- {'<C-m>d', ':Mdelete<cr>', mode = 'n'},
+            -- {'<C-m>s', ':Mselect<cr>', mode = 'n'},
+            -- {'<C-m><space>', ':Mchat<cr>', mode = 'n' }
         },
     },
 }

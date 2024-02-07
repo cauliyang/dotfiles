@@ -43,7 +43,7 @@ M.config = function()
             monaspace_xenon = "Monaspace Xenon:h13",
         }
 
-        vim.o.guifont = fonts.monaspace_argon
+        vim.o.guifont = fonts.cascadia
         vim.opt.linespace = 0
 
         vim.g.neovide_transparency = 0.8
