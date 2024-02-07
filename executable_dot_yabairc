@@ -67,6 +67,7 @@ yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Selec
 yabai -m signal --add label=space_changed event=space_changed \
 	action="$HOME/.config/yabai/save_recent_space.sh"
 
-borders width=6.0 active_color=0xff00ff00 2>/dev/null 1>&2 &
+# borders width=6.0 active_color=0xff00ff00 2>/dev/null 1>&2 &
+borders width=6.0 active_color=0xffe1e3e4 inactive_color=0xff494d64 2>/dev/null 1>&2 &
 
 echo "yabai configuration loaded.."
