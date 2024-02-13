@@ -88,7 +88,7 @@
   "onedarker.nvim": { "branch": "freeze", "commit": "b00dd2189f264c5aeb4cf04c59439655ecd573ec" },
   "otter.nvim": { "branch": "main", "commit": "05cc5ee31fb20e3dd5b4a3a150b0aabf20c86826" },
   "outline.nvim": { "branch": "main", "commit": "a8d40aecb799196303ff3521c0e31c87bba57198" },
-  "overseer.nvim": { "branch": "master", "commit": "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0" },
+  "overseer.nvim": { "branch": "master", "commit": "792aeb6d834a11585ea5d667e3e3f05bc6aa4ecc" },
   "persisted.nvim": { "branch": "main", "commit": "edd8aa41cd87f9da1b6ef0c584068dea192f65b7" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
