@@ -32,6 +32,7 @@ local default_diagnostic_config = {
         },
     },
     virtual_text = false,
+    update_in_insert = true,
     underline = true,
     severity_sort = true,
     float = {
@@ -59,7 +60,7 @@ lvim.lsp.document_highlight = true
 lvim.lsp.code_lens_refresh = true
 
 -- LSP lines
-vim.diagnostic.config({ virtual_lines = false })
+vim.diagnostic.config({ virtual_lines = false, update_in_insert = true })
 
 -- Setup diagnostics
 if lvim.builtin.lsplines then

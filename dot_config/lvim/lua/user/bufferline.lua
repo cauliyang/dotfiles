@@ -156,18 +156,9 @@ M.config = function()
         truncate_names = true, -- whether or not tab names should be truncated
         tab_size = 18,
         color_icons = true,
-        diagnostics_update_in_insert = false,
+        diagnostics_update_in_insert = true,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
-
-        -- custom_areas = {
-        --     right = function()
-        --         return {
-        --             { text = "%@TbToggle_theme@ " .. icons.magic .. " %X" },
-        --             { text = "%@Quit_vim@" .. icons.exit2 .. " %X", fg = "#f7768e" },
-        --         }
-        --     end,
-        -- },
     }
 end
 
