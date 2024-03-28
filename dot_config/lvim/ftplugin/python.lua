@@ -18,8 +18,8 @@ local mappings = {
         t = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" },
         T = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" },
         d = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
-        e = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Pick env" },
-        E = { "<cmd>lua require('swenv.api').get_current_venv()<cr>", "Show env" },
+        e = { "<cmd>VenvSelect<cr>", "Pick env" },
+        E = { "<cmd>VenvSelectCached<cr>", "Show env" },
     },
 }
 

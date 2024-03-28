@@ -6,7 +6,6 @@ M.config = function()
     vim.g.maplocalleader = "\\"
     vim.g.vimtex_imaps_enabled = 1
     vim.g.vimtex_view_method = "skim"
-
     -- vim.g.vimtex_view_method = "sioyek"
     -- vim.g.vimtex_callback_progpath = "/Users/ylk4626/.local/bin/lvim"
 
