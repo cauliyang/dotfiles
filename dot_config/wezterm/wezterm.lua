@@ -12,7 +12,6 @@ end)
 local config = {
 	check_for_updates = true,
 	automatically_reload_config = true,
-
 	bidi_enabled = true,
 	bidi_direction = "AutoLeftToRight",
 
