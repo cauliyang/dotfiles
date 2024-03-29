@@ -24,9 +24,10 @@ elseif utils.is_mac() then
 		window_background_opacity = 0.80,
 		macos_window_background_blur = 60,
 		font = utils.font_with_fallback({
-			family = "Cascadia Code",
+			-- family = "Cascadia Code",
 			--https://monaspace.githubnext.com/
-			-- family = "Monaspace Radon",
+			family = "Monaspace Argon",
+			weight = "Medium",
 			harfbuzz_features = {
 				"calt",
 				"liga",
