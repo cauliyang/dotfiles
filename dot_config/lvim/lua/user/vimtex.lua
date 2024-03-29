@@ -6,7 +6,6 @@ M.config = function()
     vim.g.maplocalleader = "\\"
     vim.g.vimtex_imaps_enabled = 1
     vim.g.vimtex_view_method = "skim"
-    -- vim.g.vimtex_view_method = "sioyek"
     -- vim.g.vimtex_callback_progpath = "/Users/ylk4626/.local/bin/lvim"
 
     -- " Disable some compilation warning messages
@@ -22,6 +21,17 @@ M.config = function()
     }
 
     vim.g.vimtex_quickfix_open_on_warning = 0
+
+    vim.g.vimtex_compiler_method = "latexmk"
+
+    vim.g.vimtex_compiler_tectonic = {
+        options = {
+            "--keep-logs",
+            "--synctex",
+            "-Z search-path=/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex",
+            "-Z shell-escape",
+        },
+    }
 
     vim.g.vimtex_compiler_latexmk = {
         callback = 1,

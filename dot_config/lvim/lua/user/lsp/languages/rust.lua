@@ -77,10 +77,20 @@ vim.g.rustaceanvim = {
         settings = {
             ["rust-analyzer"] = {
                 inlayHints = {
+                    enable = true,
+                    typeHints = true,
+                    parameterHints = true,
                     locationLinks = true,
+                },
+                callInfo = {
+                    full = true,
                 },
                 lens = {
                     enable = true,
+                    references = true,
+                    implementations = true,
+                    enumVariantReferences = true,
+                    methodReferences = true,
                 },
                 checkOnSave = {
                     enable = true,
@@ -101,6 +111,10 @@ vim.g.rustaceanvim = {
                 },
                 cargo = {
                     allFeatures = false,
+                    autoreload = true,
+                    buildScripts = {
+                        enable = true,
+                    },
                 },
             },
         },

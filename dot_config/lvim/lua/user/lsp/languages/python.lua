@@ -4,6 +4,7 @@ local lsp_manager = require("lvim.lsp.manager")
 
 lsp_manager.setup("pyright", {
     on_init = require("lvim.lsp").common_on_init,
+    on_attach = require("lvim.lsp").common_on_attach,
     capabilities = require("lvim.lsp").common_capabilities(),
     settings = {
         pyright = {
