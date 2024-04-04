@@ -713,8 +713,10 @@ lvim.plugins = {
         "andrewferrier/debugprint.nvim",
         config = function()
             require("debugprint").setup({
-                -- create_keymaps = true,
-                -- create_commands = true,
+                commands = {
+                    toggle_comment_debug_prints = "ToggleCommentDebugPrints",
+                    delete_debug_prints = "DeleteDebugPrints",
+                },
                 move_to_debugline = true,
                 display_snippet = true,
                 display_counter = true,
