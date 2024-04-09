@@ -789,12 +789,6 @@ lvim.plugins = {
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
 
-    -- {
-    --     "AckslD/swenv.nvim",
-    --     config = function()
-    --         require("swenv").setup()
-    --     end,
-    -- },
     {
         "linux-cultist/venv-selector.nvim",
         dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },

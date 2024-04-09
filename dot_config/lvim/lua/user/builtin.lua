@@ -170,6 +170,8 @@ M.config = function()
     lvim.builtin.typst = { active = true }
     lvim.builtin.symbol_usage = { active = true }
 
+    lvim.builtin.gitsigns.opts.yadm = nil
+
     lvim.builtin.breadcrumbs_provider = "incline" -- 'dropbar'
     if lvim.builtin.breadcrumbs_provider == "none" then
         lvim.builtin.breadcrumbs.active = true
