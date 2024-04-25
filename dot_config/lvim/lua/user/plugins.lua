@@ -3,10 +3,17 @@ local themes = require("user.builtin").themes
 local get_theme = require("user.builtin").get_theme
 
 lvim.plugins = {
-
     -------------------------
     --        theme        --
     -------------------------
+    {
+        "eldritch-theme/eldritch.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = true,
+        },
+    },
 
     {
         "EdenEast/nightfox.nvim",
@@ -53,7 +60,6 @@ lvim.plugins = {
     -----------------------------
     --        operation        --
     -----------------------------
-
     { "machakann/vim-sandwich" },
     -- { "echasnovski/mini.surround", version = false, config = true },
 
@@ -67,8 +73,6 @@ lvim.plugins = {
 
     -- rust
     { "rust-lang/rust.vim" },
-
-    -- { "simrat39/rust-tools.nvim" },
 
     {
         "mrcjkb/rustaceanvim",
