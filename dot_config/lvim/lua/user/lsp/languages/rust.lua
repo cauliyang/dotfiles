@@ -64,12 +64,7 @@ vim.g.rustaceanvim = {
     },
 
     server = {
-        on_attach = function(client, bufnr)
-            if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint.enable()
-            end
-            require("lvim.lsp").common_on_attach(client, bufnr)
-        end,
+        on_attach = require("lvim.lsp").common_on_attach,
         -- capabilities = require("lvim.lsp").common_capabilities(),
         capabilities = rdefault_capabilities(),
         offset_encoding = "utf-16",

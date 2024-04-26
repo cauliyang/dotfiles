@@ -7,15 +7,6 @@ lvim.plugins = {
     --        theme        --
     -------------------------
     {
-        "eldritch-theme/eldritch.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {
-            transparent = true,
-        },
-    },
-
-    {
         "EdenEast/nightfox.nvim",
         config = function()
             require("user.theme").nightfox()
@@ -76,7 +67,6 @@ lvim.plugins = {
 
     {
         "mrcjkb/rustaceanvim",
-        version = "^3", -- Recommended
         ft = { "rust" },
     },
 
@@ -125,16 +115,6 @@ lvim.plugins = {
     },
 
     -- show symbols-outline
-    {
-        "simrat39/symbols-outline.nvim",
-        keys = { -- Example mapping to toggle outline
-            { "<leader>ly", "<cmd>SymbolsOutline<CR>", desc = "Toggle outline" },
-        },
-        config = function()
-            require("user.symbols-outline").config()
-        end,
-        enabled = lvim.builtin.tag_provider == "symbols-outline",
-    },
 
     {
         "hedyhli/outline.nvim",
@@ -146,7 +126,6 @@ lvim.plugins = {
         config = function()
             require("user.outline").config()
         end,
-        enabled = lvim.builtin.tag_provider == "outline",
     },
 
     -- show lsp progress
