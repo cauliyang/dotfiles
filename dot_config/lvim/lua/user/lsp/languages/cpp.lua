@@ -29,7 +29,7 @@ local custom_on_attach = function(client, bufnr)
     require("lvim.lsp").common_on_attach(client, bufnr)
     require("clangd_extensions.inlay_hints").setup_autocmd()
     if client.server_capabilities.inlayHintProvider then
-        vim.lsp.inlay_hint.enable()
+        vim.lsp.inlay_hint.enable(true)
     end
 end
 

@@ -69,7 +69,7 @@ vim.g.rustaceanvim = {
         capabilities = rdefault_capabilities(),
         offset_encoding = "utf-16",
 
-        settings = {
+        default_settings = {
             ["rust-analyzer"] = {
                 inlayHints = {
                     enable = true,

@@ -59,21 +59,17 @@ M.config = function()
         { name = "nvim_lua", group_index = 1 },
         { name = "buffer", group_index = 1, max_item_count = 5, keyword_length = 3 },
         { name = "path", group_index = 1 },
-        { name = "dictionary", group_index = 1, keyword_length = 2 },
         { name = "git", group_index = 1 },
         { name = "latex_symbols", group_index = 1 },
         { name = "cmp_zotcite", group_index = 1 },
         { name = "crates", group_index = 1 },
         { name = "emoji", group_index = 1 },
         { name = "otter", group_index = 1 },
-        -- { name = "omni", group_index = 1 },
         { name = "vimtex", group_index = 1 },
     }
 
     lvim.builtin.cmp.experimental = {
-        ghost_text = false,
-        native_menu = false,
-        custom_menu = true,
+        ghost_text = true,
     }
 
     local cmp_border = {
@@ -94,7 +90,6 @@ M.config = function()
         vimtex = "(Vimtex)",
         nvim_lua = "(NvLua)",
         copilot = "(Copilot)",
-        dictionary = "(Dict)",
     }
 
     if lvim.builtin.borderless_cmp then
@@ -188,7 +183,6 @@ M.config = function()
             { name = "git", group_index = 1 },
             { name = "path", group_index = 1 },
             { name = "buffer", group_index = 1 },
-            { name = "dictionary", group_index = 1 },
             { name = "luasnip", group_index = 1, max_item_count = 5, keyword_length = 3 },
             { name = "emoji", group_index = 2 },
         }),
@@ -200,7 +194,6 @@ M.config = function()
             { name = "luasnip", group_index = 1, max_item_count = 5, keyword_length = 3 },
             { name = "otter", group_index = 1 },
             { name = "path", group_index = 1 },
-            { name = "dictionary", group_index = 1 },
             { name = "buffer", group_index = 1 },
             { name = "emoji", group_index = 2 },
         }),
@@ -215,7 +208,6 @@ M.config = function()
             { name = "luasnip", max_item_count = 5 },
             { name = "buffer", max_item_count = 5, keyword_length = 5 },
             { name = "copilot", max_item_count = 3 },
-            { name = "dictionary", group_index = 1, keyword_length = 2 },
             { name = "emoji", group_index = 2 },
         }),
     })

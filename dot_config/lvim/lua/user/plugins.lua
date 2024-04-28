@@ -67,7 +67,7 @@ lvim.plugins = {
 
     {
         "mrcjkb/rustaceanvim",
-        ft = { "rust" },
+        lazy = false,
     },
 
     {
@@ -303,23 +303,6 @@ lvim.plugins = {
 
     -- Cmp for emojis..
     { "hrsh7th/cmp-emoji" },
-
-    -- cmp_dictionay
-    -- https://github.com/uga-rosa/cmp-dictionary/wiki/Examples-of-usage
-    {
-        "uga-rosa/cmp-dictionary",
-        config = function()
-            require("cmp_dictionary").setup({
-                dic = {
-                    ["tex"] = "/Users/ylk4626/.config/dict/en.dict",
-                    ["markdown"] = "/Users/ylk4626/.config/dict/en.dict",
-                    ["rst"] = "/Users/ylk4626/.config/dict/en.dict",
-                    ["*"] = {},
-                },
-            })
-        end,
-        lazy = true,
-    },
 
     -- Cmp for github/gitlab issues
     {
