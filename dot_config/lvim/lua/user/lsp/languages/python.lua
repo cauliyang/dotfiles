@@ -1,24 +1,13 @@
+
 -- set lsp
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "ruff_lsp" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "ruff_lsp", "basedpyright" })
 local lsp_manager = require("lvim.lsp.manager")
 
-lsp_manager.setup("pyright", {
+lsp_manager.setup("basedpyright", {
     on_init = require("lvim.lsp").common_on_init,
     on_attach = require("lvim.lsp").common_on_attach,
     capabilities = require("lvim.lsp").common_capabilities(),
-    settings = {
-        pyright = {
-            disableLanguageServices = false,
-            disableOrganizeImports = false,
-        },
-        python = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "workspace",
-                useLibraryCodeForTypes = true,
-            },
-        },
-    },
+    settings = {},
     single_file_support = true,
     filetypes = { "python" },
 })

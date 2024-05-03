@@ -84,12 +84,29 @@ vim.api.nvim_clear_autocmds({ pattern = "*", group = "nvim_swapfile" })
 -- Custom group.
 vim.api.nvim_create_augroup("_lvim_user", {})
 
+-- Prevent entering buffers in insert mode.
+vim.api.nvim_create_autocmd("WinLeave", {
+    group = "_lvim_user",
+    desc = "Prevent entering buffers in insert mode.",
+    callback = function()
+        if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
+        end
+    end,
+})
+
 -- Codelense viewer
+vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
+    group = "_lvim_user",
+    pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.py", "*.pyi", "*.java" },
+    desc = "Refresh codelens",
+    callback = vim.lsp.codelens.refresh,
+})
 vim.api.nvim_create_autocmd("CursorHold", {
     group = "_lvim_user",
-    pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.kt", "*.py", "*.pyi", "*.java" },
-    desc = "Enable and refresh codelens",
-    command = "lua require('user.codelens').show_line_sign()",
+    pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.py", "*.pyi", "*.java" },
+    desc = "Show codelens indicator",
+    callback = require("user.codelens").show_line_sign,
 })
 
 -- Terminal
@@ -97,7 +114,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     group = "_lvim_user",
     pattern = "term://*",
     desc = "Set terminal keymappings",
-    command = "lua require('user.keys').terminal_keys()",
+    callback = require("user.keys").terminal_keys,
 })
 
 vim.api.nvim_create_autocmd("BufWinEnter", {

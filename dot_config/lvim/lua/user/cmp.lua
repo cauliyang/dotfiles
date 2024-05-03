@@ -69,7 +69,7 @@ M.config = function()
     }
 
     lvim.builtin.cmp.experimental = {
-        ghost_text = true,
+        ghost_text = false,
     }
 
     local cmp_border = {
