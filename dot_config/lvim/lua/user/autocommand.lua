@@ -12,8 +12,6 @@ vim.api.nvim_create_autocmd({ "UIEnter" }, {
     end,
 })
 
--- -- firenvim
-
 -- www.overleaf.com_project-64332fa11174832565817f1c_d-editor-DIV-2-DIV-1-DIV-2-DIV-2_2023-04-10T02-43-21-511Z.txt
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "www.overleaf.com_*.txt",

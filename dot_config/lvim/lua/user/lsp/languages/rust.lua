@@ -49,14 +49,14 @@ vim.g.rustaceanvim = {
             output = "crate_graph.pdf",
         },
 
-        on_initialized = function()
-            vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
-                pattern = { "*.rs" },
-                callback = function()
-                    local _, _ = pcall(vim.lsp.codelens.refresh)
-                end,
-            })
-        end,
+        -- on_initialized = function()
+        --     vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
+        --         pattern = { "*.rs" },
+        --         callback = function()
+        --             local _, _ = pcall(vim.lsp.codelens.refresh)
+        --         end,
+        --     })
+        -- end,
     },
 
     dap = {
@@ -65,15 +65,15 @@ vim.g.rustaceanvim = {
 
     server = {
         on_attach = function(client, bufnr)
-            -- if client.server_capabilities.inlayHintProvider then
-            --     vim.lsp.inlay_hint.enable()
-            -- end
+            if client.server_capabilities.inlayHintProvider then
+                vim.lsp.inlay_hint.enable(true)
+            end
             require("lvim.lsp").common_on_attach(client, bufnr)
         end,
-        -- capabilities = require("lvim.lsp").common_capabilities(),
-        capabilities = rdefault_capabilities(),
-        offset_encoding = "utf-16",
-
+        on_init = require("lvim.lsp").common_on_init,
+        capabilities = require("lvim.lsp").common_capabilities(),
+        -- capabilities = rdefault_capabilities(),
+        -- offset_encoding = "utf-16",
         default_settings = {
             ["rust-analyzer"] = {
                 inlayHints = {

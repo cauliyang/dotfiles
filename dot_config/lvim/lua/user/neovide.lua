@@ -4,7 +4,7 @@ M.config = function()
     if vim.g.neovide then
         vim.g.neovide_scale_factor = 1.0
         vim.g.neovide_hide_mouse_when_typing = true
-        vim.g.neovide_input_macos_alt_is_meta = true
+        vim.g.neovide_input_macos_option_key_is_meta = true
         vim.g.neovide_hide_mouse_when_typing = true
         vim.g.neovide_refresh_rate = 60
         vim.g.neovide_refresh_rate_idle = 5
