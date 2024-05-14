@@ -93,13 +93,24 @@ vim.api.nvim_create_autocmd("WinLeave", {
     end,
 })
 
--- Codelense viewer
-vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
-    group = "_lvim_user",
-    pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.py", "*.pyi", "*.java" },
-    desc = "Refresh codelens",
-    callback = vim.lsp.codelens.refresh,
-})
+-- -- Codelense viewer
+-- vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
+--     group = "_lvim_user",
+--     pattern = {
+--         "*.rs",
+--         "*.c",
+--         "*.cpp",
+--         "*.go",
+--         "*.ts",
+--         "*.tsx",
+--         -- "*.py",
+--         -- "*.pyi",
+--         "*.java",
+--     },
+--     desc = "Refresh codelens",
+--     callback = vim.lsp.codelens.refresh,
+-- })
+
 vim.api.nvim_create_autocmd("CursorHold", {
     group = "_lvim_user",
     pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.py", "*.pyi", "*.java" },

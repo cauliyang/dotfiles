@@ -494,7 +494,6 @@ M.config = function()
 
     lvim.builtin.telescope.on_config_done = function(telescope)
         telescope.load_extension("luasnip")
-        -- telescope.load_extension("zoxide")
         telescope.load_extension("repo")
         telescope.load_extension("file_browser")
         telescope.load_extension("persisted")
