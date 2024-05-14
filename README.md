@@ -6,12 +6,12 @@ If you are a tech enthusiast, a programmer, or simply interested in setting up y
 | Module Type           | Module Name  |
 | --------------------- | ------------ |
 | Shell                 | [fish-shell] |
-| Prompt Theme          | [Tide]       |
+| Prompt Theme          | [starship]   |
 | Window Manager        | [Yabai]      |
 | Status Bar            | [SketchyBar] |
-| System Info           | [neofecth]   |
+| System Info           | [fastfecth]   |
 | Terminal              | [Wezterm]    |
-| File Manager          | [ranger]     |
+| File Manager          | [yazi]     |
 | Text Editor           | [Neovim]     |
 | Configuration Manager | [chezmoi]    |
 
@@ -79,9 +79,9 @@ For any questions or suggestions, please feel free to contact me at:
 [sketchybar]: https://github.com/FelixKratz/SketchyBar
 [yabai]: https://github.com/koekeishiya/yabai
 [fish-shell]: https://github.com/fish-shell/fish-shell
-[Tide]: https://github.com/IlanCosman/tide
-[neofecth]: https://github.com/dylanaraps/neofetch
+[starship]: https://github.com/starship/starship
+[fastfecth]: https://github.com/fastfetch-cli/fastfetch
 [wezterm]: https://wezfurlong.org/wezterm
-[ranger]: https://github.com/ranger/ranger
+[yazi]: https://github.com/dtolnay-contrib/yazi
 [neovim]: https://github.com/neovim/neovim
 [chezmoi]: https://www.chezmoi.io
