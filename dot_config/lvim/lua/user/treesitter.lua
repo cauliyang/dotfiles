@@ -6,7 +6,7 @@ M.config = function()
     lvim.builtin.treesitter.highlight.enabled = true
     lvim.builtin.treesitter.context_commentstring.enable = true
 
-    local languages = vim.tbl_flatten({
+    local languages = vim.iter({
         { "bash", "c", "c_sharp", "cmake", "comment", "cpp", "css", "d", "dart" },
         { "dockerfile", "elixir", "elm", "erlang", "fennel", "fish", "go", "gomod" },
         { "gomod", "graphql", "hcl", "vimdoc", "html", "java", "javascript", "jsdoc" },
@@ -25,6 +25,8 @@ M.config = function()
         { "teal", "toml", "tsx", "typescript", "vim", "vue", "yaml", "zig" },
         { "markdown_inline", "gitcommit" },
     })
+        :flatten()
+        :totable()
 
     lvim.builtin.treesitter.ensure_installed = languages
     lvim.builtin.treesitter.ignore_install = { "haskell" }

@@ -4,7 +4,7 @@ M.config = function()
     if vim.g.neovide then
         vim.g.neovide_scale_factor = 1.0
         vim.g.neovide_hide_mouse_when_typing = true
-        vim.g.neovide_input_macos_option_key_is_meta = true
+        vim.g.neovide_input_macos_option_key_is_meta = "both"
         vim.g.neovide_hide_mouse_when_typing = true
         vim.g.neovide_refresh_rate = 60
         vim.g.neovide_refresh_rate_idle = 5
@@ -23,6 +23,8 @@ M.config = function()
         vim.g.neovide_padding_bottom = 0
         vim.g.neovide_padding_right = 0
         vim.g.neovide_padding_left = 0
+
+        vim.g.neovide_floating_shadow = false
 
         -- only macos
         vim.g.neovide_window_blurred = true
@@ -46,7 +48,7 @@ M.config = function()
         vim.o.guifont = fonts.cascadia
         vim.opt.linespace = 0
 
-        vim.g.neovide_transparency = 0.8
+        vim.g.neovide_transparency = 0.4
 
         local change_scale_factor = function(delta)
             vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta

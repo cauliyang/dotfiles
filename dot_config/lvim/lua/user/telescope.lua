@@ -87,7 +87,7 @@ function M._multiopen(prompt_bufnr, open_cmd)
     local picker = action_state.get_current_picker(prompt_bufnr)
 
     -- refactor to  new cdoe
-    local num_selections = table.getn(picker:get_multi_selection())
+    local num_selections = #picker:get_multi_selection()
 
     local border_contents = picker.prompt_border.contents[1]
     if

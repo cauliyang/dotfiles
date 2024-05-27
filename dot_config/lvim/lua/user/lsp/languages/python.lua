@@ -1,5 +1,5 @@
 -- set lsp
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "ruff_lsp", "basedpyright" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "ruff_lsp", "basedpyright", "ruff" })
 local lsp_manager = require("lvim.lsp.manager")
 
 lsp_manager.setup("basedpyright", {

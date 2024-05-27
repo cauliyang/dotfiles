@@ -32,7 +32,15 @@ local file_exists = function(dir, file_pattern)
 end
 
 M.python = function()
-    local conda_python = os.getenv("CONDA_PREFIX") .. "/bin/python"
+    local conda_prefix = os.getenv("CONDA_PREFIX")
+    if conda_prefix then
+        local conda_python = conda_prefix .. "/bin/python"
+    -- Use conda_python variable in your code
+    else
+        -- Handle the case where CONDA_PREFIX environment variable is not set
+        print("CONDA_PREFIX environment variable is not set")
+    end
+
     require("dap-python").setup(conda_python)
 
     dap.configurations.python = dap.configurations.python or {}
@@ -44,7 +52,7 @@ M.python = function()
         python = function() end,
         pythonPath = function()
             local path
-            for _, server in pairs(vim.lsp.buf_get_clients()) do
+            for _, server in pairs(vim.lsp.get_clients()) do
                 if server.name == "pyright" or server.name == "pylance" then
                     path = vim.tbl_get(server, "config", "settings", "python", "pythonPath")
                     break

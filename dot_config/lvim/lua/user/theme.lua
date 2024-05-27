@@ -536,7 +536,7 @@ M.hi_colors = function()
         red = { group = "diffRemoved", property = "foreground" },
     }
     local function get_hl_by_name(name)
-        local ret = vim.api.nvim_get_hl_by_name(name.group, true)
+        local ret = vim.api.nvim_get_hl(0, { name = name.group })
         return string.format("#%06x", ret[name.property])
     end
 
@@ -621,6 +621,12 @@ M.telescope_theme = function(colorset)
         set_fg_bg("FzfLuaScrollBorderFull", hi_colors.bg, hi_colors.bg)
         set_fg_bg("FzfLuaHelpNormal", hi_colors.bg_alt, hi_colors.bg)
     end
+
+    local bg = vim.api.nvim_get_hl(0, { name = "StatusLine" }).bg
+    local hl = vim.api.nvim_get_hl(0, { name = "Folded" })
+    hl.bg = bg
+    vim.api.nvim_set_hl(0, "Folded", { fg = hl.fg, bg = hl.bg })
+    vim.opt.foldtext = [[luaeval('HighlightedFoldtext')()]]
 
     if lvim.builtin.symbol_usage.active then
         local function h(name)
