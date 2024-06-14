@@ -21,12 +21,13 @@ if utils.is_windows() then
 	}
 elseif utils.is_mac() then
 	M.config = {
-		window_background_opacity = 0.80,
-		macos_window_background_blur = 60,
+		window_background_opacity = 0.70,
+		macos_window_background_blur = 30,
 		font = utils.font_with_fallback({
 			family = "Cascadia Code",
-			--https://monaspace.githubnext.com/
-			-- family = "Monaspace Argon",
+			-- family = "JetBrains Mono",
+			-- https://monaspace.githubnext.com/
+			-- family = "Monaspace Neon",
 			-- weight = "Medium",
 			harfbuzz_features = {
 				"calt",
@@ -40,6 +41,8 @@ elseif utils.is_mac() then
 				"ss06",
 				"ss07",
 				"ss08",
+				"ss19",
+				"ss20",
 				"onum",
 				"dlig",
 			},
