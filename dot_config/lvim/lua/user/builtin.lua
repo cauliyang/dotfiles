@@ -121,7 +121,7 @@ M.config = function()
     -- test runner
     lvim.builtin.test_runner = ""
     -- task runner
-    lvim.builtin.task_runner = "overseer" -- overseer
+    lvim.builtin.task_runner = "" -- overseer
     -- tree provider
     lvim.builtin.tree_provider = "nvimtree"
 

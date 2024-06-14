@@ -5,12 +5,13 @@ local icons = require("user.icons").icons
 if lvim.builtin.trouble.active then
     lvim.builtin.which_key.mappings["t"] = {
         name = "Trouble",
-        r = { "<cmd>Trouble lsp_references<cr>", "References" },
-        f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-        d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-        q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-        l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-        w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+        d = { "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Diagnostics" },
+        f = { "<cmd>Trouble lsp_definitions toggle<cr>", "Definitions" },
+        l = { "<cmd>Trouble loclist toggle<cr>", "LocationList" },
+        q = { "<cmd>Trouble quickfix toggle<cr>", "QuickFix" },
+        r = { "<cmd>Trouble lsp_references toggle<cr>", "References" },
+        t = { "<cmd>TodoLocList <cr>", "Todo" },
+        w = { "<cmd>Trouble diagnostics toggle<cr>", "Workspace Diagnostics" },
     }
 end
 

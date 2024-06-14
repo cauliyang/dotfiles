@@ -610,6 +610,7 @@ lvim.plugins = {
         end,
         enabled = lvim.builtin.task_runner == "overseer",
     },
+
     {
         "nvim-neotest/neotest",
         config = function()
@@ -624,6 +625,7 @@ lvim.plugins = {
         event = { "BufReadPost", "BufNew" },
         enabled = lvim.builtin.task_runner == "overseer",
     },
+
     -- { "nvim-neotest/neotest-go", event = { "BufEnter *.go" } },
     {
         "nvim-neotest/neotest-python",
@@ -757,6 +759,7 @@ lvim.plugins = {
 
     {
         "linux-cultist/venv-selector.nvim",
+        branch = "regexp",
         dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
         opts = {
             -- Your options go here
