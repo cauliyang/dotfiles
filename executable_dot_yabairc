@@ -56,7 +56,7 @@ app_names="^(Calculator|Authy Desktop|Postgres|VLC|System Preferences|IINA|GifCa
 app_names+="|iMazing HEIC Converter|AppCleaner|Stickies|1Password 7|VeraCrypt|zoom.us|Spotify"
 app_names+="|Tunnelblick|WireGuard|Logi Options|JetBrains Toolbox|LX Music"
 app_names+="|Inkscape Settings|Alfred|System Settings|System Preferences|System Information|Activity Monitor"
-app_names+="|Logi Options\+|JetBrains Gateway|SteelSeries GG Client)$"
+app_names+="|Logi Options\+|JetBrains Gateway|Raycast|CleanShot X|SteelSeries GG Client)$"
 yabai -m rule --add app="${app_names}" manage=off
 
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
@@ -68,6 +68,6 @@ yabai -m signal --add label=space_changed event=space_changed \
 	action="$HOME/.config/yabai/save_recent_space.sh"
 
 # borders width=6.0 active_color=0xff00ff00 2>/dev/null 1>&2 &
-borders width=6.0 active_color=0xffe1e3e4 inactive_color=0xff494d64 2>/dev/null 1>&2 &
+borders width=6.0 active_color=0xffe2e2e3 inactive_color=0xff494d64 2>/dev/null 1>&2 &
 
 echo "yabai configuration loaded.."
