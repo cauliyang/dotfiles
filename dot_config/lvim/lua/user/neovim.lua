@@ -36,7 +36,6 @@ M.config = function()
     vim.filetype.add({ extension = { wgsl = "wgsl" } })
     -- support .editorconfig
     vim.g.editorconfig = true
-    vim.g.markdown_fenced_languages = { "shell=bash" }
 
     vim.g.tex_flavor = "latex"
     -- Set wrap

@@ -218,16 +218,6 @@ lvim.plugins = {
     },
 
     -- latex and markdown
-    -- https://github.com/iamcco/markdown-preview.nvim/
-    {
-        "iamcco/markdown-preview.nvim",
-        build = "cd app && yarn install",
-        config = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = "markdown",
-    },
-
     { "barreiroleo/ltex-extra.nvim" },
 
     {
@@ -457,12 +447,10 @@ lvim.plugins = {
         "declancm/cinnamon.nvim",
         config = function()
             require("cinnamon").setup({
-                default_keymaps = true,
-                default_delay = 4,
-                extra_keymaps = true,
-                extended_keymaps = false,
-                centered = true,
-                scroll_limit = 100,
+                keymaps = { basic = true, extra = true },
+                options = {
+                    mode = "window",
+                },
             })
         end,
         event = "BufRead",
@@ -992,5 +980,14 @@ lvim.plugins = {
 
     {
         "let-def/texpresso.vim",
+    },
+
+    {
+        "abzcoding/markdown.nvim",
+        branch = "feature/fancy",
+        name = "render-markdown",
+        config = function()
+            require("user.markd").config()
+        end,
     },
 }
