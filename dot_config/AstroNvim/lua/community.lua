@@ -28,5 +28,6 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
 }
