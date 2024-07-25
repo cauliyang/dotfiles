@@ -219,7 +219,12 @@ lvim.plugins = {
 
     -- latex and markdown
     { "barreiroleo/ltex-extra.nvim" },
-
+    {
+        "Kicamon/markdown-table-mode.nvim",
+        config = function()
+            require("markdown-table-mode").setup()
+        end,
+    },
     {
         "AckslD/nvim-FeMaco.lua",
         config = function()

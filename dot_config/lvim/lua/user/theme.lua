@@ -188,6 +188,7 @@ M.rose_pine = function()
             CmpItemKindReference = { fg = "gold" },
             CmpItemKindOperator = { fg = "subtle" },
             CmpItemKindTypeSnippet = { fg = "pine" },
+            ColorColumn = { bg = "#16141f" },
             rainbow1 = { fg = "#eb6f92", bg = "#2a273f" },
             rainbow2 = { fg = "#ea9d34", bg = "#2a273f" },
             rainbow3 = { fg = "#f7c177", bg = "#2a273f" },
@@ -271,6 +272,7 @@ M.catppuccin = function()
                 CmpItemKindEnumMember = { fg = "#F5C2E7" },
                 CmpItemMenu = { fg = "#7F849C" },
                 CmpItemAbbr = { fg = "#BAC2DE" },
+                ColorColumn = { bg = "#181825" },
                 Cursor = { fg = "#1e1e2e", bg = "#d9e0ee" },
                 ["@constant.builtin"] = { fg = "#EBA0AC" },
                 TSConstBuiltin = { fg = "#EBA0AC" },
@@ -338,6 +340,7 @@ M.kanagawa = function()
                 rainbow4 = { fg = "#76946A", bg = "#21212A" },
                 rainbow5 = { fg = "#4e8ca2", bg = "#21212A" },
                 rainbow6 = { fg = "#949fb5", bg = "#21212A" },
+                ColorColumn = { bg = "#181820" },
             }
         end,
         theme = "wave",

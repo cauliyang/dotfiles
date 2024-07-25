@@ -17,7 +17,7 @@ M.toggle_inlay_hints = function(buf, value)
         if value == nil then
             value = not ih.is_enabled(buf)
         end
-        ih.enable(buf, value)
+        ih.enable(value)
     end
 end
 
