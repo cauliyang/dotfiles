@@ -1,0 +1,67 @@
+{
+  "arrow": {
+    "prefix": "kk",
+    "body": ["->"],
+    "description": "arrow function"
+  },
+  "derivedebug": {
+    "prefix": "derivedebug",
+    "body": ["#[derive(Debug)]"],
+    "description": ""
+  },
+  "deadcode": {
+    "prefix": "deadcode",
+    "body": ["#[allow(dead_code)]"],
+    "description": ""
+  },
+  "allowfreedom": {
+    "prefix": "allowfreedom",
+    "body": [
+      "#![allow(clippy::disallowed_names, unused_variables, dead_code)]"
+    ],
+    "description": ""
+  },
+  "testcfg": {
+    "prefix": "testcfg",
+    "body": [
+      "#[cfg(test)]",
+      "mod ${1:tests} {",
+      "    use super::*;",
+      "",
+      "    #[test]",
+      "    fn ${2:name}() {",
+      "        ${0:todo!()}",
+      "    }",
+      "}"
+    ],
+    "description": "test cfg"
+  },
+  "new": {
+    "prefix": "new",
+    "body": [
+      "pub fn new(${1:arg}:${2:Type}) -> Self {",
+      "    ${0:todo!()}",
+      "}"
+    ],
+    "description": "create constructor"
+  },
+
+  "op": {
+    "prefix": "op",
+    "body": ["Option<${1}>"],
+    "description": "",
+    "wordTrigger": false
+  },
+  "so": {
+    "prefix": "so",
+    "body": ["Some(${1})"],
+    "description": "",
+    "wordTrigger": false
+  },
+  "ok": {
+    "prefix": "ok",
+    "body": ["Ok(${1})"],
+    "description": "",
+    "wordTrigger": false
+  }
+}
