@@ -218,6 +218,22 @@ lvim.plugins = {
     },
 
     -- latex and markdown
+    -- {
+    --     "OXY2DEV/markview.nvim",
+    --     lazy = false,
+    --     dependencies = {
+    --         "nvim-treesitter/nvim-treesitter",
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    -- },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {},
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    },
+
     { "barreiroleo/ltex-extra.nvim" },
     {
         "Kicamon/markdown-table-mode.nvim",
@@ -985,14 +1001,5 @@ lvim.plugins = {
 
     {
         "let-def/texpresso.vim",
-    },
-
-    {
-        "abzcoding/markdown.nvim",
-        branch = "feature/fancy",
-        name = "render-markdown",
-        config = function()
-            require("user.markd").config()
-        end,
     },
 }

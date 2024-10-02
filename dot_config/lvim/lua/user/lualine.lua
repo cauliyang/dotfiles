@@ -156,22 +156,16 @@ M.config = function()
             globalstatus = lvim.builtin.global_statusline,
         },
         sections = {
-            -- these are to remove the defaults
             lualine_a = {},
-
             lualine_b = {},
-            lualine_y = {},
-            lualine_z = {},
-            -- These will be filled later
             lualine_c = {},
             lualine_x = {},
+            lualine_y = {},
+            lualine_z = {},
         },
         inactive_sections = {
             -- these are to remove the defaults
             lualine_a = {},
-            lualine_v = {},
-            lualine_y = {},
-            lualine_z = {},
             lualine_c = {
                 {
                     function()
@@ -193,7 +187,10 @@ M.config = function()
                     color = { fg = colors.blue, gui = "bold", bg = colors.bg },
                 },
             },
+            lualine_v = {},
             lualine_x = {},
+            lualine_y = {},
+            lualine_z = {},
         },
     }
 
@@ -542,6 +539,7 @@ M.config = function()
             local index = math.ceil(line_ratio * #chars)
             return chars[index]
         end,
+        fmt = string.lower,
         padding = 0,
         color = { fg = colors.yellow, bg = colors.bg },
         cond = nil,

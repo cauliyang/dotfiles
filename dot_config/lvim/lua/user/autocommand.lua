@@ -111,12 +111,12 @@ vim.api.nvim_create_autocmd("WinLeave", {
 --     callback = vim.lsp.codelens.refresh,
 -- })
 
-vim.api.nvim_create_autocmd("CursorHold", {
-    group = "_lvim_user",
-    pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.py", "*.pyi", "*.java" },
-    desc = "Show codelens indicator",
-    callback = require("user.codelens").show_line_sign,
-})
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     group = "_lvim_user",
+--     pattern = { "*.rs", "*.c", "*.cpp", "*.go", "*.ts", "*.tsx", "*.py", "*.pyi", "*.java" },
+--     desc = "Show codelens indicator",
+--     callback = require("user.codelens").show_line_sign,
+-- })
 
 -- Terminal
 vim.api.nvim_create_autocmd("TermOpen", {

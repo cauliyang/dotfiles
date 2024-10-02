@@ -92,10 +92,10 @@ vim.g.rustaceanvim = {
                         minLines = 25,
                     },
                     closureReturnTypeHints = {
-                        enable = "never",
+                        enable = true,
                     },
                     lifetimeElisionHints = {
-                        enable = "never",
+                        enable = false,
                         useParameterNames = false,
                     },
                     maxLength = 25,
@@ -123,8 +123,9 @@ vim.g.rustaceanvim = {
                     methodReferences = true,
                 },
                 checkOnSave = {
-                    enable = true,
+                    enable = false,
                     command = "clippy",
+                    -- command = "check",
                 },
                 diagnostics = {
                     experimental = true,

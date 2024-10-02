@@ -674,6 +674,15 @@ M.telescope_theme = function(colorset)
         vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Type").fg, bg = h("CursorLine").bg, italic = true })
         vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("@keyword").fg, bg = h("CursorLine").bg, italic = true })
     end
+    -- for markdown preview
+    link("MarkviewHeading1", "rainbow1")
+    link("MarkviewHeading1Sign", "rainbow1")
+    link("MarkviewHeading2", "rainbow2")
+    link("MarkviewHeading2Sign", "rainbow2")
+    link("MarkviewHeading3", "rainbow3")
+    link("MarkviewHeading4", "rainbow4")
+    link("MarkviewHeading5", "rainbow5")
+    link("MarkviewHeading6", "rainbow6")
 end
 
 M.dashboard_theme = function()
