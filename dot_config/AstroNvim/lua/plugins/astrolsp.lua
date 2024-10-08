@@ -46,6 +46,34 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            procMacro = {
+              enable = true,
+              ignored = {
+                leptos_macro = {
+                  -- optional: --
+                  "component",
+                  "server",
+                },
+              },
+            },
+            lens = {
+              enable = true,
+              enumVariantReferences = true,
+              methodReferences = true,
+            },
+            cargo = {
+              allFeatures = false,
+              autoreload = true,
+              buildScripts = {
+                enable = true,
+              },
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
