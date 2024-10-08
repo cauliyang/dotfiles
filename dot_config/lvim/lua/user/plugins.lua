@@ -487,11 +487,12 @@ lvim.plugins = {
         dependencies = { "nvim-telescope/telescope.nvim" },
         lazy = true,
     },
-    {
-        "cljoly/telescope-repo.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        lazy = true,
-    },
+
+    -- {
+    --     "cljoly/telescope-repo.nvim",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     lazy = true,
+    -- },
 
     -- Telescope file browser
     {
@@ -768,19 +769,34 @@ lvim.plugins = {
 
     {
         "linux-cultist/venv-selector.nvim",
-        branch = "regexp",
         dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-        opts = {
-            -- Your options go here
-            -- name = "venv",
-            -- auto_refresh = false
-        },
-        event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+        config = function()
+            require("venv-selector").setup({
+                -- Your options go here
+                -- name = "venv",
+                -- auto_refresh = false
+                settings = {
+                    search = {
+                        miniforge_envs = {
+                            command = "fd 'bin/python$' ~/miniforge3/envs --full-path --color never",
+                            type = "miniforge",
+                        },
+                        miniforge_base = {
+                            command = "fd '/python$' ~/miniforge3/bin --full-path --color never",
+                            type = "miniforge",
+                        },
+                    },
+                },
+            })
+        end,
+        branch = "regexp",
+        lazy = false,
+        -- event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
         keys = {
             -- Keymap to open VenvSelector to pick a venv.
-            -- { "<leader>vs", "<cmd>VenvSelect<cr>" },
+            -- { '<leader>vs', '<cmd>VenvSelect<cr>' },
             -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-            -- { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
+            -- { '<leader>vc', '<cmd>VenvSelectCached<cr>' },
         },
     },
 
