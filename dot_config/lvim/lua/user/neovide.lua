@@ -36,10 +36,11 @@ M.config = function()
         vim.g.neovide_floating_blur_amount_y = 2.0
 
         local fonts = {
+            inconsolata = "Inconsolata:h13",
             iosevka = "Iosevka:h13",
             victor = "Victor Mono:h13",
             ia = "iA Writer Mono S:h13",
-            cascadia = "Cascadia Code:h13",
+            cascadia = "Cascadia Code NF:h13",
             cascadiam = "Cascadia Mono:h13",
             fira = "Fira Code:h13",
             firam = "Fira Mono:h13",
@@ -48,10 +49,10 @@ M.config = function()
             monaspace_xenon = "Monaspace Xenon:h13",
         }
 
-        vim.o.guifont = fonts.cascadia
+        vim.o.guifont = fonts.inconsolata
         vim.opt.linespace = 0
 
-        vim.g.neovide_transparency = 0.4
+        vim.g.neovide_transparency = 0.8
 
         local change_scale_factor = function(delta)
             vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
