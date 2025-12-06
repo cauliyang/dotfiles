@@ -10,6 +10,7 @@ wezterm.time.call_after(600 * 60, function()
 end)
 
 local config = {
+	use_ime = false,
 	check_for_updates = true,
 	automatically_reload_config = true,
 	bidi_enabled = true,
@@ -36,7 +37,7 @@ local config = {
 
 	selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 	line_height = 1.25,
-	font_size = 15,
+	font_size = 16,
 
 	inactive_pane_hsb = {
 		saturation = 0.9,
