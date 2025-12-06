@@ -1,0 +1,49 @@
+# vim=config:ft=ghostty
+
+# font-family = Cascadia Code NF
+font-family = Maple Mono
+font-size = 18
+font-thicken = true
+
+# font feature for maple mono
+font-feature = +liga, +calt, +dlig, +ss03, +ss04, +ss05, +ss08, +zero, +onum
+
+# feature for cascadia code
+# font-feature = +liga, +calt, +dlig, +ss01, +ss02, +ss19, +ss20, +ss03, +ss04, +ss05, +ss08, +zero, +onum
+# adjust-cell-height=7
+
+font-thicken-strength=1
+
+# theme = light:Rose Pine Dawn,dark:Rose Pine
+# theme = Dracula+
+theme = Gruvbox Dark
+shell-integration = fish
+shell-integration-features = cursor,sudo,title
+minimum-contrast = 2
+bold-is-bright = true
+
+background-opacity = 0.9
+background-blur-radius = 20
+# background=#000000
+selection-invert-fg-bg = true
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+macos-titlebar-style = tabs
+
+# cursor
+cursor-style = block
+cursor-style-blink = true
+cursor-invert-fg-bg = true
+cursor-opacity = .8
+
+# other
+macos-option-as-alt = true
+copy-on-select = clipboard
+
+# https://github.com/0xhckr/ghostty-shaders
+# reference https://catskull.net/fun-with-ghostty-shaders.html
+custom-shader = ~/.config/ghostty/shaders/shader.glsl
+# custom-shader = ~/.config/ghostty/shaders/inside-the-matrix.glsl
+# custom-shader = ~/.config/ghostty/shaders/sparks-from-fire.glsl
+# custom-shader = ~/.config/ghostty/shaders/just-snow.glsl
+# custom-shader = ~/.config/ghostty/shaders/matrix-hallway.glsl
