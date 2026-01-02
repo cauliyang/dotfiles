@@ -1,0 +1,15 @@
+[[mgr.prepend_keymap]]
+on = ["z", "i"]
+run = 'shell "imv $0" --confirm'
+desc = "Open in imv (zoomable)"
+
+[[mgr.prepend_keymap]]
+on = ["z", "p"]
+run = 'shell "zathura \"$@\"" --confirm'
+desc = "Open PDF (zoomable)"
+
+
+[[mgr.prepend_keymap]]
+on = ["z", "P"]
+run = 'shell "zathura \"$@\" &" --confirm'
+desc = "Open all selected PDFs"

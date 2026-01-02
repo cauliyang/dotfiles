@@ -1,0 +1,78 @@
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Edit with nvim" },
+]
+pdf = [
+    { run = "zathura \"$@\"", orphan = true, desc = "Zathura" },
+]
+office = [
+    { run = 'libreoffice "$@"', orphan = true, desc = "Open with LibreOffice" },
+]
+image = [
+    { run = 'imv "$@"', orphan = true, desc = "View image" },
+]
+svg = [
+    { run = 'inkscape "$@"', orphan = true, desc = "Edit with Inkscape" },
+]
+
+[open]
+rules = [
+    # PDF files
+    { mime = "application/pdf", use = "pdf" },
+    
+    # Text files
+    { mime = "text/*", use = "edit" },
+    { mime = "inode/x-empty", use = "edit" },
+    
+    # Programming languages
+    { name = "*.rs", use = "edit" },
+    { name = "*.py", use = "edit" },
+    { name = "*.cpp", use = "edit" },
+    { name = "*.c", use = "edit" },
+    { name = "*.h", use = "edit" },
+    { name = "*.hpp", use = "edit" },
+    { name = "*.js", use = "edit" },
+    { name = "*.ts", use = "edit" },
+    { name = "*.jsx", use = "edit" },
+    { name = "*.tsx", use = "edit" },
+    { name = "*.go", use = "edit" },
+    { name = "*.java", use = "edit" },
+    { name = "*.r", use = "edit" },
+    { name = "*.R", use = "edit" },
+    
+    # Config files
+    { name = "*.json", use = "edit" },
+    { name = "*.toml", use = "edit" },
+    { name = "*.yaml", use = "edit" },
+    { name = "*.yml", use = "edit" },
+    { name = "*.xml", use = "edit" },
+    { name = "*.ini", use = "edit" },
+    { name = "*.conf", use = "edit" },
+    
+    # Scripts
+    { name = "*.sh", use = "edit" },
+    { name = "*.bash", use = "edit" },
+    { name = "*.fish", use = "edit" },
+    
+    # Markup/Documentation
+    { name = "*.md", use = "edit" },
+    { name = "*.tex", use = "edit" },
+    { name = "*.rst", use = "edit" },
+    
+    # LibreOffice documents
+    { name = "*.doc", use = "office" },
+    { name = "*.docx", use = "office" },
+    { name = "*.odt", use = "office" },
+    { name = "*.xls", use = "office" },
+    { name = "*.xlsx", use = "office" },
+    { name = "*.ods", use = "office" },
+    { name = "*.ppt", use = "office" },
+    { name = "*.pptx", use = "office" },
+    { name = "*.odp", use = "office" },
+    
+    # SVG (must come before image/*)
+    { name = "*.svg", use = "svg" },
+    { mime = "image/svg+xml", use = "svg" },
+    # Images
+    { mime = "image/*", use = "image" },
+]
